@@ -2,6 +2,7 @@ package com.frc5113.library.drivers;
 
 import com.frc5113.library.primative.RobotState;
 import com.frc5113.library.primative.SmartTimedRobot;
+import com.frc5113.library.primative.StatefulRobot;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.Solenoid;
 
@@ -13,18 +14,18 @@ public class SmartSolenoid extends Solenoid {
     private boolean isOn = false;
     private boolean wasDisabled = true;
 
-    private final SmartTimedRobot robot;
+    private final StatefulRobot robot;
 
     // Allen - Allows the use of 0-13 to set solenoid number, ports 0-7 on module 2
     // or solenoids 8-13.
-    public SmartSolenoid(int channel, SmartTimedRobot robot) {
+    public SmartSolenoid(int channel, StatefulRobot robot) {
         super((channel > 7 ? 1 : 0), PneumaticsModuleType.CTREPCM, (channel > 7 ? channel - 8 : channel));
         this.robot = robot;
     }
 
     // Allen - Allows the use of 0-13 to set solenoid number, ports 0-7 on module 2
     // or solenoids 8-13.
-    public SmartSolenoid(final PneumaticsModuleType moduleType, int channel, SmartTimedRobot robot) {
+    public SmartSolenoid(final PneumaticsModuleType moduleType, int channel, StatefulRobot robot) {
         super(moduleType, channel);
         this.robot = robot;
     }
