@@ -18,6 +18,14 @@ public class Dpad {
     public AxisButton DownLeft;
     public AxisButton DownRight;
 
+    /**
+     * Define the value on the POV hat (DPad) at which the dpad direction is activated.
+     * This can be though of as passing a threshold, at which that button is active
+     * <code>
+     *     .value
+     * </code>
+     * return the value on the hat.
+     */
     public enum DPadButtons {
         UNPRESSED(-1), UP(0), UP_RIGHT(45), RIGHT(90), DOWN_RIGHT(135), DOWN(180), DOWN_LEFT(225), LEFT(270),
         UP_LEFT(315);
@@ -46,6 +54,10 @@ public class Dpad {
         this.DownRight = new AxisButton(joy, axis, DPadButtons.DOWN_RIGHT.value, ThresholdType.POV);
     }
 
+    /**
+     * get the raw axis value of the POV hat
+     * @return scalar of POV hat
+     */
     public double getValue() {
         return joy.getRawAxis(axis.value);
     }

@@ -21,7 +21,7 @@ public class Limelight {
     private final NetworkTable table;
     private String tableName = "";
     private Boolean isConnected = false;
-    private final double _hearBeatPeriod = 0.1;
+    private final double heartBeatPeriod = 0.1;
 
     class HeartbeatRunnable implements java.lang.Runnable {
         public void run() {
@@ -43,7 +43,7 @@ public class Limelight {
     public Limelight() {
         tableName = "limelight";
         table = NetworkTableInstance.getDefault().getTable(tableName);
-        _heartBeat.startPeriodic(_hearBeatPeriod);
+        _heartBeat.startPeriodic(heartBeatPeriod);
     }
 
     /**
@@ -53,7 +53,7 @@ public class Limelight {
     public Limelight(String tableName) {
         this.tableName = tableName;
         table = NetworkTableInstance.getDefault().getTable(this.tableName);
-        _heartBeat.startPeriodic(_hearBeatPeriod);
+        _heartBeat.startPeriodic(heartBeatPeriod);
     }
 
     /**
@@ -62,7 +62,7 @@ public class Limelight {
      */
     public Limelight(NetworkTable table) {
         this.table = table;
-        _heartBeat.startPeriodic(_hearBeatPeriod);
+        _heartBeat.startPeriodic(heartBeatPeriod);
 
     }
 

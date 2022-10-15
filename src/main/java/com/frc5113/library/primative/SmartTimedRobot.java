@@ -3,7 +3,6 @@ package com.frc5113.library.primative;
 import com.frc5113.library.config.ConfigLibrary;
 import com.frc5113.library.utils.Alert;
 import com.frc5113.library.utils.Alert.AlertType;
-import com.frc5113.robot.RobotContainer;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -47,7 +46,7 @@ public abstract class SmartTimedRobot extends TimedRobot {
         if (MAC.equals("")) {
             getMACAddress();
         }
-        if (MAC.equals(ConfigLibrary.getMainBotMac())) {
+        if (!MAC.equals(ConfigLibrary.getMainBotMac())) {
             notMainBot = true;
             notMainBotAlert.set(true);
 //            PracticeConstants.practiceBotConstantsOverride();
@@ -114,7 +113,7 @@ public abstract class SmartTimedRobot extends TimedRobot {
      */
     public RobotState getState() {
         return state;
-    };
+    }
 
     /**
      * Set the current state of the robot
@@ -152,7 +151,7 @@ public abstract class SmartTimedRobot extends TimedRobot {
     @Override
     public void disabledPeriodic() {}
 
-    /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class. */
+    /** This autonomous runs the autonomous command selected by your RobotContainer class. */
     @Override
     public void autonomousInit() {
         setState(RobotState.AUTONOMOUS);

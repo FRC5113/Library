@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.Solenoid;
  * @author Cheezy Poofs (254), Spectrum (3847), Vladimir Bondar (5113)
  */
 public class SmartSolenoid extends Solenoid {
-    private boolean on = false;
+    private boolean isOn = false;
     private boolean wasDisabled = true;
 
     private final SmartTimedRobot robot;
@@ -34,16 +34,16 @@ public class SmartSolenoid extends Solenoid {
     // state changed from or to Disabled
     public void set(boolean value) {
         boolean is_disabled = robot.getState() == RobotState.DISABLED;
-        if ((!is_disabled && wasDisabled) || value != on) {
+        if ((!is_disabled && wasDisabled) || value != isOn) {
             super.set(value);
         }
-        on = value;
+        isOn = value;
         wasDisabled = is_disabled;
     }
 
     @Override
     // Allen - Don't waste time with a CAN command to check the state
     public boolean get() {
-        return on;
+        return isOn;
     }
 }
