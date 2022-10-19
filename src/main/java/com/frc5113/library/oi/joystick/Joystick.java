@@ -8,14 +8,35 @@ import com.frc5113.library.oi.xbox.XboxGamepad;
 import com.frc5113.library.primative.Axis;
 
 public class Joystick extends edu.wpi.first.wpilibj.Joystick {
+
+    public Curve xCurve;
+    public Curve yCurve;
+    public Curve tCurve;
+
     public Joystick(int port) {
         super(port);
     }
 
     public Joystick(int port, double xDeadband, double yDeadband) {
         this(port);
-//        this.stick.setDeadband(xDeadband, yDeadband);
+        this.stick.setDeadband(xDeadband, yDeadband);
     }
+
+    public Joystick(int port, Curve xCurve, Curve yCurve, Curve tCurve) {
+        this(port);
+        this.xCurve = xCurve;
+        this.yCurve = yCurve;
+        this.tCurve = tCurve;
+    }
+
+    public Joystick(int port, double xDeadband, Double yDeadband, Curve xCurve, Curve yCurve, Curve tCurve) {
+        this(port, xDeadband, yDeadband);
+        this.xCurve = xCurve;
+        this.yCurve = yCurve;
+        this.tCurve = tCurve;
+    }
+
+    
 
     public Button triggerButton = new Button(this, JoystickButton.k1);
     public Button thumbButton = new Button(this, JoystickButton.k2);
@@ -32,7 +53,7 @@ public class Joystick extends edu.wpi.first.wpilibj.Joystick {
 
     public Dpad dPad = new Dpad(this, JoystickAxis.POV);
 
-    public Stick stick = new Stick(this, JoystickAxis.X, JoystickAxis.Y, JoystickAxis.Twist);
+    public Stick stick = new Stick(this, JoystickAxis.X, JoystickAxis.Y, JoystickAxis.Twist, xCurve, yCurve, tCurve);
 
     public Slider slider = new Slider(this, JoystickAxis.Slider);
 
