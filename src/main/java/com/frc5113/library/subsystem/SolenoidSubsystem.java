@@ -66,4 +66,9 @@ public class SolenoidSubsystem extends SmartSubsystem {
     public void stop() {
         // nothing to "stop"
     }
+
+    @Override
+    public void zeroSensors() {
+        // nothing to zero (possibly fold solenoid)
+    }
 }

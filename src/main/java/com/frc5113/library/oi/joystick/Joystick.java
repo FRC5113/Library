@@ -2,6 +2,7 @@ package com.frc5113.library.oi.joystick;
 
 import com.frc5113.library.oi.Dpad;
 import com.frc5113.library.oi.buttons.Button;
+import com.frc5113.library.oi.scalers.Curve;
 import com.frc5113.library.oi.sticks.Slider;
 import com.frc5113.library.oi.sticks.Stick;
 import com.frc5113.library.oi.xbox.XboxGamepad;
@@ -13,30 +14,27 @@ public class Joystick extends edu.wpi.first.wpilibj.Joystick {
     public Curve yCurve;
     public Curve tCurve;
 
+    /**
+     * Create simple joystick (with no-op curves)
+     * @param port DS Port of Joystick
+     */
     public Joystick(int port) {
         super(port);
     }
 
-    public Joystick(int port, double xDeadband, double yDeadband) {
-        this(port);
-        this.stick.setDeadband(xDeadband, yDeadband);
-    }
-
+    /**
+     * Create with curves
+     * @param port DS Port of Joystick
+     * @param xCurve Curve to adjust X Axis
+     * @param yCurve Curve to adjust Y Axis
+     * @param tCurve Curve to adjust Twist Axis
+     */
     public Joystick(int port, Curve xCurve, Curve yCurve, Curve tCurve) {
         this(port);
         this.xCurve = xCurve;
         this.yCurve = yCurve;
         this.tCurve = tCurve;
     }
-
-    public Joystick(int port, double xDeadband, Double yDeadband, Curve xCurve, Curve yCurve, Curve tCurve) {
-        this(port, xDeadband, yDeadband);
-        this.xCurve = xCurve;
-        this.yCurve = yCurve;
-        this.tCurve = tCurve;
-    }
-
-    
 
     public Button triggerButton = new Button(this, JoystickButton.k1);
     public Button thumbButton = new Button(this, JoystickButton.k2);

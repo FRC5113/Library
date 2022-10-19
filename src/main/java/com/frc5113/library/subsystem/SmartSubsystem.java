@@ -26,4 +26,9 @@ public abstract class SmartSubsystem extends SubsystemBase {
      * Stop everything in the subsystem (now)
      */
     abstract public void stop();
+
+    /**
+     * Reset all the motors
+     */
+    abstract public void zeroSensors();
 }
