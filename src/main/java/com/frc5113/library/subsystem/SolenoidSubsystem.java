@@ -4,13 +4,14 @@ import com.frc5113.library.drivers.SmartSolenoid;
 import com.frc5113.library.primative.SmartTimedRobot;
 import com.frc5113.library.primative.StatefulRobot;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 /**
  * A subsystem consisting of a single solenoid that can be activated and deactivated
  */
-public class SolenoidSubsystem extends SubsystemBase{
+public class SolenoidSubsystem extends SmartSubsystem {
     public final SmartSolenoid solenoid;
 
     /**
@@ -48,5 +49,21 @@ public class SolenoidSubsystem extends SubsystemBase{
 
     public void off(){
         solenoid.set(false);
+    }
+
+    @Override
+    public boolean checkSubsystem() {
+        solenoid.get(); // check that solenoid is alive
+        return true;
+    }
+
+    @Override
+    public void outputTelemetry() {
+        SmartDashboard.putBoolean(getName() + " Activated", solenoid.get());
+    }
+
+    @Override
+    public void stop() {
+        // nothing to "stop"
     }
 }

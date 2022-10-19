@@ -22,5 +22,8 @@ public abstract class SmartSubsystem extends SubsystemBase {
      */
     abstract public boolean checkSubsystem();
 
-
+    /**
+     * Stop everything in the subsystem (now)
+     */
+    abstract public void stop();
 }
