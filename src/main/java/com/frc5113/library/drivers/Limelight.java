@@ -197,10 +197,8 @@ public class Limelight {
 
     /**
      * pipeline Sets Limelight’s current pipeline:
-     * <ul>
-     * 0 - 9	Select pipeline 0-9
-     * </ul>
-     * @param pipeline Integer value of preferred pipeline
+     * @param pipeline Integer value of preferred pipeline:
+     *                 0 - 9	Select pipeline 0-9
      */
     public void setPipeline(Integer pipeline) {
         if (pipeline < 0) {
@@ -258,8 +256,8 @@ public class Limelight {
     /**
      * snapshot Allows taking a camera render up to 2 times per second.
      * Value <b>MUST</b> be set to zero after each snapshot to take another snapshot, see:
-     * <br><br>Fix “snapshot” networktables key. Users must set the “snapshot” key to “0” before setting it to “1” to take a screenshot. (Bug fix changelog 2022.2.3 (3/16/22)) <br/><br/>
-     * <p>
+     * <br/><br/>Fix "snapshot" networktables key. Users must set the "snapshot" key to "0" before setting it to "1" to take a screenshot. (Bug fix changelog 2022.2.3 (3/16/22)) <br/><br/>
+     * <br/><br/>
      * kon - Take 1 snapshot
      * koff - Do not take a snapshot (default state)
      *
@@ -285,6 +283,9 @@ public class Limelight {
      * Limelight posts three raw contours to NetworkTables that are not influenced by your grouping mode.
      * That is, they are filtered with your pipeline parameters, but never grouped. X and Y are returned
      * in normalized screen space (-1 to 1) rather than degrees.
+     *
+     * @param raw Target
+     * @return Degree of target
      */
     public double getAdvanced_RotationToTarget(Advanced_Target raw) {
         NetworkTableEntry txRaw = table.getEntry("tx" + Integer.toString(raw.getValue()));

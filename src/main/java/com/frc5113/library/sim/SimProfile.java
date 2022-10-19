@@ -16,7 +16,7 @@ public class SimProfile {
     }
 
     /**
-     * Returns the time since last call, in milliseconds.
+     * @return The time since last call, in milliseconds.
      */
     protected double getPeriod() {
         // set the start time if not yet running

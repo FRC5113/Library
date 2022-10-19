@@ -62,8 +62,8 @@ public class ThumbStick {
     }
 
     /**
-     * Get state of the thumbstick as the pair <X, Y>
-     * @return {@link CoordinatePair} <X, Y>
+     * Get state of the thumbstick as the pair &gt;X, Y&lt;
+     * @return {@link CoordinatePair} &gt;X, Y&lt;
      */
     public CoordinatePair<Double, Double> getAsPair() {
         return new CoordinatePair<>(getX(), getY());

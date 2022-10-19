@@ -11,6 +11,16 @@ public abstract class SmartSubsystem extends SubsystemBase {
         super();
     }
 
-    // enforce telemetry
-    abstract public void shuffleboardTelemetry();
+    /**
+     * Do telemetry, for example shuffleboard
+     */
+    abstract public void outputTelemetry();
+
+    /**
+     * Have the subsystem make sure that everything is good
+     * @return Check status (success - true / fail - false)
+     */
+    abstract public boolean checkSubsystem();
+
+
 }

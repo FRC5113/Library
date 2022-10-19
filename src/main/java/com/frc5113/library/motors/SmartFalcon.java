@@ -132,8 +132,8 @@ public class SmartFalcon extends TalonFX {
     /**
      * Configure the radius / gear ratio of the output of the motor (ie a wheel)
      * @param radius Radius of the output mechanism
-     * @param gearRatio Gear ratio between the input and output (>1 means output
-     *                  is going slower than input, <1 means output is going faster
+     * @param gearRatio Gear ratio between the input and output (&gt;1 means output
+     *                  is going slower than input, &lt;1 means output is going faster
      *                  than input)
      * @return Configured motor
      */

@@ -34,7 +34,7 @@ public class SimpleGenericController extends Joystick {
     /**
      * Set the current value of a boolean output (ie LED)
      * @param port Port of desired output
-     * @param value boolean value to set the output to (false => low, true => high)
+     * @param value boolean value to set the output to (false =&gt; low, true =&gt; high)
      */
     public void setBooleanOutput(int port, boolean value) {
         this.setOutput(port, value);

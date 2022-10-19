@@ -20,7 +20,7 @@ import java.net.UnknownHostException;
  * details, they are required (due to the abstract clause) to be @Override-ed in the
  * Robot class.
  *
- * @implNote It is important to call super.{methodName} for background changes.
+ * <b>It is important to call super.{methodName} for background changes.</b>
  *
  * @author Vladimir Bondar (5113)
  */

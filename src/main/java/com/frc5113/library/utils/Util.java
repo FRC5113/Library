@@ -20,7 +20,10 @@ public class Util {
     }
 
     /**
-     * Limits the given input to the given magnitude.
+     * limits input to the max and min
+     * @param v - input
+     * @param limit - max (limit) / min(-limit) value
+     * @return Limit of the max, min and value
      */
     public static double limit(double v, double limit) {
         return limit(v, limit, -limit);
@@ -32,7 +35,7 @@ public class Util {
      * @param v - input
      * @param max - max value
      * @param min - min value
-     * @return
+     * @return Limit of the max, min and value
      */
     public static double limit(double v, double max, double min){
         return (v > max) ? max : (Math.max(v, min));

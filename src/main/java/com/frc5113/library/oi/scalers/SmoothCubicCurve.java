@@ -10,7 +10,7 @@ Latex function definitions (Desmos):
  *
  * An example can be found on <a href="https://www.desmos.com/calculator/x2k1hgcdna">Desmos</a>.
  *
- * This curve is mostly used for drive train scaling for the precise -> powerful transition.
+ * This curve is mostly used for drive train scaling for the precise -&gt; powerful transition.
  *
  * @author Vladimir Bondar (5113)
  * @version 0.0.4

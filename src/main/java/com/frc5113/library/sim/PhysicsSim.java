@@ -12,6 +12,7 @@ public class PhysicsSim {
 
     /**
      * Gets the robot simulator instance.
+     * @return Only instance of the physics sim
      */
     public static PhysicsSim getInstance() {
         return sim;

@@ -1,7 +1,7 @@
 package com.frc5113.library.primative;
 
 /**
- * Extend me to implement flags in {@link com.frc5113.library.logging.FlagLogger}
+ * Extend me to implement flags in FlagLogger in the Logging package
  */
 public interface BaseLoggerFlags {
     public final String tag = "";

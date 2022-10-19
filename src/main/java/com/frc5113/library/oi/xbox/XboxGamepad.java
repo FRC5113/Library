@@ -92,6 +92,7 @@ public class XboxGamepad extends Joystick {
         /**
          * Get the enum corresponding to the integer value
          *
+         * @param mValue The integer value corresponding to a enum
          * @return Enum with corresponding value || null
          */
         public XboxButton fromValue(int mValue) {
