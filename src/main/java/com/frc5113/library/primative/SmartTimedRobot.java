@@ -19,12 +19,15 @@ import java.net.UnknownHostException;
  * that are required by libraries to function. While there are no implementation
  * details, they are required (due to the abstract clause) to be @Override-ed in the
  * Robot class.
+ * <br><br>
+ * Make sure to update SmartLoggedTimedRobot when updating this class
  *
  * <b>It is important to call super.{methodName} for background changes.</b>
  *
  * @author Vladimir Bondar (5113)
  */
-public abstract class SmartTimedRobot extends TimedRobot {
+// UPDATE SmartLoggedTimedRobot IN LOGGING when changing this file
+public abstract class SmartTimedRobot extends TimedRobot implements StatefulRobot {
     /**
      * Manages the current state of the robot
      */
