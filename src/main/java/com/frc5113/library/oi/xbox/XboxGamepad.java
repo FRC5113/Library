@@ -4,6 +4,7 @@ import com.frc5113.library.oi.Dpad;
 import com.frc5113.library.oi.buttons.AxisButton;
 import com.frc5113.library.oi.buttons.Button;
 import com.frc5113.library.oi.scalers.SmoothCubicCurve;
+import com.frc5113.library.oi.scalers.Curve;
 import com.frc5113.library.oi.sticks.ThumbStick;
 import com.frc5113.library.primative.Axis;
 import edu.wpi.first.wpilibj.Joystick;
@@ -15,6 +16,11 @@ public class XboxGamepad extends Joystick {
     public SmoothCubicCurve smoothCubicRY = new SmoothCubicCurve();
     public SmoothCubicCurve smoothCubicLX = new SmoothCubicCurve();
     public SmoothCubicCurve smoothCubicLY = new SmoothCubicCurve();
+
+    public Curve lxCurve;
+    public Curve lyCurve;
+    public Curve rxCurve; 
+    public Curve ryCurve; 
 
     public Button xButton = new Button(this, XboxButton.X);
     public Button yButton = new Button(this, XboxButton.Y);
@@ -32,8 +38,8 @@ public class XboxGamepad extends Joystick {
             ThresholdType.GREATER_THAN);
     public Dpad Dpad = new Dpad(this, XboxAxis.dPad);
 
-    public ThumbStick leftStick = new ThumbStick(this, XboxAxis.leftX, XboxAxis.leftY);
-    public ThumbStick rightStick = new ThumbStick(this, XboxAxis.rightX, XboxAxis.rightY);
+    public ThumbStick leftStick = new ThumbStick(this, XboxAxis.leftX, XboxAxis.leftY, lxCurve, lyCurve);
+    public ThumbStick rightStick = new ThumbStick(this, XboxAxis.rightX, XboxAxis.rightY, rxCurve, ryCurve);
 
     public Triggers triggers = new Triggers(this);
 
@@ -45,21 +51,44 @@ public class XboxGamepad extends Joystick {
 
     public XboxGamepad(int port, double xDeadband, double yDeadband) {
         this(port);
-        smoothCubicLX.setDeadDiameter(xDeadband);
-        smoothCubicLY.setDeadDiameter(yDeadband);
-        smoothCubicRX.setDeadDiameter(xDeadband);
-        smoothCubicRY.setDeadDiameter(yDeadband);
+        lxCurve = smoothCubicLX;
+        lyCurve = smoothCubicLY;
+        rxCurve = smoothCubicRX;
+        ryCurve = smoothCubicRY;
+        lxCurve.setDeadDiameter(xDeadband);
+        lyCurve.setDeadDiameter(yDeadband);
+        rxCurve.setDeadDiameter(xDeadband);
+        rycurve.setDeadDiameter(yDeadband);
     }
 
     public XboxGamepad(int port, double leftXDeadband, double leftYDeadband, double rightXDeadband,
                        double rightYDeadband) {
         this(port);
-        smoothCubicLX.setDeadDiameter(leftXDeadband);
-        smoothCubicLY.setDeadDiameter(leftYDeadband);
-        smoothCubicRX.setDeadDiameter(rightXDeadband);
-        smoothCubicRY.setDeadDiameter(rightYDeadband);
+        lxCurve = smoothCubicLX;
+        lyCurve = smoothCubicLY;
+        rxCurve = smoothCubicRX;
+        ryCurve = smoothCubicRY;
+        lxCurve.setDeadDiameter(leftXDeadband);
+        lyCurve.setDeadDiameter(leftYDeadband);
+        rxCurve.setDeadDiameter(rightXDeadband);
+        rycurve.setDeadDiameter(rightYDeadband);
     }
 
+    public XboxGamepad(int port, Curve xCurve, Curve yCurve) {
+        this(port);
+        this.lxCurve = xCurve;
+        this.lyCurve = yCurve
+        this.rxCurve = xCurve;
+        this.ryCurve = yCurve;
+    }
+
+    public XboxGamepad(int port, Curve lxCurve, Curve lyCurve, Curve rxCurve, Curve ryCurve) {
+        this(port);
+        this.lxCurve = lxCurve;
+        this.lyCurve = lyCurve
+        this.rxCurve = rxCurve;
+        this.ryCurve = ryCurve;
+    }
 
      public enum XboxButton {
         A(1),
