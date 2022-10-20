@@ -5,6 +5,7 @@ import com.frc5113.library.oi.buttons.AxisButton;
 import com.frc5113.library.oi.buttons.Button;
 import com.frc5113.library.oi.scalers.SmoothCubicCurve;
 import com.frc5113.library.oi.scalers.Curve;
+import com.frc5113.library.oi.scalers.NoOpCurve;
 import com.frc5113.library.oi.sticks.ThumbStick;
 import com.frc5113.library.primative.Axis;
 import edu.wpi.first.wpilibj.Joystick;
@@ -16,6 +17,8 @@ public class XboxGamepad extends Joystick {
     public SmoothCubicCurve smoothCubicRY = new SmoothCubicCurve();
     public SmoothCubicCurve smoothCubicLX = new SmoothCubicCurve();
     public SmoothCubicCurve smoothCubicLY = new SmoothCubicCurve();
+
+    public NoOpCurve noOp = new NoOpCurve();
 
     public Curve lxCurve;
     public Curve lyCurve;
@@ -45,10 +48,24 @@ public class XboxGamepad extends Joystick {
 
     public Rumble rumble = new Rumble(this);
 
+    /**
+     * Create with no Scaler
+     * @param port DS Port of gamepad
+     */
     public XboxGamepad(int port) {
         super(port);
+        lxCurve = noOp;
+        lyCurve = noOp;
+        rxCurve = noOp;
+        rxCurve = noOp;
     }
 
+    /**
+     * Create with default smoothCubic Curve
+     * @param port DS Port of gamepad
+     * @param xDeadband deadband value for x axis
+     * @param yDeadband deadband value for y axis
+     */
     public XboxGamepad(int port, double xDeadband, double yDeadband) {
         this(port);
         lxCurve = smoothCubicLX;
@@ -58,9 +75,16 @@ public class XboxGamepad extends Joystick {
         lxCurve.setDeadDiameter(xDeadband);
         lyCurve.setDeadDiameter(yDeadband);
         rxCurve.setDeadDiameter(xDeadband);
-        rycurve.setDeadDiameter(yDeadband);
+        ryCurve.setDeadDiameter(yDeadband);
     }
-
+    /**
+     * Create with default smoothCubic Curve with seperate left and right deadbands
+     * @param port DS Port of gamepad
+     * @param leftXDeadband deadband value for left stick x axis
+     * @param leftYDeadband deadband value for left stick y axis
+     * @param rightXDeadband deadband value for right stick x axis
+     * @param rightYDeadband deadband value for right stick y axis
+     */
     public XboxGamepad(int port, double leftXDeadband, double leftYDeadband, double rightXDeadband,
                        double rightYDeadband) {
         this(port);
@@ -71,21 +95,34 @@ public class XboxGamepad extends Joystick {
         lxCurve.setDeadDiameter(leftXDeadband);
         lyCurve.setDeadDiameter(leftYDeadband);
         rxCurve.setDeadDiameter(rightXDeadband);
-        rycurve.setDeadDiameter(rightYDeadband);
+        ryCurve.setDeadDiameter(rightYDeadband);
     }
-
+    /**
+     * Create with curves
+     * @param port DS Port of gamepad
+     * @param lxCurve Curve to adjust X Axis
+     * @param lyCurve Curve to adjust Y Axis
+     */
     public XboxGamepad(int port, Curve xCurve, Curve yCurve) {
         this(port);
         this.lxCurve = xCurve;
-        this.lyCurve = yCurve
+        this.lyCurve = yCurve;
         this.rxCurve = xCurve;
         this.ryCurve = yCurve;
     }
-
+    /**
+     * Create with seperate curves for left and right
+     * @param port DS Port of gamepad
+     * @param lxCurve Curve to adjust left thumbstick X Axis
+     * @param lyCurve Curve to adjust left thumstick Y Axis
+     * @param rxCurve Curve to adjust right thumbstick X Axis
+     * @param ryCurve Curve to adjust right thumstick Y Axis
+     * @param tCurve Curve to adjust Twist Axis
+     */
     public XboxGamepad(int port, Curve lxCurve, Curve lyCurve, Curve rxCurve, Curve ryCurve) {
         this(port);
         this.lxCurve = lxCurve;
-        this.lyCurve = lyCurve
+        this.lyCurve = lyCurve;
         this.rxCurve = rxCurve;
         this.ryCurve = ryCurve;
     }
