@@ -18,7 +18,7 @@ import edu.wpi.first.math.geometry.Translation2d;
 public class SmartFalcon extends TalonFX {
 
     public static final int TICKS_PER_ROTATION = 2048;
-    private Double outputRadius = null;
+    private Double outputDiameter = null;
     private Double gearRatio = null;
 
     private Translation2d position;
@@ -148,8 +148,8 @@ public class SmartFalcon extends TalonFX {
      *                  than input)
      * @return Configured motor
      */
-    public SmartFalcon configureOutput(double radius, double gearRatio) {
-        this.outputRadius = radius;
+    public SmartFalcon configureOutput(double diameter, double gearRatio) {
+        this.outputDiameter = diameter;
         this.gearRatio = gearRatio;
         return this;
     }
@@ -159,7 +159,7 @@ public class SmartFalcon extends TalonFX {
      * @return Travel speed on output
      */
     public double getOutputSpeed() {
-        return (2 * Math.PI * outputRadius) * getEncoderVelocity() / gearRatio;
+        return (Math.PI * outputDiameter) * getEncoderVelocity() / gearRatio;
     }
 
     /**
@@ -167,8 +167,13 @@ public class SmartFalcon extends TalonFX {
      * @return Traveled distance of the output
      */
     public double getOutputDistance() {
-        return (2 * Math.PI * outputRadius) * getEncoderRotations() / gearRatio;
+        return (Math.PI * outputDiameter) * getEncoderRotations() / gearRatio;
     }
+
+    public double getOutputDistance(double diameter, double ratio) {
+        return (Math.PI * diameter) * getEncoderRotations() / ratio;
+    }
+
 
     /**
      * return the position of a drive motor relative to the center of the robot

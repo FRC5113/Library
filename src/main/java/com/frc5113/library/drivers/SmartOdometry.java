@@ -34,6 +34,7 @@ public class SmartOdometry{
     private Pose2d position;
     private double tankWheelDiameter;
     private double mecWheelDiameter;
+    private double gearRatio;
 
     private OdometryType type;
 
@@ -45,6 +46,7 @@ public class SmartOdometry{
     OdometryType type, 
     Pose2d startPos,
     double wheelDiameter,
+    double gearRatio,
     SmartFalcon frontLeft, 
     SmartFalcon backLeft, 
     SmartFalcon frontRight, 
@@ -59,6 +61,7 @@ public class SmartOdometry{
         // gyro.setAngleAdjustment(90); // add 90deg to getAngle calls
         gyro.reset();
         tankWheelDiameter = wheelDiameter;
+        this.gearRatio = gearRatio;
 
         this.type = type;
         //Setting up position tracking for tankdrive
@@ -83,11 +86,12 @@ public class SmartOdometry{
     Pose2d startPos, 
     double wheelDiameter,
     double mecWheelDiameter,
+    double gearRatio,
     SmartFalcon frontLeft, 
     SmartFalcon backLeft, 
     SmartFalcon frontRight, 
     SmartFalcon backRight) { 
-        this(type, startPos, wheelDiameter, frontLeft, backLeft, frontRight, backRight);
+        this(type, startPos, wheelDiameter, gearRatio, frontLeft, backLeft, frontRight, backRight);
         this.mecWheelDiameter = mecWheelDiameter;
     }
 
@@ -101,15 +105,15 @@ public class SmartOdometry{
                 */
                 diffOdometry.update(
                     gyro.getRotation2d(), 
-                    frontLeft.getOutputDistance() * tankWheelDiameter, 
-                    frontRight.getOutputDistance() * tankWheelDiameter);
+                    frontLeft.getOutputDistance(tankWheelDiameter, gearRatio), 
+                    frontRight.getOutputDistance(tankWheelDiameter, gearRatio));
                 position = diffOdometry.getPoseMeters();
                 break;
             case mecWheelDifferential:
             diffOdometry.update(
                 gyro.getRotation2d(), 
-                frontLeft.getOutputDistance() * mecWheelDiameter, 
-                frontRight.getOutputDistance() * mecWheelDiameter);
+                frontLeft.getOutputDistance(mecWheelDiameter, gearRatio), 
+                frontRight.getOutputDistance(mecWheelDiameter, gearRatio));
                 position = diffOdometry.getPoseMeters();
                 break;
             case mecanum:
