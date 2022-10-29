@@ -4,6 +4,8 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 
+import edu.wpi.first.math.geometry.Translation2d;
+
 /**
  * Modifications to TalonFX-esq motors (commonly the Talon)
  * <ul>
@@ -19,6 +21,8 @@ public class SmartFalcon extends TalonFX {
     private Double outputRadius = null;
     private Double gearRatio = null;
 
+    private Translation2d position;
+
     /**
      * Create a new Smart TalonFX with Falcon based parameters
      * @param canID integer CAN network ID
@@ -29,6 +33,13 @@ public class SmartFalcon extends TalonFX {
         super(canID);
         TalonFXWrench.defaultSetup(this, inverted, 40);
         this.setNeutralMode(neutralMode);
+    }
+
+    SmartFalcon(int canID, boolean inverted, NeutralMode neutralMode, Translation2d position) {
+        super(canID);
+        TalonFXWrench.defaultSetup(this, inverted, 40);
+        this.setNeutralMode(neutralMode);
+        this.position = position;
     }
 
     /**
@@ -157,5 +168,13 @@ public class SmartFalcon extends TalonFX {
      */
     public double getOutputDistance() {
         return (2 * Math.PI * outputRadius) * getEncoderRotations() / gearRatio;
+    }
+
+    /**
+     * return the position of a drive motor relative to the center of the robot
+     * @return
+     */
+    public Translation2d getRelativePosition() {
+        return position;
     }
 }
