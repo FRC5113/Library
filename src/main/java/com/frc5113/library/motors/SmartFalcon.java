@@ -29,13 +29,13 @@ public class SmartFalcon extends TalonFX {
      * @param inverted spin backwards?
      * @param neutralMode Whether to break or coast when .set(0);
      */
-    SmartFalcon(int canID, boolean inverted, NeutralMode neutralMode) {
+    public SmartFalcon(int canID, boolean inverted, NeutralMode neutralMode) {
         super(canID);
         TalonFXWrench.defaultSetup(this, inverted, 40);
         this.setNeutralMode(neutralMode);
     }
 
-    SmartFalcon(int canID, boolean inverted, NeutralMode neutralMode, Translation2d position) {
+    public SmartFalcon(int canID, boolean inverted, NeutralMode neutralMode, Translation2d position) {
         super(canID);
         TalonFXWrench.defaultSetup(this, inverted, 40);
         this.setNeutralMode(neutralMode);
