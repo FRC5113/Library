@@ -138,4 +138,16 @@ public class SmartOdometry{
         backRight.resetEncoder();
         startTime = mecTimer.getFPGATimestamp();
     }
+
+    public double getAngle() {
+        return gyro.getAngle();
+    }
+
+    public void resetGyro() {
+        gyro.reset();
+    }
+
+    public Rotation2d getAngleRotation2d() {
+        return gyro.getRotation2d();
+    }
 }
