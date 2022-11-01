@@ -139,6 +139,20 @@ public class SmartOdometry{
         startTime = mecTimer.getFPGATimestamp();
     }
 
+    public Pose2d getPosition() {
+        return position;
+    }
+
+    public void resetPosition() {
+        position = new Pose2d(new Translation2d(0,0), new Rotation2d(0));  
+    }
+
+    public void resetOdometry() {
+        switchType(type);
+        resetPosition();
+        resetGyro();
+    }
+
     public double getAngle() {
         return gyro.getAngle();
     }
