@@ -25,3 +25,12 @@ jobs:
       run: chmod +x gradlew
     - name: Generate JavaDoc
       run: javadoc -protected -splitindex -use -author -version -d ./docs
+
+    - name: Deploy to pages
+      uses: JamesIves/github-pages-deploy-action@v4.4.1
+      with:
+        token: ${{ inputs.GITHUB_TOKEN }}
+        branch: javadoc
+        clean: true
+        folder: Library
+        target-folder: ./docs
