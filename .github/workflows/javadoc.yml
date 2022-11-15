@@ -31,8 +31,8 @@ jobs:
     - name: Deploy to pages
       uses: JamesIves/github-pages-deploy-action@v4.4.1
       with:
-        token: ${{ inputs.GITHUB_TOKEN }}
-        branch: javadoc
-        clean: true
-        folder: Library
-        target-folder: ./build/docs/javadoc
+        #token: ${{ inputs.GITHUB_TOKEN }}
+        #branch: javadoc
+        #clean: true
+        folder: ./build/docs/javadoc
+        #target-folder: ./build/docs/javadoc
