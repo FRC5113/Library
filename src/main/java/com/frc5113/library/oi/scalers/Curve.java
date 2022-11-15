@@ -42,7 +42,7 @@ public abstract class Curve {
      * Returns the value of <code>input</code> mapped to create
      * a deadband of width <code>deadzone</code> in the center of the
      * curve and squishes the rest of the curve to the outside 
-     * proportionally. <br/><br/>
+     * proportionally. <br><br>
      *
      * A deadband or dead-band (also known as a dead zone or a neutral zone)
      * is a band (value range) of input values in the domain of a transfer function in a

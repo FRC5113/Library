@@ -100,8 +100,8 @@ public class XboxGamepad extends Joystick {
     /**
      * Create with curves
      * @param port DS Port of gamepad
-     * @param lxCurve Curve to adjust X Axis
-     * @param lyCurve Curve to adjust Y Axis
+     * @param xCurve Curve to adjust X Axis
+     * @param yCurve Curve to adjust Y Axis
      */
     public XboxGamepad(int port, Curve xCurve, Curve yCurve) {
         this(port);
@@ -117,7 +117,6 @@ public class XboxGamepad extends Joystick {
      * @param lyCurve Curve to adjust left thumstick Y Axis
      * @param rxCurve Curve to adjust right thumbstick X Axis
      * @param ryCurve Curve to adjust right thumstick Y Axis
-     * @param tCurve Curve to adjust Twist Axis
      */
     public XboxGamepad(int port, Curve lxCurve, Curve lyCurve, Curve rxCurve, Curve ryCurve) {
         this(port);

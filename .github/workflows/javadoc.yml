@@ -1,4 +1,4 @@
-# This workflow will build a Java project with Gradle
+# This workflow will generate a JavaDoc for the project
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
 
 name: Javadoc Generator
@@ -10,8 +10,7 @@ on:
     branches: '**' #[ main ]
 
 jobs:
-  build:
-
+  javadoc-gen:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,8 +22,11 @@ jobs:
         distribution: 'adopt'
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+    - name: Build with Gradle
+      run: ./gradlew build
+
     - name: Generate JavaDoc
-      run: javadoc -protected -splitindex -use -author -version -d ./docs
+      run: ./gradlew javadoc
 
     - name: Deploy to pages
       uses: JamesIves/github-pages-deploy-action@v4.4.1
@@ -33,4 +35,4 @@ jobs:
         branch: javadoc
         clean: true
         folder: Library
-        target-folder: ./docs
+        target-folder: ./build/docs/javadoc
