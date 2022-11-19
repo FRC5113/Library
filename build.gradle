@@ -5,6 +5,8 @@ plugins {
     id "edu.wpi.first.GradleRIO" version "2022.4.1"
 }
 
+apply plugin: "java"
+
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 
@@ -51,6 +53,7 @@ def includeDesktopSupport = true
 dependencies {
     implementation wpi.java.deps.wpilib()
     implementation wpi.java.vendor.java()
+    implementation 'org.jetbrains:annotations:20.1.0'
 
     roborioDebug wpi.java.deps.wpilibJniDebug(wpi.platforms.roborio)
     roborioDebug wpi.java.vendor.jniDebug(wpi.platforms.roborio)
@@ -81,6 +84,20 @@ jar {
     manifest GradleRIOPlugin.javaManifest(ROBOT_MAIN_CLASS)
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
 }
+
+// Javadoc builds to build
+//sourceSets {
+//    main {
+//        java {
+//            srcDirs = ['src/main/java']
+//        }
+//    }
+//}
+//
+//javadoc {
+//    source = sourceSets.main.allJava
+//    destinationDir = reporting.file("./docs")
+//}
 
 repositories {
     mavenCentral()

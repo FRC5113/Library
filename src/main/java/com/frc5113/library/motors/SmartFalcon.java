@@ -4,7 +4,6 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
-
 import edu.wpi.first.math.geometry.Translation2d;
 
 /**
@@ -23,6 +22,29 @@ public class SmartFalcon extends WPI_TalonFX {
     private Double gearRatio = null;
 
     private Translation2d position;
+
+    /**
+     * Create a new Smart TalonFX with Falcon based parameters.
+     * Not Inverted and Coasts on stop
+     * @param canID integer CAN network ID
+     */
+    public SmartFalcon(int canID) {
+        super(canID);
+        TalonFXWrench.defaultSetup(this, false, 40);
+        this.setNeutralMode(NeutralMode.Coast);
+    }
+
+    /**
+     * Create a new Smart TalonFX with Falcon based parameters
+     * Coasts on .set(0)
+     * @param canID integer CAN network ID
+     * @param inverted spin backwards?
+     */
+    public SmartFalcon(int canID, boolean inverted) {
+        super(canID);
+        TalonFXWrench.defaultSetup(this, inverted, 40);
+        this.setNeutralMode(NeutralMode.Coast);
+    }
 
     /**
      * Create a new Smart TalonFX with Falcon based parameters
