@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -241,6 +241,13 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 <div class="block">Create a new Smart TalonFX with Falcon based parameters</div>
 </td>
 </tr>
+<tr class="rowColor">
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,boolean,com.ctre.phoenix.motorcontrol.NeutralMode,edu.wpi.first.math.geometry.Translation2d)">SmartFalcon</a></span>&#8203;(int&nbsp;canID,
+           boolean&nbsp;inverted,
+           com.ctre.phoenix.motorcontrol.NeutralMode&nbsp;neutralMode,
+           edu.wpi.first.math.geometry.Translation2d&nbsp;position)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
 </table>
 </li>
 </ul>
@@ -261,7 +268,7 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="SmartFalcon.html" title="class in com.frc5113.library.motors">SmartFalcon</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#configureOutput(double,double)">configureOutput</a></span>&#8203;(double&nbsp;radius,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#configureOutput(double,double)">configureOutput</a></span>&#8203;(double&nbsp;diameter,
                double&nbsp;gearRatio)</code></th>
 <td class="colLast">
 <div class="block">Configure the radius / gear ratio of the output of the motor (ie a wheel)</div>
@@ -327,26 +334,39 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>double</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOutputDistance(double,double)">getOutputDistance</a></span>&#8203;(double&nbsp;diameter,
+                 double&nbsp;ratio)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOutputSpeed()">getOutputSpeed</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Compute the travel speed (units per second) on the output</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>edu.wpi.first.math.geometry.Translation2d</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRelativePosition()">getRelativePosition</a></span>()</code></th>
+<td class="colLast">
+<div class="block">return the position of a drive motor relative to the center of the robot</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resetEncoder()">resetEncoder</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Set the position of the encoder back to zero ticks</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="SmartFalcon.html" title="class in com.frc5113.library.motors">SmartFalcon</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setRampRate(double)">setRampRate</a></span>&#8203;(double&nbsp;rate)</code></th>
 <td class="colLast">
 <div class="block">Chainable, set the amount of time (sec) from 0 to full speed</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSpeedPercent(double)">setSpeedPercent</a></span>&#8203;(double&nbsp;input)</code></th>
 <td class="colLast">
@@ -484,7 +504,7 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 <a id="&lt;init&gt;(int,boolean,com.ctre.phoenix.motorcontrol.NeutralMode)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>SmartFalcon</h4>
 <pre>public&nbsp;SmartFalcon&#8203;(int&nbsp;canID,
@@ -497,6 +517,18 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 <dd><code>inverted</code> - spin backwards?</dd>
 <dd><code>neutralMode</code> - Whether to break or coast when .set(0);</dd>
 </dl>
+</li>
+</ul>
+<a id="&lt;init&gt;(int,boolean,com.ctre.phoenix.motorcontrol.NeutralMode,edu.wpi.first.math.geometry.Translation2d)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>SmartFalcon</h4>
+<pre>public&nbsp;SmartFalcon&#8203;(int&nbsp;canID,
+                   boolean&nbsp;inverted,
+                   com.ctre.phoenix.motorcontrol.NeutralMode&nbsp;neutralMode,
+                   edu.wpi.first.math.geometry.Translation2d&nbsp;position)</pre>
 </li>
 </ul>
 </li>
@@ -661,12 +693,12 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>configureOutput</h4>
-<pre class="methodSignature">public&nbsp;<a href="SmartFalcon.html" title="class in com.frc5113.library.motors">SmartFalcon</a>&nbsp;configureOutput&#8203;(double&nbsp;radius,
+<pre class="methodSignature">public&nbsp;<a href="SmartFalcon.html" title="class in com.frc5113.library.motors">SmartFalcon</a>&nbsp;configureOutput&#8203;(double&nbsp;diameter,
                                    double&nbsp;gearRatio)</pre>
 <div class="block">Configure the radius / gear ratio of the output of the motor (ie a wheel)</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>radius</code> - Radius of the output mechanism</dd>
+<dd><code>diameter</code> - Radius of the output mechanism</dd>
 <dd><code>gearRatio</code> - Gear ratio between the input and output (&gt;1 means output
                   is going slower than input, &lt;1 means output is going faster
                   than input)</dd>
@@ -692,7 +724,7 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 <a id="getOutputDistance()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getOutputDistance</h4>
 <pre class="methodSignature">public&nbsp;double&nbsp;getOutputDistance()</pre>
@@ -700,6 +732,30 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Traveled distance of the output</dd>
+</dl>
+</li>
+</ul>
+<a id="getOutputDistance(double,double)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOutputDistance</h4>
+<pre class="methodSignature">public&nbsp;double&nbsp;getOutputDistance&#8203;(double&nbsp;diameter,
+                                double&nbsp;ratio)</pre>
+</li>
+</ul>
+<a id="getRelativePosition()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getRelativePosition</h4>
+<pre class="methodSignature">public&nbsp;edu.wpi.first.math.geometry.Translation2d&nbsp;getRelativePosition()</pre>
+<div class="block">return the position of a drive motor relative to the center of the robot</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the relative position to the start</dd>
 </dl>
 </li>
 </ul>
