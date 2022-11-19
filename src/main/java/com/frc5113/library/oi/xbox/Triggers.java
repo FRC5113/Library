@@ -1,12 +1,13 @@
 package com.frc5113.library.oi.xbox;
 
+import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import com.frc5113.library.oi.xbox.XboxGamepad.XboxAxis;
 
 public class Triggers {
-    Joystick controller;
+    GenericHID controller;
 
-    public Triggers(Joystick controller) {
+    public Triggers(GenericHID controller) {
         this.controller = controller;
     }
 

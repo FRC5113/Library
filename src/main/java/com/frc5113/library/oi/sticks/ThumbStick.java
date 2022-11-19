@@ -4,6 +4,7 @@ import com.frc5113.library.oi.scalers.Curve;
 import com.frc5113.library.oi.scalers.NoOpCurve;
 import com.frc5113.library.primative.Axis;
 import com.frc5113.library.primative.CoordinatePair;
+import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 
 /**
@@ -11,7 +12,7 @@ import edu.wpi.first.wpilibj.Joystick;
  * @author Bob (319), Vladimir Bondar (5113)
  */
 public class ThumbStick {
-    Joystick controller;
+    GenericHID controller;
     Axis xAxis;
     Axis yAxis;
     public final Curve xCurve;
@@ -26,7 +27,7 @@ public class ThumbStick {
         yCurve = new NoOpCurve();
     }
 
-    public ThumbStick(Joystick controller, Axis xAxis, Axis yAxis, Curve xCurve, Curve yCurve) {
+    public ThumbStick(GenericHID controller, Axis xAxis, Axis yAxis, Curve xCurve, Curve yCurve) {
         this.controller = controller;
         this.xAxis = xAxis;
         this.yAxis = yAxis;
