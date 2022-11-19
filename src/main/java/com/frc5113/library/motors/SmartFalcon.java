@@ -165,7 +165,7 @@ public class SmartFalcon extends WPI_TalonFX {
 
     /**
      * Configure the radius / gear ratio of the output of the motor (ie a wheel)
-     * @param radius Radius of the output mechanism
+     * @param diameter Radius of the output mechanism
      * @param gearRatio Gear ratio between the input and output (&gt;1 means output
      *                  is going slower than input, &lt;1 means output is going faster
      *                  than input)
@@ -200,7 +200,7 @@ public class SmartFalcon extends WPI_TalonFX {
 
     /**
      * return the position of a drive motor relative to the center of the robot
-     * @return
+     * @return the relative position to the start
      */
     public Translation2d getRelativePosition() {
         return position;
