@@ -3,6 +3,7 @@ package com.frc5113.library.motors;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 /**
  * Modifications to TalonFX-esq motors (commonly the Talon)
@@ -13,11 +14,34 @@ import com.ctre.phoenix.motorcontrol.can.TalonFX;
  *     <li>Readability / usability improvements</li>
  * </ul>
  */
-public class SmartFalcon extends TalonFX {
+public class SmartFalcon extends WPI_TalonFX {
 
     public static final int TICKS_PER_ROTATION = 2048;
     private Double outputRadius = null;
     private Double gearRatio = null;
+
+    /**
+     * Create a new Smart TalonFX with Falcon based parameters.
+     * Not Inverted and Coasts on stop
+     * @param canID integer CAN network ID
+     */
+    public SmartFalcon(int canID) {
+        super(canID);
+        TalonFXWrench.defaultSetup(this, false, 40);
+        this.setNeutralMode(NeutralMode.Coast);
+    }
+
+    /**
+     * Create a new Smart TalonFX with Falcon based parameters
+     * Coasts on .set(0)
+     * @param canID integer CAN network ID
+     * @param inverted spin backwards?
+     */
+    public SmartFalcon(int canID, boolean inverted) {
+        super(canID);
+        TalonFXWrench.defaultSetup(this, inverted, 40);
+        this.setNeutralMode(NeutralMode.Coast);
+    }
 
     /**
      * Create a new Smart TalonFX with Falcon based parameters
@@ -25,7 +49,7 @@ public class SmartFalcon extends TalonFX {
      * @param inverted spin backwards?
      * @param neutralMode Whether to break or coast when .set(0);
      */
-    SmartFalcon(int canID, boolean inverted, NeutralMode neutralMode) {
+    public SmartFalcon(int canID, boolean inverted, NeutralMode neutralMode) {
         super(canID);
         TalonFXWrench.defaultSetup(this, inverted, 40);
         this.setNeutralMode(neutralMode);
