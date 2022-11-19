@@ -4,6 +4,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
+import edu.wpi.first.math.geometry.Translation2d;
 
 /**
  * Modifications to TalonFX-esq motors (commonly the Talon)
@@ -17,8 +18,10 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 public class SmartFalcon extends WPI_TalonFX {
 
     public static final int TICKS_PER_ROTATION = 2048;
-    private Double outputRadius = null;
+    private Double outputDiameter = null;
     private Double gearRatio = null;
+
+    private Translation2d position;
 
     /**
      * Create a new Smart TalonFX with Falcon based parameters.
@@ -53,6 +56,13 @@ public class SmartFalcon extends WPI_TalonFX {
         super(canID);
         TalonFXWrench.defaultSetup(this, inverted, 40);
         this.setNeutralMode(neutralMode);
+    }
+
+    public SmartFalcon(int canID, boolean inverted, NeutralMode neutralMode, Translation2d position) {
+        super(canID);
+        TalonFXWrench.defaultSetup(this, inverted, 40);
+        this.setNeutralMode(neutralMode);
+        this.position = position;
     }
 
     /**
@@ -155,14 +165,14 @@ public class SmartFalcon extends WPI_TalonFX {
 
     /**
      * Configure the radius / gear ratio of the output of the motor (ie a wheel)
-     * @param radius Radius of the output mechanism
+     * @param diameter Radius of the output mechanism
      * @param gearRatio Gear ratio between the input and output (&gt;1 means output
      *                  is going slower than input, &lt;1 means output is going faster
      *                  than input)
      * @return Configured motor
      */
-    public SmartFalcon configureOutput(double radius, double gearRatio) {
-        this.outputRadius = radius;
+    public SmartFalcon configureOutput(double diameter, double gearRatio) {
+        this.outputDiameter = diameter;
         this.gearRatio = gearRatio;
         return this;
     }
@@ -172,7 +182,7 @@ public class SmartFalcon extends WPI_TalonFX {
      * @return Travel speed on output
      */
     public double getOutputSpeed() {
-        return (2 * Math.PI * outputRadius) * getEncoderVelocity() / gearRatio;
+        return (Math.PI * outputDiameter) * getEncoderVelocity() / gearRatio;
     }
 
     /**
@@ -180,6 +190,19 @@ public class SmartFalcon extends WPI_TalonFX {
      * @return Traveled distance of the output
      */
     public double getOutputDistance() {
-        return (2 * Math.PI * outputRadius) * getEncoderRotations() / gearRatio;
+        return (Math.PI * outputDiameter) * getEncoderRotations() / gearRatio;
+    }
+
+    public double getOutputDistance(double diameter, double ratio) {
+        return (Math.PI * diameter) * getEncoderRotations() / ratio;
+    }
+
+
+    /**
+     * return the position of a drive motor relative to the center of the robot
+     * @return the relative position to the start
+     */
+    public Translation2d getRelativePosition() {
+        return position;
     }
 }
