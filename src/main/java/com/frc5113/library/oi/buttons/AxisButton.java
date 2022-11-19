@@ -18,14 +18,14 @@ public class AxisButton extends Button {
         LESS_THAN, GREATER_THAN, EXACT, POV, DEADBAND;
     }
 
-    public AxisButton(Joystick joystick, int axis, double threshold, ThresholdType thresholdType) {
+    public AxisButton(GenericHID joystick, int axis, double threshold, ThresholdType thresholdType) {
         this.controller = joystick;
         this.axis = axis;
         this.targetVal = threshold;
         this.thresholdType = thresholdType;
     }
 
-    public AxisButton(Joystick joystick, Axis axis, double threshold, ThresholdType thresholdType) {
+    public AxisButton(GenericHID joystick, Axis axis, double threshold, ThresholdType thresholdType) {
         this(joystick, axis.value, threshold, thresholdType);
     }
 

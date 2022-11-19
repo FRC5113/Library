@@ -2,11 +2,12 @@ package com.frc5113.library.oi;
 
 import com.frc5113.library.oi.buttons.AxisButton;
 import com.frc5113.library.primative.Axis;
+import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import com.frc5113.library.oi.buttons.AxisButton.ThresholdType;
 
 public class Dpad {
-    public final Joystick joy;
+    public final GenericHID joy;
 
     public final Axis axis;
     public AxisButton Up;
@@ -41,7 +42,7 @@ public class Dpad {
         }
     }
 
-    public Dpad(Joystick joystick, Axis axis) {
+    public Dpad(GenericHID joystick, Axis axis) {
         this.joy = joystick;
         this.axis = axis;
         this.Up = new AxisButton(joy, axis, DPadButtons.UP.value, ThresholdType.POV);

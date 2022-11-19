@@ -7,11 +7,10 @@ import com.frc5113.library.oi.scalers.SmoothCubicCurve;
 import com.frc5113.library.oi.scalers.Curve;
 import com.frc5113.library.oi.scalers.NoOpCurve;
 import com.frc5113.library.oi.sticks.ThumbStick;
-import com.frc5113.library.primative.Axis;
-import edu.wpi.first.wpilibj.Joystick;
 import com.frc5113.library.oi.buttons.AxisButton.ThresholdType;
+import edu.wpi.first.wpilibj.XboxController;
 
-public class XboxGamepad extends Joystick {
+public class XboxGamepad extends XboxController {
 
     public SmoothCubicCurve smoothCubicRX = new SmoothCubicCurve();
     public SmoothCubicCurve smoothCubicRY = new SmoothCubicCurve();
@@ -25,16 +24,16 @@ public class XboxGamepad extends Joystick {
     public Curve rxCurve; 
     public Curve ryCurve; 
 
-    public Button xButton = new Button(this, XboxButton.X);
-    public Button yButton = new Button(this, XboxButton.Y);
-    public Button aButton = new Button(this, XboxButton.A);
-    public Button bButton = new Button(this, XboxButton.B);
-    public Button rightBumper = new Button(this, XboxButton.rightBumper);
-    public Button leftBumper = new Button(this, XboxButton.leftBumper);
-    public Button startButton = new Button(this, XboxButton.Start);
-    public Button backButton = new Button(this, XboxButton.Back);
-    public Button leftStickButton = new Button(this, XboxButton.leftStick);
-    public Button rightStickButton = new Button(this, XboxButton.rightStick);
+    public com.frc5113.library.oi.buttons.Button xButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.X);
+    public com.frc5113.library.oi.buttons.Button yButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.Y);
+    public com.frc5113.library.oi.buttons.Button aButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.A);
+    public com.frc5113.library.oi.buttons.Button bButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.B);
+    public com.frc5113.library.oi.buttons.Button rightBumper = new com.frc5113.library.oi.buttons.Button(this, XboxButton.rightBumper);
+    public com.frc5113.library.oi.buttons.Button leftBumper = new com.frc5113.library.oi.buttons.Button(this, XboxButton.leftBumper);
+    public com.frc5113.library.oi.buttons.Button startButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.Start);
+    public com.frc5113.library.oi.buttons.Button backButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.Back);
+    public com.frc5113.library.oi.buttons.Button leftStickButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.leftStick);
+    public com.frc5113.library.oi.buttons.Button rightStickButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.rightStick);
 
     public AxisButton leftTriggerButton = new AxisButton(this, XboxAxis.leftTrigger, .05, ThresholdType.GREATER_THAN);
     public AxisButton rightTriggerButton = new AxisButton(this, XboxAxis.rightTrigger, .05,
@@ -179,7 +178,7 @@ public class XboxGamepad extends Joystick {
     }
 
 
-    public enum XboxAxis implements Axis {
+    public enum XboxAxis implements com.frc5113.library.primative.Axis {
         leftX(0),
         leftY(1),
         leftTrigger(2),
