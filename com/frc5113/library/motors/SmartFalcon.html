@@ -89,13 +89,13 @@ loadScripts(document, 'script');</script>
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
 <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
@@ -131,7 +131,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li>com.ctre.phoenix.motorcontrol.can.TalonFX</li>
 <li>
 <ul class="inheritance">
+<li>com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</li>
+<li>
+<ul class="inheritance">
 <li>com.frc5113.library.motors.SmartFalcon</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -146,11 +151,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code>com.ctre.phoenix.motorcontrol.IFollower</code>, <code>com.ctre.phoenix.motorcontrol.IMotorController</code>, <code>com.ctre.phoenix.motorcontrol.IMotorControllerEnhanced</code>, <code>com.ctre.phoenix.signals.IInvertable</code>, <code>com.ctre.phoenix.signals.IOutputSignal</code></dd>
+<dd><code>com.ctre.phoenix.motorcontrol.IFollower</code>, <code>com.ctre.phoenix.motorcontrol.IMotorController</code>, <code>com.ctre.phoenix.motorcontrol.IMotorControllerEnhanced</code>, <code>com.ctre.phoenix.signals.IInvertable</code>, <code>com.ctre.phoenix.signals.IOutputSignal</code>, <code>edu.wpi.first.util.sendable.Sendable</code>, <code>edu.wpi.first.wpilibj.motorcontrol.MotorController</code>, <code>edu.wpi.first.wpilibj.SpeedController</code>, <code>java.lang.AutoCloseable</code></dd>
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">SmartFalcon</span>
-extends com.ctre.phoenix.motorcontrol.can.TalonFX</pre>
+extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 <div class="block">Modifications to TalonFX-esq motors (commonly the Talon)
  <ul>
      <li>Auto-wrenching default talon configs</li>
@@ -185,12 +190,58 @@ extends com.ctre.phoenix.motorcontrol.can.TalonFX</pre>
 </tr>
 </table>
 <ul class="blockList">
+<li class="blockList"><a id="fields.inherited.from.class.com.ctre.phoenix.motorcontrol.can.WPI_TalonFX">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</h3>
+<code>kDefaultSafetyExpiration</code></li>
+</ul>
+<ul class="blockList">
 <li class="blockList"><a id="fields.inherited.from.class.com.ctre.phoenix.motorcontrol.can.BaseMotorController">
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;com.ctre.phoenix.motorcontrol.can.BaseMotorController</h3>
 <code>m_handle</code></li>
 </ul>
+</li>
+</ul>
+</section>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<section role="region">
+<ul class="blockList">
+<li class="blockList"><a id="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Constructor</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tr class="altColor">
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int)">SmartFalcon</a></span>&#8203;(int&nbsp;canID)</code></th>
+<td class="colLast">
+<div class="block">Create a new Smart TalonFX with Falcon based parameters.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,boolean)">SmartFalcon</a></span>&#8203;(int&nbsp;canID,
+           boolean&nbsp;inverted)</code></th>
+<td class="colLast">
+<div class="block">Create a new Smart TalonFX with Falcon based parameters
+ Coasts on .set(0)</div>
+</td>
+</tr>
+<tr class="altColor">
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,boolean,com.ctre.phoenix.motorcontrol.NeutralMode)">SmartFalcon</a></span>&#8203;(int&nbsp;canID,
+           boolean&nbsp;inverted,
+           com.ctre.phoenix.motorcontrol.NeutralMode&nbsp;neutralMode)</code></th>
+<td class="colLast">
+<div class="block">Create a new Smart TalonFX with Falcon based parameters</div>
+</td>
+</tr>
+</table>
 </li>
 </ul>
 </section>
@@ -304,6 +355,13 @@ extends com.ctre.phoenix.motorcontrol.can.TalonFX</pre>
 </tr>
 </table>
 <ul class="blockList">
+<li class="blockList"><a id="methods.inherited.from.class.com.ctre.phoenix.motorcontrol.can.WPI_TalonFX">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</h3>
+<code>close, disable, feed, get, getDescription, getExpiration, getInverted, initSendable, isAlive, isSafetyEnabled, set, set, set, setExpiration, setInverted, setSafetyEnabled, setVoltage, stopMotor</code></li>
+</ul>
+<ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.com.ctre.phoenix.motorcontrol.can.TalonFX">
 <!--   -->
 </a>
@@ -322,7 +380,7 @@ extends com.ctre.phoenix.motorcontrol.can.TalonFX</pre>
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.ctre.phoenix.motorcontrol.can.BaseMotorController</h3>
-<code>baseConfigAllSettings, baseConfigurePID, baseGetAllConfigs, baseGetPIDConfigs, changeMotionControlFramePeriod, clearMotionProfileHasUnderrun, clearMotionProfileHasUnderrun, clearMotionProfileTrajectories, clearStickyFaults, clearStickyFaults, config_IntegralZone, config_IntegralZone, config_kD, config_kD, config_kF, config_kF, config_kI, config_kI, config_kP, config_kP, configAllowableClosedloopError, configAllowableClosedloopError, configAuxPIDPolarity, configAuxPIDPolarity, configClearPositionOnLimitF, configClearPositionOnLimitR, configClearPositionOnQuadIdx, configClosedLoopPeakOutput, configClosedLoopPeakOutput, configClosedLoopPeriod, configClosedLoopPeriod, configClosedloopRamp, configClosedloopRamp, configFactoryDefault, configFactoryDefault, configFeedbackNotContinuous, configForwardLimitSwitchSource, configForwardLimitSwitchSource, configForwardLimitSwitchSource, configForwardSoftLimitEnable, configForwardSoftLimitEnable, configForwardSoftLimitThreshold, configForwardSoftLimitThreshold, configGetCustomParam, configGetCustomParam, configGetParameter, configGetParameter, configGetParameter, configGetParameter, configLimitSwitchDisableNeutralOnLOS, configMaxIntegralAccumulator, configMaxIntegralAccumulator, configMotionAcceleration, configMotionAcceleration, configMotionCruiseVelocity, configMotionCruiseVelocity, configMotionProfileTrajectoryInterpolationEnable, configMotionProfileTrajectoryInterpolationEnable, configMotionProfileTrajectoryPeriod, configMotionProfileTrajectoryPeriod, configMotionSCurveStrength, configMotionSCurveStrength, configNeutralDeadband, configNeutralDeadband, configNominalOutputForward, configNominalOutputForward, configNominalOutputReverse, configNominalOutputReverse, configOpenloopRamp, configOpenloopRamp, configPeakOutputForward, configPeakOutputForward, configPeakOutputReverse, configPeakOutputReverse, configPulseWidthPeriod_EdgesPerRot, configPulseWidthPeriod_FilterWindowSz, configRemoteFeedbackFilter, configRemoteFeedbackFilter, configRemoteFeedbackFilter, configRemoteFeedbackFilter, configRemoteFeedbackFilter, configRemoteFeedbackFilter, configRemoteSensorClosedLoopDisableNeutralOnLOS, configReverseLimitSwitchSource, configReverseLimitSwitchSource, configReverseLimitSwitchSource, configReverseSoftLimitEnable, configReverseSoftLimitEnable, configReverseSoftLimitThreshold, configReverseSoftLimitThreshold, configSelectedFeedbackCoefficient, configSelectedFeedbackCoefficient, configSelectedFeedbackSensor, configSelectedFeedbackSensor, configSelectedFeedbackSensor, configSelectedFeedbackSensor, configSensorTerm, configSensorTerm, configSensorTerm, configSensorTerm, configSetCustomParam, configSetCustomParam, configSetParameter, configSetParameter, configSetParameter, configSetParameter, configSoftLimitDisableNeutralOnLOS, configureFilter, configureFilter, configureFilter, configureSlot, configureSlot, configVoltageCompSaturation, configVoltageCompSaturation, configVoltageMeasurementFilter, configVoltageMeasurementFilter, DestroyObject, enableVoltageCompensation, follow, follow, getActiveTrajectoryArbFeedFwd, getActiveTrajectoryArbFeedFwd, getActiveTrajectoryPosition, getActiveTrajectoryPosition, getActiveTrajectoryVelocity, getActiveTrajectoryVelocity, getBaseID, getBusVoltage, getClosedLoopError, getClosedLoopError, getClosedLoopTarget, getClosedLoopTarget, getControlMode, getDeviceID, getErrorDerivative, getErrorDerivative, getFaults, getFilterConfigs, getFilterConfigs, getFirmwareVersion, getHandle, getIntegralAccumulator, getIntegralAccumulator, getInverted, getLastError, getMotionProfileStatus, getMotionProfileTopLevelBufferCount, getMotorOutputPercent, getMotorOutputVoltage, getSelectedSensorPosition, getSelectedSensorPosition, getSelectedSensorVelocity, getSelectedSensorVelocity, getSlotConfigs, getSlotConfigs, getStatusFramePeriod, getStatusFramePeriod, getStatusFramePeriod, getStatusFramePeriod, getStickyFaults, getTemperature, getVictorSPXSimCollection, hasResetOccurred, isMotionProfileFinished, isMotionProfileTopLevelBufferFull, isVoltageCompensationEnabled, neutralOutput, overrideLimitSwitchesEnable, overrideSoftLimitsEnable, processMotionProfileBuffer, pushMotionProfileTrajectory, selectProfileSlot, set, set, setControlFramePeriod, setControlFramePeriod, setIntegralAccumulator, setIntegralAccumulator, setInverted, setInverted, setNeutralMode, setSelectedSensorPosition, setSelectedSensorPosition, setSensorPhase, setStatusFramePeriod, setStatusFramePeriod, setStatusFramePeriod, setStatusFramePeriod, startMotionProfile, valueUpdated</code></li>
+<code>baseConfigAllSettings, baseConfigurePID, baseGetAllConfigs, baseGetPIDConfigs, changeMotionControlFramePeriod, clearMotionProfileHasUnderrun, clearMotionProfileHasUnderrun, clearMotionProfileTrajectories, clearStickyFaults, clearStickyFaults, config_IntegralZone, config_IntegralZone, config_kD, config_kD, config_kF, config_kF, config_kI, config_kI, config_kP, config_kP, configAllowableClosedloopError, configAllowableClosedloopError, configAuxPIDPolarity, configAuxPIDPolarity, configClearPositionOnLimitF, configClearPositionOnLimitR, configClearPositionOnQuadIdx, configClosedLoopPeakOutput, configClosedLoopPeakOutput, configClosedLoopPeriod, configClosedLoopPeriod, configClosedloopRamp, configClosedloopRamp, configFactoryDefault, configFactoryDefault, configFeedbackNotContinuous, configForwardLimitSwitchSource, configForwardLimitSwitchSource, configForwardLimitSwitchSource, configForwardSoftLimitEnable, configForwardSoftLimitEnable, configForwardSoftLimitThreshold, configForwardSoftLimitThreshold, configGetCustomParam, configGetCustomParam, configGetParameter, configGetParameter, configGetParameter, configGetParameter, configLimitSwitchDisableNeutralOnLOS, configMaxIntegralAccumulator, configMaxIntegralAccumulator, configMotionAcceleration, configMotionAcceleration, configMotionCruiseVelocity, configMotionCruiseVelocity, configMotionProfileTrajectoryInterpolationEnable, configMotionProfileTrajectoryInterpolationEnable, configMotionProfileTrajectoryPeriod, configMotionProfileTrajectoryPeriod, configMotionSCurveStrength, configMotionSCurveStrength, configNeutralDeadband, configNeutralDeadband, configNominalOutputForward, configNominalOutputForward, configNominalOutputReverse, configNominalOutputReverse, configOpenloopRamp, configOpenloopRamp, configPeakOutputForward, configPeakOutputForward, configPeakOutputReverse, configPeakOutputReverse, configPulseWidthPeriod_EdgesPerRot, configPulseWidthPeriod_FilterWindowSz, configRemoteFeedbackFilter, configRemoteFeedbackFilter, configRemoteFeedbackFilter, configRemoteFeedbackFilter, configRemoteFeedbackFilter, configRemoteFeedbackFilter, configRemoteSensorClosedLoopDisableNeutralOnLOS, configReverseLimitSwitchSource, configReverseLimitSwitchSource, configReverseLimitSwitchSource, configReverseSoftLimitEnable, configReverseSoftLimitEnable, configReverseSoftLimitThreshold, configReverseSoftLimitThreshold, configSelectedFeedbackCoefficient, configSelectedFeedbackCoefficient, configSelectedFeedbackSensor, configSelectedFeedbackSensor, configSelectedFeedbackSensor, configSelectedFeedbackSensor, configSensorTerm, configSensorTerm, configSensorTerm, configSensorTerm, configSetCustomParam, configSetCustomParam, configSetParameter, configSetParameter, configSetParameter, configSetParameter, configSoftLimitDisableNeutralOnLOS, configureFilter, configureFilter, configureFilter, configureSlot, configureSlot, configVoltageCompSaturation, configVoltageCompSaturation, configVoltageMeasurementFilter, configVoltageMeasurementFilter, DestroyObject, enableVoltageCompensation, follow, follow, getActiveTrajectoryArbFeedFwd, getActiveTrajectoryArbFeedFwd, getActiveTrajectoryPosition, getActiveTrajectoryPosition, getActiveTrajectoryVelocity, getActiveTrajectoryVelocity, getBaseID, getBusVoltage, getClosedLoopError, getClosedLoopError, getClosedLoopTarget, getClosedLoopTarget, getControlMode, getDeviceID, getErrorDerivative, getErrorDerivative, getFaults, getFilterConfigs, getFilterConfigs, getFirmwareVersion, getHandle, getIntegralAccumulator, getIntegralAccumulator, getLastError, getMotionProfileStatus, getMotionProfileTopLevelBufferCount, getMotorOutputPercent, getMotorOutputVoltage, getSelectedSensorPosition, getSelectedSensorPosition, getSelectedSensorVelocity, getSelectedSensorVelocity, getSlotConfigs, getSlotConfigs, getStatusFramePeriod, getStatusFramePeriod, getStatusFramePeriod, getStatusFramePeriod, getStickyFaults, getTemperature, getVictorSPXSimCollection, hasResetOccurred, isMotionProfileFinished, isMotionProfileTopLevelBufferFull, isVoltageCompensationEnabled, neutralOutput, overrideLimitSwitchesEnable, overrideSoftLimitsEnable, processMotionProfileBuffer, pushMotionProfileTrajectory, selectProfileSlot, setControlFramePeriod, setControlFramePeriod, setIntegralAccumulator, setIntegralAccumulator, setInverted, setNeutralMode, setSelectedSensorPosition, setSelectedSensorPosition, setSensorPhase, setStatusFramePeriod, setStatusFramePeriod, setStatusFramePeriod, setStatusFramePeriod, startMotionProfile, valueUpdated</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -343,7 +401,7 @@ extends com.ctre.phoenix.motorcontrol.can.TalonFX</pre>
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;com.ctre.phoenix.motorcontrol.IMotorController</h3>
-<code>changeMotionControlFramePeriod, clearMotionProfileHasUnderrun, clearMotionProfileTrajectories, clearStickyFaults, config_IntegralZone, config_kD, config_kF, config_kI, config_kP, configAllowableClosedloopError, configAuxPIDPolarity, configClosedLoopPeakOutput, configClosedLoopPeriod, configClosedloopRamp, configForwardLimitSwitchSource, configForwardSoftLimitEnable, configForwardSoftLimitThreshold, configGetCustomParam, configGetParameter, configGetParameter, configMaxIntegralAccumulator, configMotionAcceleration, configMotionCruiseVelocity, configMotionProfileTrajectoryPeriod, configMotionSCurveStrength, configNeutralDeadband, configNominalOutputForward, configNominalOutputReverse, configOpenloopRamp, configPeakOutputForward, configPeakOutputReverse, configRemoteFeedbackFilter, configRemoteFeedbackFilter, configRemoteFeedbackFilter, configReverseLimitSwitchSource, configReverseSoftLimitEnable, configReverseSoftLimitThreshold, configSelectedFeedbackCoefficient, configSelectedFeedbackSensor, configSensorTerm, configSetCustomParam, configSetParameter, configSetParameter, configVoltageCompSaturation, configVoltageMeasurementFilter, enableVoltageCompensation, getActiveTrajectoryPosition, getActiveTrajectoryVelocity, getBaseID, getBusVoltage, getClosedLoopError, getClosedLoopTarget, getControlMode, getDeviceID, getErrorDerivative, getFaults, getFirmwareVersion, getIntegralAccumulator, getInverted, getLastError, getMotionProfileStatus, getMotionProfileTopLevelBufferCount, getMotorOutputPercent, getMotorOutputVoltage, getSelectedSensorPosition, getSelectedSensorVelocity, getStatusFramePeriod, getStickyFaults, getTemperature, hasResetOccurred, isMotionProfileTopLevelBufferFull, neutralOutput, overrideLimitSwitchesEnable, overrideSoftLimitsEnable, processMotionProfileBuffer, pushMotionProfileTrajectory, selectProfileSlot, set, set, setControlFramePeriod, setIntegralAccumulator, setInverted, setInverted, setNeutralMode, setSelectedSensorPosition, setSensorPhase, setStatusFramePeriod</code></li>
+<code>changeMotionControlFramePeriod, clearMotionProfileHasUnderrun, clearMotionProfileTrajectories, clearStickyFaults, config_IntegralZone, config_kD, config_kF, config_kI, config_kP, configAllowableClosedloopError, configAuxPIDPolarity, configClosedLoopPeakOutput, configClosedLoopPeriod, configClosedloopRamp, configForwardLimitSwitchSource, configForwardSoftLimitEnable, configForwardSoftLimitThreshold, configGetCustomParam, configGetParameter, configGetParameter, configMaxIntegralAccumulator, configMotionAcceleration, configMotionCruiseVelocity, configMotionProfileTrajectoryPeriod, configMotionSCurveStrength, configNeutralDeadband, configNominalOutputForward, configNominalOutputReverse, configOpenloopRamp, configPeakOutputForward, configPeakOutputReverse, configRemoteFeedbackFilter, configRemoteFeedbackFilter, configRemoteFeedbackFilter, configReverseLimitSwitchSource, configReverseSoftLimitEnable, configReverseSoftLimitThreshold, configSelectedFeedbackCoefficient, configSelectedFeedbackSensor, configSensorTerm, configSetCustomParam, configSetParameter, configSetParameter, configVoltageCompSaturation, configVoltageMeasurementFilter, enableVoltageCompensation, getActiveTrajectoryPosition, getActiveTrajectoryVelocity, getBaseID, getBusVoltage, getClosedLoopError, getClosedLoopTarget, getControlMode, getDeviceID, getErrorDerivative, getFaults, getFirmwareVersion, getIntegralAccumulator, getLastError, getMotionProfileStatus, getMotionProfileTopLevelBufferCount, getMotorOutputPercent, getMotorOutputVoltage, getSelectedSensorPosition, getSelectedSensorVelocity, getStatusFramePeriod, getStickyFaults, getTemperature, hasResetOccurred, isMotionProfileTopLevelBufferFull, neutralOutput, overrideLimitSwitchesEnable, overrideSoftLimitsEnable, processMotionProfileBuffer, pushMotionProfileTrajectory, selectProfileSlot, setControlFramePeriod, setIntegralAccumulator, setInverted, setNeutralMode, setSelectedSensorPosition, setSensorPhase, setStatusFramePeriod</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.com.ctre.phoenix.motorcontrol.IMotorControllerEnhanced">
@@ -378,6 +436,66 @@ extends com.ctre.phoenix.motorcontrol.can.TalonFX</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../constant-values.html#com.frc5113.library.motors.SmartFalcon.TICKS_PER_ROTATION">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<section role="region">
+<ul class="blockList">
+<li class="blockList"><a id="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a id="&lt;init&gt;(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SmartFalcon</h4>
+<pre>public&nbsp;SmartFalcon&#8203;(int&nbsp;canID)</pre>
+<div class="block">Create a new Smart TalonFX with Falcon based parameters.
+ Not Inverted and Coasts on stop</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>canID</code> - integer CAN network ID</dd>
+</dl>
+</li>
+</ul>
+<a id="&lt;init&gt;(int,boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SmartFalcon</h4>
+<pre>public&nbsp;SmartFalcon&#8203;(int&nbsp;canID,
+                   boolean&nbsp;inverted)</pre>
+<div class="block">Create a new Smart TalonFX with Falcon based parameters
+ Coasts on .set(0)</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>canID</code> - integer CAN network ID</dd>
+<dd><code>inverted</code> - spin backwards?</dd>
+</dl>
+</li>
+</ul>
+<a id="&lt;init&gt;(int,boolean,com.ctre.phoenix.motorcontrol.NeutralMode)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>SmartFalcon</h4>
+<pre>public&nbsp;SmartFalcon&#8203;(int&nbsp;canID,
+                   boolean&nbsp;inverted,
+                   com.ctre.phoenix.motorcontrol.NeutralMode&nbsp;neutralMode)</pre>
+<div class="block">Create a new Smart TalonFX with Falcon based parameters</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>canID</code> - integer CAN network ID</dd>
+<dd><code>inverted</code> - spin backwards?</dd>
+<dd><code>neutralMode</code> - Whether to break or coast when .set(0);</dd>
 </dl>
 </li>
 </ul>
@@ -638,13 +756,13 @@ extends com.ctre.phoenix.motorcontrol.can.TalonFX</pre>
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
 <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
