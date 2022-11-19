@@ -256,8 +256,8 @@ public class Limelight {
     /**
      * snapshot Allows taking a camera render up to 2 times per second.
      * Value <b>MUST</b> be set to zero after each snapshot to take another snapshot, see:
-     * <br/><br/>Fix "snapshot" networktables key. Users must set the "snapshot" key to "0" before setting it to "1" to take a screenshot. (Bug fix changelog 2022.2.3 (3/16/22)) <br/><br/>
-     * <br/><br/>
+     * <br><br>Fix "snapshot" networktables key. Users must set the "snapshot" key to "0" before setting it to "1" to take a screenshot. (Bug fix changelog 2022.2.3 (3.16.22)) <br><br>
+     * <br><br>
      * kon - Take 1 snapshot
      * koff - Do not take a snapshot (default state)
      *
