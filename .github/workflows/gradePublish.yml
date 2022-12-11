@@ -49,6 +49,11 @@ jobs:
       - name: Create (possibly not existing structure) for maven
         run: mkdir -p ./libraryBuilds/repo/com/frc5113/library
 
+      - name: Generate .json file
+        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+        with:
+          arguments: generateVendorDep
+
       - name: Move repo files over
         run: mv ~/.m2/repository/com/frc5113/library/* libraryBuilds/repo/com/frc5113/library
 

@@ -1,5 +1,6 @@
 import edu.wpi.first.gradlerio.GradleRIOPlugin
 
+
 plugins {
     id "java"
     id "edu.wpi.first.GradleRIO" version "2022.4.1"
@@ -12,6 +13,7 @@ sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 
 def ROBOT_MAIN_CLASS = "com.frc5113.robot.Main"
+def cVersion = '1.1.7'
 
 // Define my targets (RoboRIO) and artifacts (deployable files)
 // This is added by GradleRIO's backing project DeployUtils.
@@ -120,7 +122,7 @@ publishing {
         mavenJava(MavenPublication) {
             groupId = 'com.frc5113'
             artifactId = 'library'
-            version = '1.1.6'
+            version = cVersion
 
             from components.java
         }
@@ -131,3 +133,28 @@ publishing {
 deployArtifact.jarTask = jar
 wpi.java.configureExecutableTasks(jar)
 wpi.java.configureTestTasks(test)
+
+task generateVendorDep() {
+    doLast {
+        new File(projectDir, "libraryBuilds/repo/Library5113.json").text = """{
+    "fileName": "Library5113.json",
+    "name": "Library5113",
+    "version": "$cVersion",
+    "uuid": "85bf4f52-0ccb-4187-807e-1dca1a96e689",
+    "mavenUrls": [
+        "https://frc5113.github.io/LibraryBuilds/repo/"
+    ],
+    "jsonUrl": "",
+    "javaDependencies": [
+        {
+            "groupId": "com.frc5113",
+            "artifactId": "library",
+            "version": "$cVersion"
+        }
+    ],
+    "jniDependencies": [],
+    "cppDependencies": []
+}
+"""
+    }
+}
