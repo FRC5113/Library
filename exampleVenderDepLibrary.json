@@ -6,7 +6,7 @@
     "mavenUrls": [
         "https://frc5113.github.io/LibraryBuilds/repo/"
     ],
-    "jsonUrl": "",
+    "jsonUrl": "https://frc5113.github.io/LibraryBuilds/repo/Library5113.json",
     "javaDependencies": [
         {
             "groupId": "com.frc5113",
