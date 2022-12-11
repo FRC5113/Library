@@ -46,8 +46,11 @@ jobs:
           token: ${{ secrets.PUSH_TOKEN }}
           path: ./libraryBuilds
 
+      - name: Create (possibly not existing structure) for maven
+        run: mkdir -p ./libraryBuilds/repo/com/frc5113/library
+
       - name: Move repo files over
-        run: mv ~/.m2/repository/com/frc5113/library/* libraryBuilds/
+        run: mv ~/.m2/repository/com/frc5113/library/* libraryBuilds/repo/com/frc5113/library
 
       - name: Push Library Builds
         run: |
