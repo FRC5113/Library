@@ -43,13 +43,13 @@ jobs:
         uses: actions/checkout@master
         with:
           repository: FRC5113/LibraryBuilds
-          token: ${{ secrets.ACTIONS_TOKEN }}
+          token: ${{ secrets.PUSH_TOKEN }}
           path: ./libraryBuilds
 
       - name: Move repo files over
         run: mv ~/.m2/repository/com/frc5113/library/* libraryBuilds/
 
-      - name: Push Project B
+      - name: Push Library Builds
         run: |
           cd ./libraryBuilds
           git add .
