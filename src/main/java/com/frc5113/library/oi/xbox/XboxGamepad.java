@@ -2,7 +2,6 @@ package com.frc5113.library.oi.xbox;
 
 import com.frc5113.library.oi.Dpad;
 import com.frc5113.library.oi.buttons.AxisButton;
-import com.frc5113.library.oi.buttons.Button;
 import com.frc5113.library.oi.scalers.SmoothCubicCurve;
 import com.frc5113.library.oi.scalers.Curve;
 import com.frc5113.library.oi.scalers.NoOpCurve;
@@ -30,13 +29,13 @@ public class XboxGamepad extends XboxController {
     public com.frc5113.library.oi.buttons.Button bButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.B);
     public com.frc5113.library.oi.buttons.Button rightBumper = new com.frc5113.library.oi.buttons.Button(this, XboxButton.rightBumper);
     public com.frc5113.library.oi.buttons.Button leftBumper = new com.frc5113.library.oi.buttons.Button(this, XboxButton.leftBumper);
-    public com.frc5113.library.oi.buttons.Button startButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.Start);
-    public com.frc5113.library.oi.buttons.Button backButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.Back);
+    public com.frc5113.library.oi.buttons.Button startButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.start);
+    public com.frc5113.library.oi.buttons.Button backButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.back);
     public com.frc5113.library.oi.buttons.Button leftStickButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.leftStick);
     public com.frc5113.library.oi.buttons.Button rightStickButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.rightStick);
 
-    public AxisButton leftTriggerButton = new AxisButton(this, XboxAxis.leftTrigger, .05, ThresholdType.GREATER_THAN);
-    public AxisButton rightTriggerButton = new AxisButton(this, XboxAxis.rightTrigger, .05,
+    public AxisButton leftTriggerButton = new AxisButton(this, XboxAxis.leftTrigger, .1, ThresholdType.GREATER_THAN);
+    public AxisButton rightTriggerButton = new AxisButton(this, XboxAxis.rightTrigger, .1,
             ThresholdType.GREATER_THAN);
     public Dpad Dpad = new Dpad(this, XboxAxis.dPad);
 
@@ -48,22 +47,23 @@ public class XboxGamepad extends XboxController {
     public Rumble rumble = new Rumble(this);
 
     /**
-     * Create with no Scaler
+     * Create with no curve
      * @param port DS Port of gamepad
+     * @deprecated Not recommended - specify deadband
      */
     public XboxGamepad(int port) {
         super(port);
         lxCurve = noOp;
         lyCurve = noOp;
         rxCurve = noOp;
-        rxCurve = noOp;
+        ryCurve = noOp;
     }
 
     /**
-     * Create with default smoothCubic Curve
+     * Create with a default smoothCubic Curve
      * @param port DS Port of gamepad
-     * @param xDeadband deadband value for x axis
-     * @param yDeadband deadband value for y axis
+     * @param xDeadband deadband value for x-axis (0.05 recommended)
+     * @param yDeadband deadband value for y-axis (0.05 recommended)
      */
     public XboxGamepad(int port, double xDeadband, double yDeadband) {
         this(port);
@@ -77,12 +77,12 @@ public class XboxGamepad extends XboxController {
         ryCurve.setDeadDiameter(yDeadband);
     }
     /**
-     * Create with default smoothCubic Curve with seperate left and right deadbands
+     * Create with default smoothCubic Curve with separate left and right dead bands
      * @param port DS Port of gamepad
-     * @param leftXDeadband deadband value for left stick x axis
-     * @param leftYDeadband deadband value for left stick y axis
-     * @param rightXDeadband deadband value for right stick x axis
-     * @param rightYDeadband deadband value for right stick y axis
+     * @param leftXDeadband deadband value for left stick x-axis
+     * @param leftYDeadband deadband value for left stick y-axis
+     * @param rightXDeadband deadband value for right stick x-axis
+     * @param rightYDeadband deadband value for right stick y-axis
      */
     public XboxGamepad(int port, double leftXDeadband, double leftYDeadband, double rightXDeadband,
                        double rightYDeadband) {
@@ -97,7 +97,7 @@ public class XboxGamepad extends XboxController {
         ryCurve.setDeadDiameter(rightYDeadband);
     }
     /**
-     * Create with curves
+     * Create with custom user-specified curves
      * @param port DS Port of gamepad
      * @param xCurve Curve to adjust X Axis
      * @param yCurve Curve to adjust Y Axis
@@ -110,12 +110,12 @@ public class XboxGamepad extends XboxController {
         this.ryCurve = yCurve;
     }
     /**
-     * Create with seperate curves for left and right
+     * Create with separate curves for left and right
      * @param port DS Port of gamepad
      * @param lxCurve Curve to adjust left thumbstick X Axis
-     * @param lyCurve Curve to adjust left thumstick Y Axis
+     * @param lyCurve Curve to adjust left thumbstick Y Axis
      * @param rxCurve Curve to adjust right thumbstick X Axis
-     * @param ryCurve Curve to adjust right thumstick Y Axis
+     * @param ryCurve Curve to adjust right thumbstick Y Axis
      */
     public XboxGamepad(int port, Curve lxCurve, Curve lyCurve, Curve rxCurve, Curve ryCurve) {
         this(port);
@@ -125,6 +125,9 @@ public class XboxGamepad extends XboxController {
         this.ryCurve = ryCurve;
     }
 
+    /**
+     * Button IDs of an XBox controller
+     */
      public enum XboxButton {
         A(1),
         B(2),
@@ -132,8 +135,8 @@ public class XboxGamepad extends XboxController {
         Y(4),
         leftBumper(5),
         rightBumper(6),
-        Back(7),
-        Start(8),
+        back(7),
+        start(8),
         leftStick(9),
         rightStick(10);
 
@@ -178,6 +181,9 @@ public class XboxGamepad extends XboxController {
     }
 
 
+    /**
+     * Axis IDs of an XBox controller. An axis is a line of freedom of movement (forward / backward)
+     */
     public enum XboxAxis implements com.frc5113.library.primative.Axis {
         leftX(0),
         leftY(1),
