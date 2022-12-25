@@ -1,10 +1,10 @@
 package com.frc5113.library.oi.generic;
 
-import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj2.command.button.Button;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
-public class SimpleGenericController extends Joystick {
+public class SimpleGenericController extends GenericHID {
     /**
      * Create a new Simple Generic Controller
      * @param port DS port (indicated in controller settings / preview)

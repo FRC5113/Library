@@ -2,7 +2,6 @@ package com.frc5113.library.oi.xbox;
 
 import com.frc5113.library.oi.Dpad;
 import com.frc5113.library.oi.buttons.AxisButton;
-import com.frc5113.library.oi.buttons.Button;
 import com.frc5113.library.oi.scalers.SmoothCubicCurve;
 import com.frc5113.library.oi.scalers.Curve;
 import com.frc5113.library.oi.scalers.NoOpCurve;
@@ -21,7 +20,7 @@ public class XboxGamepad extends XboxController {
 
     public Curve lxCurve;
     public Curve lyCurve;
-    public Curve rxCurve; 
+    public Curve rxCurve;
     public Curve ryCurve; 
 
     public com.frc5113.library.oi.buttons.Button xButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.X);
@@ -56,7 +55,7 @@ public class XboxGamepad extends XboxController {
         lxCurve = noOp;
         lyCurve = noOp;
         rxCurve = noOp;
-        rxCurve = noOp;
+        ryCurve = noOp;
     }
 
     /**
@@ -177,7 +176,10 @@ public class XboxGamepad extends XboxController {
         }
     }
 
-
+    /**
+     * The axis numerations of the XBox controller
+     * @implNote should be equivalent to <a href="https://github.wpilib.org/allwpilib/docs/release/java/src-html/edu/wpi/first/wpilibj/XboxController.html#line.57">...</a>
+     */
     public enum XboxAxis implements com.frc5113.library.primative.Axis {
         leftX(0),
         leftY(1),

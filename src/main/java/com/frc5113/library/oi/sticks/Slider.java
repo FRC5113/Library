@@ -23,7 +23,7 @@ public class Slider {
     public double getValue() {
         double value = 0;
         if (this.controller.isConnected()){
-            value = this.controller.getRawAxis(slider.value);
+            value = this.controller.getRawAxis(slider.getValue());
             value = curve.calculateMappedVal(value);
         }
         return value;

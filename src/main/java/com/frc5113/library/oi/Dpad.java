@@ -60,6 +60,6 @@ public class Dpad {
      * @return scalar of POV hat
      */
     public double getValue() {
-        return joy.getRawAxis(axis.value);
+        return joy.getRawAxis(axis.getValue());
     }
 }
