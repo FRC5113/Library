@@ -177,8 +177,8 @@ public class XboxGamepad extends XboxController {
     }
 
     /**
-     * The axis numerations of the XBox controller
-     * @implNote should be equivalent to <a href="https://github.wpilib.org/allwpilib/docs/release/java/src-html/edu/wpi/first/wpilibj/XboxController.html#line.57">...</a>
+     * The axis numerations of the XBox controller.
+     * Should be equivalent to <a href="https://github.wpilib.org/allwpilib/docs/release/java/src-html/edu/wpi/first/wpilibj/XboxController.html#line.57">WPI Impl</a>
      */
     public enum XboxAxis implements com.frc5113.library.primative.Axis {
         leftX(0),
