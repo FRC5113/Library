@@ -17,7 +17,7 @@ public abstract class SmartSubsystem extends SubsystemBase {
     abstract public void outputTelemetry();
 
     /**
-     * Have the subsystem make sure that everything is good
+     * Have the subsystem make sure that everything is good. Should print debug data if something fails
      * @return Check status (success - true / fail - false)
      */
     abstract public boolean checkSubsystem();
