@@ -1,10 +1,10 @@
-package com.frc5113.library.drivers;
+package com.frc5113.library.vision.limelight;
 
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.Notifier;
-import com.frc5113.library.drivers.LimelightControlModes.*;
+import com.frc5113.library.vision.limelight.LimelightControlModes.*;
 
 /**
  * Utility class to speed up work with the "fruit camera" Limelight. <br><br>
