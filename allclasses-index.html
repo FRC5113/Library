@@ -132,7 +132,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><a href="com/frc5113/library/oi/buttons/AxisButton.html" title="class in com.frc5113.library.oi.buttons">AxisButton</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Treat a axis as if it was a button</div>
+</th>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><a href="com/frc5113/library/oi/buttons/AxisButton.ThresholdType.html" title="enum in com.frc5113.library.oi.buttons">AxisButton.ThresholdType</a></td>
@@ -150,15 +152,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><a href="com/frc5113/library/oi/buttons/logic/ButtonAnd.html" title="class in com.frc5113.library.oi.buttons.logic">ButtonAnd</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Treat two buttons as one (where the fake button is "pressed" when both real buttons are pressed)</div>
+</th>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><a href="com/frc5113/library/oi/buttons/logic/ButtonAndNot.html" title="class in com.frc5113.library.oi.buttons.logic">ButtonAndNot</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Treat two buttons as one (where the fake button is "pressed" when one real buttons is pressed and the other is not)</div>
+</th>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><a href="com/frc5113/library/oi/buttons/logic/ButtonOr.html" title="class in com.frc5113.library.oi.buttons.logic">ButtonOr</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Treat two buttons as one (where the fake button is "pressed" when either of the real buttons is pressed)</div>
+</th>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><a href="com/frc5113/library/config/ConfigLibrary.html" title="class in com.frc5113.library.config">ConfigLibrary</a></td>
@@ -213,15 +221,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i21" class="rowColor">
 <td class="colFirst"><a href="com/frc5113/library/oi/joystick/Joystick.html" title="class in com.frc5113.library.oi.joystick">Joystick</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Equivalent to a flight simulator joystick commonly used in FRC: <a href="https://docs.wpilib.org/en/stable/_images/joystick.webp">Example Image</a></div>
+</th>
 </tr>
 <tr id="i22" class="altColor">
 <td class="colFirst"><a href="com/frc5113/library/oi/joystick/Joystick.JoystickAxis.html" title="enum in com.frc5113.library.oi.joystick">Joystick.JoystickAxis</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Movement (axis of freedom) axis</div>
+</th>
 </tr>
 <tr id="i23" class="rowColor">
 <td class="colFirst"><a href="com/frc5113/library/oi/joystick/Joystick.JoystickButton.html" title="enum in com.frc5113.library.oi.joystick">Joystick.JoystickButton</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Button mapping to joystick buttons</div>
+</th>
 </tr>
 <tr id="i24" class="altColor">
 <td class="colFirst"><a href="com/frc5113/library/drivers/Limelight.html" title="class in com.frc5113.library.drivers">Limelight</a></td>
@@ -434,12 +448,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr id="i61" class="rowColor">
 <td class="colFirst"><a href="com/frc5113/library/oi/sticks/ThumbStick.html" title="class in com.frc5113.library.oi.sticks">ThumbStick</a></td>
 <th class="colLast" scope="row">
-<div class="block">Thumbstick provides an expression of the thumbstick found on any device.</div>
+<div class="block">Thumbstick provides an expression of a thumbstick found on any device, with an x-axis and y-axis.</div>
 </th>
 </tr>
 <tr id="i62" class="altColor">
 <td class="colFirst"><a href="com/frc5113/library/oi/xbox/Triggers.html" title="class in com.frc5113.library.oi.xbox">Triggers</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Represent the state of the physical triggers (on the back of the XBox controller)</div>
+</th>
 </tr>
 <tr id="i63" class="rowColor">
 <td class="colFirst"><a href="com/frc5113/library/utils/TunableNumber.html" title="class in com.frc5113.library.utils">TunableNumber</a></td>
@@ -463,11 +479,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i67" class="rowColor">
 <td class="colFirst"><a href="com/frc5113/library/oi/xbox/XboxGamepad.XboxAxis.html" title="enum in com.frc5113.library.oi.xbox">XboxGamepad.XboxAxis</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Axis IDs of an XBox controller.</div>
+</th>
 </tr>
 <tr id="i68" class="altColor">
 <td class="colFirst"><a href="com/frc5113/library/oi/xbox/XboxGamepad.XboxButton.html" title="enum in com.frc5113.library.oi.xbox">XboxGamepad.XboxButton</a></td>
-<th class="colLast" scope="row">&nbsp;</th>
+<th class="colLast" scope="row">
+<div class="block">Button IDs of an XBox controller</div>
+</th>
 </tr>
 </table>
 </li>

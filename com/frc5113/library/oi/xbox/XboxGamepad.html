@@ -160,12 +160,16 @@ extends edu.wpi.first.wpilibj.XboxController</pre>
 <tr class="altColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="XboxGamepad.XboxAxis.html" title="enum in com.frc5113.library.oi.xbox">XboxGamepad.XboxAxis</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Axis IDs of an XBox controller.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="XboxGamepad.XboxButton.html" title="enum in com.frc5113.library.oi.xbox">XboxGamepad.XboxButton</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Button IDs of an XBox controller</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -349,7 +353,9 @@ extends edu.wpi.first.wpilibj.XboxController</pre>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int)">XboxGamepad</a></span>&#8203;(int&nbsp;port)</code></th>
 <td class="colLast">
-<div class="block">Create with no Scaler</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Not recommended - specify deadband</div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -357,7 +363,7 @@ extends edu.wpi.first.wpilibj.XboxController</pre>
            double&nbsp;xDeadband,
            double&nbsp;yDeadband)</code></th>
 <td class="colLast">
-<div class="block">Create with default smoothCubic Curve</div>
+<div class="block">Create with a default smoothCubic Curve</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -367,7 +373,7 @@ extends edu.wpi.first.wpilibj.XboxController</pre>
            double&nbsp;rightXDeadband,
            double&nbsp;rightYDeadband)</code></th>
 <td class="colLast">
-<div class="block">Create with default smoothCubic Curve with seperate left and right deadbands</div>
+<div class="block">Create with default smoothCubic Curve with separate left and right dead bands</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -375,7 +381,7 @@ extends edu.wpi.first.wpilibj.XboxController</pre>
            <a href="../scalers/Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a>&nbsp;xCurve,
            <a href="../scalers/Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a>&nbsp;yCurve)</code></th>
 <td class="colLast">
-<div class="block">Create with curves</div>
+<div class="block">Create with custom user-specified curves</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -385,7 +391,7 @@ extends edu.wpi.first.wpilibj.XboxController</pre>
            <a href="../scalers/Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a>&nbsp;rxCurve,
            <a href="../scalers/Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a>&nbsp;ryCurve)</code></th>
 <td class="colLast">
-<div class="block">Create with seperate curves for left and right</div>
+<div class="block">Create with separate curves for left and right</div>
 </td>
 </tr>
 </table>
@@ -687,7 +693,10 @@ extends edu.wpi.first.wpilibj.XboxController</pre>
 <li class="blockList">
 <h4>XboxGamepad</h4>
 <pre>public&nbsp;XboxGamepad&#8203;(int&nbsp;port)</pre>
-<div class="block">Create with no Scaler</div>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Not recommended - specify deadband</div>
+</div>
+<div class="block">Create with no curve</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>port</code> - DS Port of gamepad</dd>
@@ -703,12 +712,12 @@ extends edu.wpi.first.wpilibj.XboxController</pre>
 <pre>public&nbsp;XboxGamepad&#8203;(int&nbsp;port,
                    double&nbsp;xDeadband,
                    double&nbsp;yDeadband)</pre>
-<div class="block">Create with default smoothCubic Curve</div>
+<div class="block">Create with a default smoothCubic Curve</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>port</code> - DS Port of gamepad</dd>
-<dd><code>xDeadband</code> - deadband value for x axis</dd>
-<dd><code>yDeadband</code> - deadband value for y axis</dd>
+<dd><code>xDeadband</code> - deadband value for x-axis (0.05 recommended)</dd>
+<dd><code>yDeadband</code> - deadband value for y-axis (0.05 recommended)</dd>
 </dl>
 </li>
 </ul>
@@ -723,14 +732,14 @@ extends edu.wpi.first.wpilibj.XboxController</pre>
                    double&nbsp;leftYDeadband,
                    double&nbsp;rightXDeadband,
                    double&nbsp;rightYDeadband)</pre>
-<div class="block">Create with default smoothCubic Curve with seperate left and right deadbands</div>
+<div class="block">Create with default smoothCubic Curve with separate left and right dead bands</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>port</code> - DS Port of gamepad</dd>
-<dd><code>leftXDeadband</code> - deadband value for left stick x axis</dd>
-<dd><code>leftYDeadband</code> - deadband value for left stick y axis</dd>
-<dd><code>rightXDeadband</code> - deadband value for right stick x axis</dd>
-<dd><code>rightYDeadband</code> - deadband value for right stick y axis</dd>
+<dd><code>leftXDeadband</code> - deadband value for left stick x-axis</dd>
+<dd><code>leftYDeadband</code> - deadband value for left stick y-axis</dd>
+<dd><code>rightXDeadband</code> - deadband value for right stick x-axis</dd>
+<dd><code>rightYDeadband</code> - deadband value for right stick y-axis</dd>
 </dl>
 </li>
 </ul>
@@ -743,7 +752,7 @@ extends edu.wpi.first.wpilibj.XboxController</pre>
 <pre>public&nbsp;XboxGamepad&#8203;(int&nbsp;port,
                    <a href="../scalers/Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a>&nbsp;xCurve,
                    <a href="../scalers/Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a>&nbsp;yCurve)</pre>
-<div class="block">Create with curves</div>
+<div class="block">Create with custom user-specified curves</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>port</code> - DS Port of gamepad</dd>
@@ -763,14 +772,14 @@ extends edu.wpi.first.wpilibj.XboxController</pre>
                    <a href="../scalers/Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a>&nbsp;lyCurve,
                    <a href="../scalers/Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a>&nbsp;rxCurve,
                    <a href="../scalers/Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a>&nbsp;ryCurve)</pre>
-<div class="block">Create with seperate curves for left and right</div>
+<div class="block">Create with separate curves for left and right</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>port</code> - DS Port of gamepad</dd>
 <dd><code>lxCurve</code> - Curve to adjust left thumbstick X Axis</dd>
-<dd><code>lyCurve</code> - Curve to adjust left thumstick Y Axis</dd>
+<dd><code>lyCurve</code> - Curve to adjust left thumbstick Y Axis</dd>
 <dd><code>rxCurve</code> - Curve to adjust right thumbstick X Axis</dd>
-<dd><code>ryCurve</code> - Curve to adjust right thumstick Y Axis</dd>
+<dd><code>ryCurve</code> - Curve to adjust right thumbstick Y Axis</dd>
 </dl>
 </li>
 </ul>
