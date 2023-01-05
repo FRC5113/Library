@@ -141,7 +141,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="SolenoidSubsystem.html" title="class in com.frc5113.library.subsystem">SolenoidSubsystem</a></code></dd>
+<dd><code><a href="sample/FalconTankDrivetrain.html" title="class in com.frc5113.library.subsystem.sample">FalconTankDrivetrain</a></code>, <code><a href="sample/NoOdometryFalconTankDrivetrain.html" title="class in com.frc5113.library.subsystem.sample">NoOdometryFalconTankDrivetrain</a></code>, <code><a href="SolenoidSubsystem.html" title="class in com.frc5113.library.subsystem">SolenoidSubsystem</a></code></dd>
 </dl>
 <hr>
 <pre>public abstract class <span class="typeNameLabel">SmartSubsystem</span>
@@ -193,7 +193,7 @@ extends edu.wpi.first.wpilibj2.command.SubsystemBase</pre>
 <td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#checkSubsystem()">checkSubsystem</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Have the subsystem make sure that everything is good</div>
+<div class="block">Have the subsystem make sure that everything is good.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -291,7 +291,7 @@ extends edu.wpi.first.wpilibj2.command.SubsystemBase</pre>
 <li class="blockList">
 <h4>checkSubsystem</h4>
 <pre class="methodSignature">public abstract&nbsp;boolean&nbsp;checkSubsystem()</pre>
-<div class="block">Have the subsystem make sure that everything is good</div>
+<div class="block">Have the subsystem make sure that everything is good. Should print debug data if something fails</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Check status (success - true / fail - false)</dd>

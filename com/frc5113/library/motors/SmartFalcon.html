@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -354,20 +354,27 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 </td>
 </tr>
 <tr id="i12" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isConnected()">isConnected</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Check if the falcon is connected (and alive).</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resetEncoder()">resetEncoder</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Set the position of the encoder back to zero ticks</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="SmartFalcon.html" title="class in com.frc5113.library.motors">SmartFalcon</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setRampRate(double)">setRampRate</a></span>&#8203;(double&nbsp;rate)</code></th>
 <td class="colLast">
 <div class="block">Chainable, set the amount of time (sec) from 0 to full speed</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSpeedPercent(double)">setSpeedPercent</a></span>&#8203;(double&nbsp;input)</code></th>
 <td class="colLast">
@@ -749,7 +756,7 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 <a id="getRelativePosition()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getRelativePosition</h4>
 <pre class="methodSignature">public&nbsp;edu.wpi.first.math.geometry.Translation2d&nbsp;getRelativePosition()</pre>
@@ -757,6 +764,22 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the relative position to the start</dd>
+</dl>
+</li>
+</ul>
+<a id="isConnected()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>isConnected</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isConnected()</pre>
+<div class="block">Check if the falcon is connected (and alive).
+ <p> Runs two tests (motor safety timeout check - succeeds if motor safety is disabled) and checks that there is no last error.
+ <p><b>May be slow</b>, so use sparingly</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>connected and alive</dd>
 </dl>
 </li>
 </ul>
