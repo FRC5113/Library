@@ -29,7 +29,7 @@ public class AxisButton extends Button {
     }
 
     public AxisButton(GenericHID joystick, Axis axis, double threshold, ThresholdType thresholdType) {
-        this(joystick, axis.value, threshold, thresholdType);
+        this(joystick, axis.getValue(), threshold, thresholdType);
     }
 
 

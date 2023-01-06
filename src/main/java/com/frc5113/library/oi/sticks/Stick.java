@@ -28,7 +28,7 @@ public class Stick extends ThumbStick {
     public double getTwist() {
         double value = 0;
         if (this.controller.isConnected()){
-            value = this.controller.getRawAxis(twistAxis.value);
+            value = this.controller.getRawAxis(twistAxis.getValue());
             value = twistCurve.calculateMappedVal(value);
         }
         return value;

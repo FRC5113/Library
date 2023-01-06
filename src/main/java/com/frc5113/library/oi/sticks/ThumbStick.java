@@ -18,7 +18,7 @@ public class ThumbStick {
     public final Curve xCurve;
     public final Curve yCurve;
 
-    public ThumbStick(Joystick controller, Axis xAxis, Axis yAxis) {
+    public ThumbStick(GenericHID controller, Axis xAxis, Axis yAxis) {
         this.controller = controller;
         this.xAxis = xAxis;
         this.yAxis = yAxis;
@@ -39,7 +39,7 @@ public class ThumbStick {
     public double getX() {
         double value = 0;
         if (this.controller.isConnected()){
-            value = this.controller.getRawAxis(xAxis.value);
+            value = this.controller.getRawAxis(xAxis.getValue());
             value = xCurve.calculateMappedVal(value);
         }
         return value;
@@ -48,7 +48,7 @@ public class ThumbStick {
     public double getY() {
         double value = 0;
         if (this.controller.isConnected()){
-            value = this.controller.getRawAxis(yAxis.value);
+            value = this.controller.getRawAxis(yAxis.getValue());
             value = yCurve.calculateMappedVal(value);
         }
         return  value;
