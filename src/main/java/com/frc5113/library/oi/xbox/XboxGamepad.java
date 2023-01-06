@@ -47,9 +47,8 @@ public class XboxGamepad extends XboxController {
     public Rumble rumble = new Rumble(this);
 
     /**
-     * Create with no curve
+     * Create with no curve. <b>Not recommended, specify deadband</b>
      * @param port DS Port of gamepad
-     * @deprecated Not recommended - specify deadband
      */
     public XboxGamepad(int port) {
         super(port);
