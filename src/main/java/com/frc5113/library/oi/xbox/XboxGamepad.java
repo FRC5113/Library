@@ -21,7 +21,7 @@ public class XboxGamepad extends XboxController {
     public Curve lxCurve;
     public Curve lyCurve;
     public Curve rxCurve;
-    public Curve ryCurve; 
+    public Curve ryCurve;
 
     public com.frc5113.library.oi.buttons.Button xButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.X);
     public com.frc5113.library.oi.buttons.Button yButton = new com.frc5113.library.oi.buttons.Button(this, XboxButton.Y);
@@ -39,8 +39,8 @@ public class XboxGamepad extends XboxController {
             ThresholdType.GREATER_THAN);
     public Dpad Dpad = new Dpad(this, XboxAxis.dPad);
 
-    public ThumbStick leftStick = new ThumbStick(this, XboxAxis.leftX, XboxAxis.leftY, lxCurve, lyCurve);
-    public ThumbStick rightStick = new ThumbStick(this, XboxAxis.rightX, XboxAxis.rightY, rxCurve, ryCurve);
+    public ThumbStick leftStick;
+    public ThumbStick rightStick;
 
     public Triggers triggers = new Triggers(this);
 
@@ -48,86 +48,74 @@ public class XboxGamepad extends XboxController {
 
     /**
      * Create with no curve. <b>Not recommended, specify deadband</b>
+     *
      * @param port DS Port of gamepad
      */
     public XboxGamepad(int port) {
-        super(port);
-        lxCurve = noOp;
-        lyCurve = noOp;
-        rxCurve = noOp;
-        ryCurve = noOp;
+        this(port, new NoOpCurve(), new NoOpCurve(), new NoOpCurve(), new NoOpCurve());
     }
 
     /**
      * Create with a default smoothCubic Curve
-     * @param port DS Port of gamepad
+     *
+     * @param port      DS Port of gamepad
      * @param xDeadband deadband value for x-axis (0.05 recommended)
      * @param yDeadband deadband value for y-axis (0.05 recommended)
      */
     public XboxGamepad(int port, double xDeadband, double yDeadband) {
-        this(port);
-        lxCurve = smoothCubicLX;
-        lyCurve = smoothCubicLY;
-        rxCurve = smoothCubicRX;
-        ryCurve = smoothCubicRY;
-        lxCurve.setDeadDiameter(xDeadband);
-        lyCurve.setDeadDiameter(yDeadband);
-        rxCurve.setDeadDiameter(xDeadband);
-        ryCurve.setDeadDiameter(yDeadband);
+        this(port, new SmoothCubicCurve().setDeadDiameter(xDeadband), new SmoothCubicCurve().setDeadDiameter(yDeadband), new SmoothCubicCurve().setDeadDiameter(xDeadband), new SmoothCubicCurve().setDeadDiameter(yDeadband));
     }
+
     /**
      * Create with default smoothCubic Curve with separate left and right dead bands
-     * @param port DS Port of gamepad
-     * @param leftXDeadband deadband value for left stick x-axis
-     * @param leftYDeadband deadband value for left stick y-axis
+     *
+     * @param port           DS Port of gamepad
+     * @param leftXDeadband  deadband value for left stick x-axis
+     * @param leftYDeadband  deadband value for left stick y-axis
      * @param rightXDeadband deadband value for right stick x-axis
      * @param rightYDeadband deadband value for right stick y-axis
      */
     public XboxGamepad(int port, double leftXDeadband, double leftYDeadband, double rightXDeadband,
                        double rightYDeadband) {
-        this(port);
-        lxCurve = smoothCubicLX;
-        lyCurve = smoothCubicLY;
-        rxCurve = smoothCubicRX;
-        ryCurve = smoothCubicRY;
-        lxCurve.setDeadDiameter(leftXDeadband);
-        lyCurve.setDeadDiameter(leftYDeadband);
-        rxCurve.setDeadDiameter(rightXDeadband);
-        ryCurve.setDeadDiameter(rightYDeadband);
+        this(port, new SmoothCubicCurve().setDeadDiameter(leftXDeadband), new SmoothCubicCurve().setDeadDiameter(leftYDeadband), new SmoothCubicCurve().setDeadDiameter(rightXDeadband), new SmoothCubicCurve().setDeadDiameter(rightYDeadband));
     }
+
     /**
      * Create with custom user-specified curves
-     * @param port DS Port of gamepad
+     *
+     * @param port   DS Port of gamepad
      * @param xCurve Curve to adjust X Axis
      * @param yCurve Curve to adjust Y Axis
      */
     public XboxGamepad(int port, Curve xCurve, Curve yCurve) {
-        this(port);
-        this.lxCurve = xCurve;
-        this.lyCurve = yCurve;
-        this.rxCurve = xCurve;
-        this.ryCurve = yCurve;
+        this(port, xCurve, yCurve, xCurve, yCurve);
     }
+
     /**
      * Create with separate curves for left and right
-     * @param port DS Port of gamepad
+     *
+     * @param port    DS Port of gamepad
      * @param lxCurve Curve to adjust left thumbstick X Axis
      * @param lyCurve Curve to adjust left thumbstick Y Axis
      * @param rxCurve Curve to adjust right thumbstick X Axis
      * @param ryCurve Curve to adjust right thumbstick Y Axis
      */
     public XboxGamepad(int port, Curve lxCurve, Curve lyCurve, Curve rxCurve, Curve ryCurve) {
-        this(port);
+        super(port);
         this.lxCurve = lxCurve;
         this.lyCurve = lyCurve;
         this.rxCurve = rxCurve;
         this.ryCurve = ryCurve;
+
+        // Define thumbsticks, which rely on the curves
+        rightStick = new ThumbStick(this, XboxAxis.rightX, XboxAxis.rightY, rxCurve, ryCurve);
+        leftStick = new ThumbStick(this, XboxAxis.leftX, XboxAxis.leftY, lxCurve, lyCurve);
     }
 
     /**
      * Button IDs of an XBox controller
      */
-     public enum XboxButton {
+    public enum XboxButton {
         A(1),
         B(2),
         X(3),
@@ -172,6 +160,7 @@ public class XboxGamepad extends XboxController {
 
         /**
          * Get the value of the value
+         *
          * @return <code>value</code>
          */
         public int getValue() {
@@ -224,6 +213,7 @@ public class XboxGamepad extends XboxController {
 
         /**
          * Get the value of the value
+         *
          * @return <code>value</code>
          */
         public int getValue() {
