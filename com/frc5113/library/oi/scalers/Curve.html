@@ -268,7 +268,7 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i10" class="altColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code><a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDeadDiameter(double)">setDeadDiameter</a></span>&#8203;(double&nbsp;deadDiameter)</code></th>
 <td class="colLast">
 <div class="block">Sets the value of <code>deadzone</code>, the
@@ -277,7 +277,7 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code><a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setOffset(double)">setOffset</a></span>&#8203;(double&nbsp;offset)</code></th>
 <td class="colLast">
 <div class="block">Sets the value of <code>offset</code>, the
@@ -285,7 +285,7 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i12" class="altColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code><a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setScalar(double)">setScalar</a></span>&#8203;(double&nbsp;scalar)</code></th>
 <td class="colLast">
 <div class="block">Sets the value of <code>scalar</code>, the
@@ -463,9 +463,11 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setOffset</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setOffset&#8203;(double&nbsp;offset)</pre>
+<pre class="methodSignature">public&nbsp;<a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a>&nbsp;setOffset&#8203;(double&nbsp;offset)</pre>
 <div class="block">Sets the value of <code>offset</code>, the
- value added to the final curve.</div>
+ value added to the final curve.
+
+ <p>Is chainable</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>offset</code> - the new value of <code>offset</code></dd>
@@ -478,9 +480,11 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setScalar</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setScalar&#8203;(double&nbsp;scalar)</pre>
+<pre class="methodSignature">public&nbsp;<a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a>&nbsp;setScalar&#8203;(double&nbsp;scalar)</pre>
 <div class="block">Sets the value of <code>scalar</code>, the
- value multiplied to the curve before it is offset.</div>
+ value multiplied to the curve before it is offset.
+
+ <p>Is chainable</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>scalar</code> - the new value of <code>scalar</code></dd>
@@ -493,10 +497,12 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setDeadDiameter</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setDeadDiameter&#8203;(double&nbsp;deadDiameter)</pre>
+<pre class="methodSignature">public&nbsp;<a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a>&nbsp;setDeadDiameter&#8203;(double&nbsp;deadDiameter)</pre>
 <div class="block">Sets the value of <code>deadzone</code>, the
  value for the width in the center of the curve
- where any input results in an output of <code>0.0</code>.</div>
+ where any input results in an output of <code>0.0</code>.
+
+ <p>Is chainable</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>deadDiameter</code> - the new value of <code>deadzone</code></dd>
