@@ -1,6 +1,7 @@
 package com.frc5113.library.oi.xbox;
 
 import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.XboxController;
 
 /**
  * Manage the current states of the rumble motors on the Xbox controller
@@ -8,7 +9,7 @@ import edu.wpi.first.wpilibj.GenericHID;
  * @author Vladimir Bondar (5113)
  */
 public class Rumble {
-    XboxGamepad joystick;
+    XboxController joystick;
     double rumbleRight;
     double rumbleLeft;
 
@@ -16,7 +17,7 @@ public class Rumble {
      * Create a new rumble state container
      * @param joystick Xbox controller with rumble 
      */
-    public Rumble(XboxGamepad joystick) {
+    public Rumble(XboxController joystick) {
         // set joystick
         this.joystick = joystick;
 

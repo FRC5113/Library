@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.Joystick;
 
 /**
  * Larger sticks (full hand ones) also come with twist functionality.
- * This class also adds representation for the twist axis.
+ * This class also adds representation for the twist axis, but is still based on a 2d joystick.
  *
  * @author Vladimir Bondar
  */

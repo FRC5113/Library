@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 
 /**
- * Thumbstick provides an expression of the thumbstick found on any device.
+ * Thumbstick provides an expression of a thumbstick found on any device, with an x-axis and y-axis.
  * @author Bob (319), Vladimir Bondar (5113)
  */
 public class ThumbStick {

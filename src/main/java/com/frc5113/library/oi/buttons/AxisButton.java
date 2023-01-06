@@ -7,6 +7,9 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import com.frc5113.library.oi.joystick.Joystick.JoystickAxis;
 
+/**
+ * Treat a axis as if it was a button
+ */
 public class AxisButton extends Button {
     private final GenericHID controller;
     private final int axis;
@@ -30,6 +33,11 @@ public class AxisButton extends Button {
     }
 
 
+    /**
+     * Get the value of an axis in true/false form
+     * @return true/false in accordance with set rules
+     */
+    @Override
     public boolean get() {
         switch (this.thresholdType) {
             case EXACT:

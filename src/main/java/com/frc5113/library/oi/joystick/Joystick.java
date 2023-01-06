@@ -8,6 +8,9 @@ import com.frc5113.library.oi.sticks.Stick;
 import com.frc5113.library.oi.xbox.XboxGamepad;
 import com.frc5113.library.primative.Axis;
 
+/**
+ * Equivalent to a flight simulator joystick commonly used in FRC: <a href="https://docs.wpilib.org/en/stable/_images/joystick.webp">Example Image</a>
+ */
 public class Joystick extends edu.wpi.first.wpilibj.Joystick {
 
     public Curve xCurve;
@@ -36,25 +39,73 @@ public class Joystick extends edu.wpi.first.wpilibj.Joystick {
         this.tCurve = tCurve;
     }
 
+    /**
+     * Trigger index finger button
+     */
     public Button triggerButton = new Button(this, JoystickButton.k1);
+    /**
+     * Button on thumb rest
+     */
     public Button thumbButton = new Button(this, JoystickButton.k2);
+    /**
+     * Button 3 located in the bottom left of the head
+     */
     public Button headBottomLeftButton = new Button(this, JoystickButton.k3);
+    /**
+     * Button 4 located in the bottom right of the head
+     */
     public Button headBottomRightButton = new Button(this, JoystickButton.k4);
+    /**
+     * Button 5 located in the top left of the head
+     */
     public Button headTopLeftButton = new Button(this, JoystickButton.k5);
+    /**
+     * Button 6 located in the top right of the head
+     */
     public Button headTopRightButton = new Button(this, JoystickButton.k6);
+    /**
+     * Button 7 located in the top left of the base
+     */
     public Button baseTopLeftButton = new Button(this, JoystickButton.k7);
+    /**
+     * Button 8 located in the top right of the base
+     */
     public Button baseTopRightButton = new Button(this, JoystickButton.k8);
+    /**
+     * Button 9 located in the middle left of the base
+     */
     public Button baseMiddleLeftButton = new Button(this, JoystickButton.k9);
+    /**
+     * Button 10 located in the middle right of the base
+     */
     public Button baseMiddleRightButton = new Button(this, JoystickButton.k10);
+    /**
+     * Button 11 located in the bottom left of the base
+     */
     public Button baseBottomLeftButton = new Button(this, JoystickButton.k11);
+    /**
+     * Button 12 located in the bottom right of the base
+     */
     public Button baseBottomRightButton = new Button(this, JoystickButton.k12);
 
+    /**
+     * POV Hat DPad
+     */
     public Dpad dPad = new Dpad(this, JoystickAxis.POV);
 
+    /**
+     * Controller stick
+     */
     public Stick stick = new Stick(this, JoystickAxis.X, JoystickAxis.Y, JoystickAxis.Twist, xCurve, yCurve, tCurve);
 
+    /**
+     * Base slider
+     */
     public Slider slider = new Slider(this, JoystickAxis.Slider);
 
+    /**
+     * Button mapping to joystick buttons
+     */
     public enum JoystickButton {
         k1(1),
         k2(2),
@@ -75,6 +126,9 @@ public class Joystick extends edu.wpi.first.wpilibj.Joystick {
         }
     }
 
+    /**
+     * Movement (axis of freedom) axis
+     */
     public enum JoystickAxis implements Axis {
         X(1),
         Y(2),

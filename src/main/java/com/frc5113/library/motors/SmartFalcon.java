@@ -1,5 +1,6 @@
 package com.frc5113.library.motors;
 
+import com.ctre.phoenix.ErrorCode;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
@@ -18,8 +19,8 @@ import edu.wpi.first.math.geometry.Translation2d;
 public class SmartFalcon extends WPI_TalonFX {
 
     public static final int TICKS_PER_ROTATION = 2048;
-    private Double outputDiameter = null;
-    private Double gearRatio = null;
+    private Double outputDiameter = 1.0; // default to 1 to avoid multiply by null errors
+    private Double gearRatio = 1.0; // default to 1 to avoid multiply by null errors
 
     private Translation2d position;
 
@@ -204,5 +205,15 @@ public class SmartFalcon extends WPI_TalonFX {
      */
     public Translation2d getRelativePosition() {
         return position;
+    }
+
+    /**
+     * Check if the falcon is connected (and alive).
+     * <p> Runs two tests (motor safety timeout check - succeeds if motor safety is disabled) and checks that there is no last error.
+     * <p><b>May be slow</b>, so use sparingly
+     * @return connected and alive
+     */
+    public boolean isConnected() {
+        return (!this.isSafetyEnabled() || this.isAlive()) && this.getLastError() == ErrorCode.OK;
     }
 }
