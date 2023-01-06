@@ -132,32 +132,41 @@ public abstract class Curve {
     /**
      * Sets the value of <code>offset</code>, the
      * value added to the final curve.
-     * 
+     *
+     * <p>Is chainable</p>
+     *
      * @param offset the new value of <code>offset</code>
      */
-    public void setOffset(double offset) {
+    public Curve setOffset(double offset) {
         this.offset = offset;
+        return this;
     }
 
     /**
      * Sets the value of <code>scalar</code>, the
      * value multiplied to the curve before it is offset.
+     *
+     * <p>Is chainable</p>
      * 
      * @param scalar the new value of <code>scalar</code>
      */
-    public void setScalar(double scalar) {
+    public Curve setScalar(double scalar) {
         this.scalar = scalar;
+        return this;
     }
 
     /**
      * Sets the value of <code>deadzone</code>, the
      * value for the width in the center of the curve
      * where any input results in an output of <code>0.0</code>.
+     *
+     * <p>Is chainable</p>
      * 
      * @param deadDiameter the new value of <code>deadzone</code>
      */
-    public void setDeadDiameter(double deadDiameter) {
+    public Curve setDeadDiameter(double deadDiameter) {
         this.deadDiameter = Math.abs(deadDiameter);
+        return this;
     }
     
     /** 
