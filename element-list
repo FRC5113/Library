@@ -15,3 +15,6 @@ com.frc5113.library.sim
 com.frc5113.library.subsystem
 com.frc5113.library.subsystem.sample
 com.frc5113.library.utils
+frc.robot
+frc.robot.commands
+frc.robot.subsystems

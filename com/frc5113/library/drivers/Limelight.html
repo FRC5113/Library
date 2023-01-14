@@ -133,11 +133,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Limelight</span>
 extends java.lang.Object</pre>
-<div class="block">Utility class to speed up work with the "fruit camera" Limelight. <br><br>
-
- The Limelight Class was started by Corey Applegate of Team 3244
- Granite City Gearheads. We Hope you enjoy the Limelight
- camera. Further modifications by Spectrum and the Combustible Lemons.</div>
+<div class="block">Utility class to speed up work with the "fruit camera" Limelight. <br>
+ <br>
+ The Limelight Class was started by Corey Applegate of Team 3244 Granite City Gearheads. We Hope
+ you enjoy the Limelight camera. Further modifications by Spectrum and the Combustible Lemons.</div>
 </li>
 </ul>
 </div>
@@ -217,7 +216,8 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAdvanced_RotationToTarget(com.frc5113.library.drivers.LimelightControlModes.Advanced_Target)">getAdvanced_RotationToTarget</a></span>&#8203;(<a href="LimelightControlModes.Advanced_Target.html" title="enum in com.frc5113.library.drivers">LimelightControlModes.Advanced_Target</a>&nbsp;raw)</code></th>
 <td class="colLast">
-<div class="block">Limelight posts three raw contours to NetworkTables that are not influenced by your grouping mode.</div>
+<div class="block">Limelight posts three raw contours to NetworkTables that are not influenced by your grouping
+ mode.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
@@ -333,11 +333,12 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLEDMode(com.frc5113.library.drivers.LimelightControlModes.LedMode)">setLEDMode</a></span>&#8203;(<a href="LimelightControlModes.LedMode.html" title="enum in com.frc5113.library.drivers">LimelightControlModes.LedMode</a>&nbsp;ledMode)</code></th>
 <td class="colLast">
 <div class="block">LedMode Sets limelight’s LED state
+
  
- kPipeline
- kForceOff
- kForceBlink
- kForceOn
+   kPipeline
+   kForceOff
+   kForceBlink
+   kForceOn
  </div>
 </td>
 </tr>
@@ -359,11 +360,14 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setStream(com.frc5113.library.drivers.LimelightControlModes.StreamType)">setStream</a></span>&#8203;(<a href="LimelightControlModes.StreamType.html" title="enum in com.frc5113.library.drivers">LimelightControlModes.StreamType</a>&nbsp;stream)</code></th>
 <td class="colLast">
-<div class="block">stream   Sets limelight’s streaming mode
+<div class="block">stream Sets limelight’s streaming mode
+
  
- kStandard - Side-by-side streams if a webcam is attached to Limelight
- kPiPMain - The secondary camera stream is placed in the lower-right corner of the primary camera stream
- kPiPSecondary - The primary camera stream is placed in the lower-right corner of the secondary camera stream
+   kStandard - Side-by-side streams if a webcam is attached to Limelight
+   kPiPMain - The secondary camera stream is placed in the lower-right corner of the primary
+       camera stream
+   kPiPSecondary - The primary camera stream is placed in the lower-right corner of the
+       secondary camera stream
  </div>
 </td>
 </tr>
@@ -530,8 +534,8 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getPipelineLatency</h4>
 <pre class="methodSignature">public&nbsp;double&nbsp;getPipelineLatency()</pre>
-<div class="block">tl The pipeline’s latency contribution (ms).
- Make sure to add at least 11ms for image capture latency.</div>
+<div class="block">tl The pipeline’s latency contribution (ms). Make sure to add at least 11ms for image capture
+ latency.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>latency (ms)</dd>
@@ -546,11 +550,12 @@ extends java.lang.Object</pre>
 <h4>setLEDMode</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setLEDMode&#8203;(<a href="LimelightControlModes.LedMode.html" title="enum in com.frc5113.library.drivers">LimelightControlModes.LedMode</a>&nbsp;ledMode)</pre>
 <div class="block">LedMode Sets limelight’s LED state
+
  <ul>
- <li>kPipeline</li>
- <li>kForceOff</li>
- <li>kForceBlink</li>
- <li>kForceOn</li>
+   <li>kPipeline
+   <li>kForceOff
+   <li>kForceBlink
+   <li>kForceOn
  </ul></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -580,9 +585,10 @@ extends java.lang.Object</pre>
 <h4>setCamMode</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setCamMode&#8203;(<a href="LimelightControlModes.CamMode.html" title="enum in com.frc5113.library.drivers">LimelightControlModes.CamMode</a>&nbsp;camMode)</pre>
 <div class="block">camMode Sets limelight’s operation mode.
+
  <ul>
- <li>kVision</li>
- <li>kDriver (Increases exposure, disables vision processing)</li>
+   <li>kVision
+   <li>kDriver (Increases exposure, disables vision processing)
  </ul></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -614,8 +620,7 @@ extends java.lang.Object</pre>
 <div class="block">pipeline Sets Limelight’s current pipeline:</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>pipeline</code> - Integer value of preferred pipeline:
-                 0 - 9  Select pipeline 0-9</dd>
+<dd><code>pipeline</code> - Integer value of preferred pipeline: 0 - 9 Select pipeline 0-9</dd>
 </dl>
 </li>
 </ul>
@@ -654,11 +659,14 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setStream</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setStream&#8203;(<a href="LimelightControlModes.StreamType.html" title="enum in com.frc5113.library.drivers">LimelightControlModes.StreamType</a>&nbsp;stream)</pre>
-<div class="block">stream   Sets limelight’s streaming mode
+<div class="block">stream Sets limelight’s streaming mode
+
  <ul>
- <li>kStandard - Side-by-side streams if a webcam is attached to Limelight</li>
- <li>kPiPMain - The secondary camera stream is placed in the lower-right corner of the primary camera stream</li>
- <li>kPiPSecondary - The primary camera stream is placed in the lower-right corner of the secondary camera stream</li>
+   <li>kStandard - Side-by-side streams if a webcam is attached to Limelight
+   <li>kPiPMain - The secondary camera stream is placed in the lower-right corner of the primary
+       camera stream
+   <li>kPiPSecondary - The primary camera stream is placed in the lower-right corner of the
+       secondary camera stream
  </ul></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -687,12 +695,15 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setSnapshot</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setSnapshot&#8203;(<a href="LimelightControlModes.Snapshot.html" title="enum in com.frc5113.library.drivers">LimelightControlModes.Snapshot</a>&nbsp;snapshot)</pre>
-<div class="block">snapshot Allows taking a camera render up to 2 times per second.
- Value <b>MUST</b> be set to zero after each snapshot to take another snapshot, see:
- <br><br>Fix "snapshot" networktables key. Users must set the "snapshot" key to "0" before setting it to "1" to take a screenshot. (Bug fix changelog 2022.2.3 (3.16.22)) <br><br>
- <br><br>
- kon - Take 1 snapshot
- koff - Do not take a snapshot (default state)</div>
+<div class="block">snapshot Allows taking a camera render up to 2 times per second. Value <b>MUST</b> be set to
+ zero after each snapshot to take another snapshot, see: <br>
+ <br>
+ Fix "snapshot" networktables key. Users must set the "snapshot" key to "0" before setting it to
+ "1" to take a screenshot. (Bug fix changelog 2022.2.3 (3.16.22)) <br>
+ <br>
+ <br>
+ <br>
+ kon - Take 1 snapshot koff - Do not take a snapshot (default state)</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>snapshot</code> - Whether to take a snapshot</dd>
@@ -720,9 +731,9 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getAdvanced_RotationToTarget</h4>
 <pre class="methodSignature">public&nbsp;double&nbsp;getAdvanced_RotationToTarget&#8203;(<a href="LimelightControlModes.Advanced_Target.html" title="enum in com.frc5113.library.drivers">LimelightControlModes.Advanced_Target</a>&nbsp;raw)</pre>
-<div class="block">Limelight posts three raw contours to NetworkTables that are not influenced by your grouping mode.
- That is, they are filtered with your pipeline parameters, but never grouped. X and Y are returned
- in normalized screen space (-1 to 1) rather than degrees.</div>
+<div class="block">Limelight posts three raw contours to NetworkTables that are not influenced by your grouping
+ mode. That is, they are filtered with your pipeline parameters, but never grouped. X and Y are
+ returned in normalized screen space (-1 to 1) rather than degrees.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>raw</code> - Target</dd>

@@ -139,21 +139,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">SplineCurve</span>
 extends <a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a></pre>
 <div class="block">This class maps the value of a stick input to a spline curve.
- 
- For <code>LINEAR</code> curves, the points provided represent the vertices
- of a linear spline plotted on a graph (like a line graph).
- 
- For <code>SMOOTH</code> curves, the points provided represent the critical
- points on the graph of the curve. The only exception to this is when
- <code>points.length</code> is equal to <code>2</code> in which it will always
- be a linear spline between the two points.
- 
- For <code>RIGHT_STEP</code> or <code>LEFT_STEP</code> curves, the points
- provided represent the points on a step function plotted on a graph. In
- <code>RIGHT_STEP</code> curves, the value on the interval between points is
- determined by the value of the rightmost point in the interval. In
- <code>LEFT_STEP</code> curves, the value on the interval between points is
- determined by the value of the leftmost point in the interval.</div>
+
+ <p>For <code>LINEAR</code> curves, the points provided represent the vertices of a linear spline
+ plotted on a graph (like a line graph).
+
+ <p>For <code>SMOOTH</code> curves, the points provided represent the critical points on the graph
+ of the curve. The only exception to this is when <code>points.length</code> is equal to <code>2
+ </code> in which it will always be a linear spline between the two points.
+
+ <p>For <code>RIGHT_STEP</code> or <code>LEFT_STEP</code> curves, the points provided represent
+ the points on a step function plotted on a graph. In <code>RIGHT_STEP</code> curves, the value on
+ the interval between points is determined by the value of the rightmost point in the interval. In
+ <code>LEFT_STEP</code> curves, the value on the interval between points is determined by the
+ value of the leftmost point in the interval.</div>
 </li>
 </ul>
 </div>
@@ -176,9 +174,8 @@ extends <a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Cur
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">SplineCurve</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Constructs a Spline Curve object which can
- be used to map a stick input based on a custom
- curve profile.</div>
+<div class="block">Constructs a Spline Curve object which can be used to map a stick input based on a custom curve
+ profile.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -188,9 +185,8 @@ extends <a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Cur
            double&nbsp;scalar,
            double&nbsp;deadzone)</code></th>
 <td class="colLast">
-<div class="block">Constructs a Spline Curve object which can
- be used to map a stick input based on a custom
- curve profile.</div>
+<div class="block">Constructs a Spline Curve object which can be used to map a stick input based on a custom curve
+ profile.</div>
 </td>
 </tr>
 </table>
@@ -239,8 +235,8 @@ extends <a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Cur
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setPoints(double%5B%5D%5B%5D)">setPoints</a></span>&#8203;(double[][]&nbsp;points)</code></th>
 <td class="colLast">
-<div class="block">The values at each index <code>0</code> in each index of the
- point array MUST BE IN INCREASING ORDER.</div>
+<div class="block">The values at each index <code>0</code> in each index of the point array MUST BE IN INCREASING
+ ORDER.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
@@ -290,9 +286,8 @@ extends <a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Cur
                    double&nbsp;offset,
                    double&nbsp;scalar,
                    double&nbsp;deadzone)</pre>
-<div class="block">Constructs a Spline Curve object which can
- be used to map a stick input based on a custom
- curve profile. Initialized with values provided.</div>
+<div class="block">Constructs a Spline Curve object which can be used to map a stick input based on a custom curve
+ profile. Initialized with values provided.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>splineType</code> - type of spline</dd>
@@ -310,10 +305,8 @@ extends <a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Cur
 <li class="blockList">
 <h4>SplineCurve</h4>
 <pre>public&nbsp;SplineCurve()</pre>
-<div class="block">Constructs a Spline Curve object which can
- be used to map a stick input based on a custom
- curve profile. Initialized with default values:
- <code>
+<div class="block">Constructs a Spline Curve object which can be used to map a stick input based on a custom curve
+ profile. Initialized with default values: <code>
      splineType = SplineType.LINEAR;
      points = new double[][]{{-1.0, -1.0}, {0.0, 0.0}, {1.0, 1.0}};
      offset = 0.0;
@@ -389,10 +382,9 @@ extends <a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Cur
 <li class="blockList">
 <h4>setPoints</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setPoints&#8203;(double[][]&nbsp;points)</pre>
-<div class="block">The values at each index <code>0</code> in each index of the
- point array MUST BE IN INCREASING ORDER. There is no code in
- place to verify this. The array must be a X by 2 array, where
- X is any valid array length.</div>
+<div class="block">The values at each index <code>0</code> in each index of the point array MUST BE IN INCREASING
+ ORDER. There is no code in place to verify this. The array must be a X by 2 array, where X is
+ any valid array length.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>points</code> - the new value of <code>points</code></dd>

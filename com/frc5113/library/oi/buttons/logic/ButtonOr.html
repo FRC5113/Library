@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10};
+var data = {"i0":10,"i1":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -126,12 +126,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li>edu.wpi.first.wpilibj2.command.button.Trigger</li>
 <li>
 <ul class="inheritance">
-<li>edu.wpi.first.wpilibj2.command.button.Button</li>
-<li>
-<ul class="inheritance">
 <li>com.frc5113.library.oi.buttons.logic.ButtonOr</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -146,8 +141,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">ButtonOr</span>
-extends edu.wpi.first.wpilibj2.command.button.Button</pre>
-<div class="block">Treat two buttons as one (where the fake button is "pressed" when either of the real buttons is pressed)</div>
+extends edu.wpi.first.wpilibj2.command.button.Trigger</pre>
+<div class="block">Treat two buttons as one (where the fake button is "pressed" when either of the real buttons is
+ pressed)</div>
 </li>
 </ul>
 </div>
@@ -168,8 +164,8 @@ extends edu.wpi.first.wpilibj2.command.button.Button</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(edu.wpi.first.wpilibj2.command.button.Button,edu.wpi.first.wpilibj2.command.button.Button)">ButtonOr</a></span>&#8203;(edu.wpi.first.wpilibj2.command.button.Button&nbsp;button,
-        edu.wpi.first.wpilibj2.command.button.Button&nbsp;button2)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(edu.wpi.first.wpilibj2.command.button.Trigger,edu.wpi.first.wpilibj2.command.button.Trigger)">ButtonOr</a></span>&#8203;(edu.wpi.first.wpilibj2.command.button.Trigger&nbsp;button,
+        edu.wpi.first.wpilibj2.command.button.Trigger&nbsp;button2)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -195,20 +191,18 @@ extends edu.wpi.first.wpilibj2.command.button.Button</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get()">get</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAsBoolean()">getAsBoolean</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
 </table>
-<ul class="blockList">
-<li class="blockList"><a id="methods.inherited.from.class.edu.wpi.first.wpilibj2.command.button.Button">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;edu.wpi.first.wpilibj2.command.button.Button</h3>
-<code>cancelWhenPressed, toggleWhenPressed, toggleWhenPressed, whenHeld, whenHeld, whenPressed, whenPressed, whenPressed, whenReleased, whenReleased, whenReleased, whileHeld, whileHeld, whileHeld</code></li>
-</ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.edu.wpi.first.wpilibj2.command.button.Trigger">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;edu.wpi.first.wpilibj2.command.button.Trigger</h3>
-<code>and, cancelWhenActive, debounce, debounce, getAsBoolean, negate, or, toggleWhenActive, toggleWhenActive, whenActive, whenActive, whenActive, whenInactive, whenInactive, whenInactive, whileActiveContinuous, whileActiveContinuous, whileActiveContinuous, whileActiveOnce, whileActiveOnce</code></li>
+<code>and, cancelWhenActive, debounce, debounce, negate, onFalse, onTrue, or, toggleOnFalse, toggleOnTrue, toggleWhenActive, whenActive, whenActive, whenInactive, whenInactive, whileActiveContinuous, whileActiveContinuous, whileActiveOnce, whileFalse, whileTrue</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -233,14 +227,14 @@ extends edu.wpi.first.wpilibj2.command.button.Button</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(edu.wpi.first.wpilibj2.command.button.Button,edu.wpi.first.wpilibj2.command.button.Button)">
+<a id="&lt;init&gt;(edu.wpi.first.wpilibj2.command.button.Trigger,edu.wpi.first.wpilibj2.command.button.Trigger)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ButtonOr</h4>
-<pre>public&nbsp;ButtonOr&#8203;(edu.wpi.first.wpilibj2.command.button.Button&nbsp;button,
-                edu.wpi.first.wpilibj2.command.button.Button&nbsp;button2)</pre>
+<pre>public&nbsp;ButtonOr&#8203;(edu.wpi.first.wpilibj2.command.button.Trigger&nbsp;button,
+                edu.wpi.first.wpilibj2.command.button.Trigger&nbsp;button2)</pre>
 </li>
 </ul>
 </li>
@@ -256,13 +250,24 @@ extends edu.wpi.first.wpilibj2.command.button.Button</pre>
 <a id="get()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;get()</pre>
+</li>
+</ul>
+<a id="getAsBoolean()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getAsBoolean</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;getAsBoolean()</pre>
 <dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code>getAsBoolean</code>&nbsp;in interface&nbsp;<code>java.util.function.BooleanSupplier</code></dd>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code>get</code>&nbsp;in class&nbsp;<code>edu.wpi.first.wpilibj2.command.button.Trigger</code></dd>
+<dd><code>getAsBoolean</code>&nbsp;in class&nbsp;<code>edu.wpi.first.wpilibj2.command.button.Trigger</code></dd>
 </dl>
 </li>
 </ul>

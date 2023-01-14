@@ -152,17 +152,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code>com.ctre.phoenix.motorcontrol.IFollower</code>, <code>com.ctre.phoenix.motorcontrol.IMotorController</code>, <code>com.ctre.phoenix.motorcontrol.IMotorControllerEnhanced</code>, <code>com.ctre.phoenix.signals.IInvertable</code>, <code>com.ctre.phoenix.signals.IOutputSignal</code>, <code>edu.wpi.first.util.sendable.Sendable</code>, <code>edu.wpi.first.wpilibj.motorcontrol.MotorController</code>, <code>edu.wpi.first.wpilibj.SpeedController</code>, <code>java.lang.AutoCloseable</code></dd>
+<dd><code>com.ctre.phoenix.motorcontrol.IFollower</code>, <code>com.ctre.phoenix.motorcontrol.IMotorController</code>, <code>com.ctre.phoenix.motorcontrol.IMotorControllerEnhanced</code>, <code>com.ctre.phoenix.signals.IInvertable</code>, <code>com.ctre.phoenix.signals.IOutputSignal</code>, <code>edu.wpi.first.util.sendable.Sendable</code>, <code>edu.wpi.first.wpilibj.motorcontrol.MotorController</code>, <code>java.lang.AutoCloseable</code></dd>
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">SmartFalcon</span>
 extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 <div class="block">Modifications to TalonFX-esq motors (commonly the Talon)
+
  <ul>
-     <li>Auto-wrenching default talon configs</li>
-     <li>Chainable configuration</li>
-     <li>Encoder improvements</li>
-     <li>Readability / usability improvements</li>
+   <li>Auto-wrenching default talon configs
+   <li>Chainable configuration
+   <li>Encoder improvements
+   <li>Readability / usability improvements
  </ul></div>
 </li>
 </ul>
@@ -230,8 +231,7 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,boolean)">SmartFalcon</a></span>&#8203;(int&nbsp;canID,
            boolean&nbsp;inverted)</code></th>
 <td class="colLast">
-<div class="block">Create a new Smart TalonFX with Falcon based parameters
- Coasts on .set(0)</div>
+<div class="block">Create a new Smart TalonFX with Falcon based parameters Coasts on .set(0)</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -484,8 +484,7 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 <li class="blockList">
 <h4>SmartFalcon</h4>
 <pre>public&nbsp;SmartFalcon&#8203;(int&nbsp;canID)</pre>
-<div class="block">Create a new Smart TalonFX with Falcon based parameters.
- Not Inverted and Coasts on stop</div>
+<div class="block">Create a new Smart TalonFX with Falcon based parameters. Not Inverted and Coasts on stop</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>canID</code> - integer CAN network ID</dd>
@@ -500,8 +499,7 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 <h4>SmartFalcon</h4>
 <pre>public&nbsp;SmartFalcon&#8203;(int&nbsp;canID,
                    boolean&nbsp;inverted)</pre>
-<div class="block">Create a new Smart TalonFX with Falcon based parameters
- Coasts on .set(0)</div>
+<div class="block">Create a new Smart TalonFX with Falcon based parameters Coasts on .set(0)</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>canID</code> - integer CAN network ID</dd>
@@ -623,8 +621,8 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 <div class="block">Get the selected sensor velocity.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>selected sensor (in raw sensor units) per 100ms.
- See Phoenix-Documentation for how to interpret.</dd>
+<dd>selected sensor (in raw sensor units) per 100ms. See Phoenix-Documentation for how to
+     interpret.</dd>
 </dl>
 </li>
 </ul>
@@ -638,8 +636,8 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 <div class="block">Get the selected sensor velocity.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>selected sensor (in raw sensor units) per second.
- See Phoenix-Documentation for how to interpret.</dd>
+<dd>selected sensor (in raw sensor units) per second. See Phoenix-Documentation for how to
+     interpret.</dd>
 </dl>
 </li>
 </ul>
@@ -707,9 +705,8 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>diameter</code> - Radius of the output mechanism</dd>
-<dd><code>gearRatio</code> - Gear ratio between the input and output (&gt;1 means output
-                  is going slower than input, &lt;1 means output is going faster
-                  than input)</dd>
+<dd><code>gearRatio</code> - Gear ratio between the input and output (&gt;1 means output is going slower
+     than input, &lt;1 means output is going faster than input)</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Configured motor</dd>
 </dl>
@@ -775,7 +772,10 @@ extends com.ctre.phoenix.motorcontrol.can.WPI_TalonFX</pre>
 <h4>isConnected</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;isConnected()</pre>
 <div class="block">Check if the falcon is connected (and alive).
- <p> Runs two tests (motor safety timeout check - succeeds if motor safety is disabled) and checks that there is no last error.
+
+ <p>Runs two tests (motor safety timeout check - succeeds if motor safety is disabled) and
+ checks that there is no last error.
+
  <p><b>May be slow</b>, so use sparingly</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>

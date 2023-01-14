@@ -146,8 +146,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public abstract class <span class="typeNameLabel">SmartSubsystem</span>
 extends edu.wpi.first.wpilibj2.command.SubsystemBase</pre>
-<div class="block">Use this class when creating a subsystem. This will allow it to be loaded into the subsystem manager
- for easy telemetry and debugging</div>
+<div class="block">Use this class when creating a subsystem. This will allow it to be loaded into the subsystem
+ manager for easy telemetry and debugging</div>
 </li>
 </ul>
 </div>
@@ -237,7 +237,7 @@ extends edu.wpi.first.wpilibj2.command.SubsystemBase</pre>
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;edu.wpi.first.wpilibj2.command.Subsystem</h3>
-<code>getCurrentCommand, getDefaultCommand, periodic, register, setDefaultCommand, simulationPeriodic</code></li>
+<code>getCurrentCommand, getDefaultCommand, periodic, register, run, runEnd, runOnce, setDefaultCommand, simulationPeriodic, startEnd</code></li>
 </ul>
 </li>
 </ul>
@@ -291,7 +291,8 @@ extends edu.wpi.first.wpilibj2.command.SubsystemBase</pre>
 <li class="blockList">
 <h4>checkSubsystem</h4>
 <pre class="methodSignature">public abstract&nbsp;boolean&nbsp;checkSubsystem()</pre>
-<div class="block">Have the subsystem make sure that everything is good. Should print debug data if something fails</div>
+<div class="block">Have the subsystem make sure that everything is good. Should print debug data if something
+ fails</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Check status (success - true / fail - false)</dd>

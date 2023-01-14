@@ -147,7 +147,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">NoOdometryFalconTankDrivetrain</span>
 extends <a href="../SmartSubsystem.html" title="class in com.frc5113.library.subsystem">SmartSubsystem</a></pre>
-<div class="block">A Drivetrain class for a tank drive consisting of two falcons per side, without any gyro or odometry code</div>
+<div class="block">A Drivetrain class for a tank drive consisting of two falcons per side, without any gyro or
+ odometry code</div>
 </li>
 </ul>
 </div>
@@ -224,7 +225,8 @@ extends <a href="../SmartSubsystem.html" title="class in com.frc5113.library.sub
                               double&nbsp;rampRate,
                               com.ctre.phoenix.motorcontrol.NeutralMode&nbsp;neutralMode)</code></th>
 <td class="colLast">
-<div class="block">Create tank with default parameters (deadband = 0.1), but a custom neutral mode and motor ramp rate.</div>
+<div class="block">Create tank with default parameters (deadband = 0.1), but a custom neutral mode and motor ramp
+ rate.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -234,7 +236,8 @@ extends <a href="../SmartSubsystem.html" title="class in com.frc5113.library.sub
                               int&nbsp;rightChildId,
                               com.ctre.phoenix.motorcontrol.NeutralMode&nbsp;neutralMode)</code></th>
 <td class="colLast">
-<div class="block">Create tank with default parameters (deadband = 0.1, ramp_rate = 0.1), but a custom neutral mode.</div>
+<div class="block">Create tank with default parameters (deadband = 0.1, ramp_rate = 0.1), but a custom neutral
+ mode.</div>
 </td>
 </tr>
 </table>
@@ -360,7 +363,8 @@ extends <a href="../SmartSubsystem.html" title="class in com.frc5113.library.sub
             double&nbsp;reverse,
             double&nbsp;rotation)</code></th>
 <td class="colLast">
-<div class="block">Arcade drive (speed and turn), but the speed is controlled by two triggers (forward and backward - where the speed is <code>forward - backward</code>).</div>
+<div class="block">Arcade drive (speed and turn), but the speed is controlled by two triggers (forward and
+ backward - where the speed is <code>forward - backward</code>).</div>
 </td>
 </tr>
 <tr id="i15" class="rowColor">
@@ -390,7 +394,7 @@ extends <a href="../SmartSubsystem.html" title="class in com.frc5113.library.sub
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;edu.wpi.first.wpilibj2.command.Subsystem</h3>
-<code>getCurrentCommand, getDefaultCommand, periodic, register, setDefaultCommand, simulationPeriodic</code></li>
+<code>getCurrentCommand, getDefaultCommand, periodic, register, run, runEnd, runOnce, setDefaultCommand, simulationPeriodic, startEnd</code></li>
 </ul>
 </li>
 </ul>
@@ -450,7 +454,9 @@ extends <a href="../SmartSubsystem.html" title="class in com.frc5113.library.sub
                                       double&nbsp;rampRate,
                                       com.ctre.phoenix.motorcontrol.NeutralMode&nbsp;neutralMode)</pre>
 <div class="block">Create tank with custom deadband and rampRate parameters.
- <p> Location is based on the forward moving direction of the robot (stand facing the same way the front of the robot is facing)</div>
+
+ <p>Location is based on the forward moving direction of the robot (stand facing the same way
+ the front of the robot is facing)</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>leftParentId</code> - CAN ID of left parent</dd>
@@ -475,8 +481,11 @@ extends <a href="../SmartSubsystem.html" title="class in com.frc5113.library.sub
                                       int&nbsp;rightChildId,
                                       double&nbsp;rampRate,
                                       com.ctre.phoenix.motorcontrol.NeutralMode&nbsp;neutralMode)</pre>
-<div class="block">Create tank with default parameters (deadband = 0.1), but a custom neutral mode and motor ramp rate.
- <p> Location is based on the forward moving direction of the robot (stand facing the same way the front of the robot is facing)</div>
+<div class="block">Create tank with default parameters (deadband = 0.1), but a custom neutral mode and motor ramp
+ rate.
+
+ <p>Location is based on the forward moving direction of the robot (stand facing the same way
+ the front of the robot is facing)</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>leftParentId</code> - CAN ID of left parent</dd>
@@ -499,8 +508,11 @@ extends <a href="../SmartSubsystem.html" title="class in com.frc5113.library.sub
                                       int&nbsp;leftChildId,
                                       int&nbsp;rightChildId,
                                       com.ctre.phoenix.motorcontrol.NeutralMode&nbsp;neutralMode)</pre>
-<div class="block">Create tank with default parameters (deadband = 0.1, ramp_rate = 0.1), but a custom neutral mode.
- <p> Location is based on the forward moving direction of the robot (stand facing the same way the front of the robot is facing)</div>
+<div class="block">Create tank with default parameters (deadband = 0.1, ramp_rate = 0.1), but a custom neutral
+ mode.
+
+ <p>Location is based on the forward moving direction of the robot (stand facing the same way
+ the front of the robot is facing)</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>leftParentId</code> - CAN ID of left parent</dd>
@@ -522,7 +534,9 @@ extends <a href="../SmartSubsystem.html" title="class in com.frc5113.library.sub
                                       int&nbsp;leftChildId,
                                       int&nbsp;rightChildId)</pre>
 <div class="block">Create tank with default parameters (deadband = 0.1, ramp_rate = 0.1, neutral_mode = coast).
- <p> Location is based on the forward moving direction of the robot (stand facing the same way the front of the robot is facing)</div>
+
+ <p>Location is based on the forward moving direction of the robot (stand facing the same way
+ the front of the robot is facing)</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>leftParentId</code> - CAN ID of left parent</dd>
@@ -551,8 +565,9 @@ extends <a href="../SmartSubsystem.html" title="class in com.frc5113.library.sub
 <pre class="methodSignature">public&nbsp;void&nbsp;tankDrive&#8203;(double&nbsp;leftSpeed,
                       double&nbsp;rightSpeed)</pre>
 <div class="block">Drive the left and right side at custom speeds 0-1.
- <p>
- Location is based on the forward moving direction of the robot (stand facing the same way the front of the robot is facing)</div>
+
+ <p>Location is based on the forward moving direction of the robot (stand facing the same way
+ the front of the robot is facing)</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>leftSpeed</code> - Speed of the left side [0.0, 1.0]</dd>
@@ -568,9 +583,11 @@ extends <a href="../SmartSubsystem.html" title="class in com.frc5113.library.sub
 <h4>tankDriveVolts</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;tankDriveVolts&#8203;(double&nbsp;leftSpeed,
                            double&nbsp;rightSpeed)</pre>
-<div class="block">Drive the left and right side at custom speeds 0-1, <b>but using voltage control</b>. <b>NOT set it and forget it, must be updated</b>.
- <p>
- Location is based on the forward moving direction of the robot (stand facing the same way the front of the robot is facing)</div>
+<div class="block">Drive the left and right side at custom speeds 0-1, <b>but using voltage control</b>. <b>NOT
+ set it and forget it, must be updated</b>.
+
+ <p>Location is based on the forward moving direction of the robot (stand facing the same way
+ the front of the robot is facing)</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>leftSpeed</code> - Speed of the left side [0.0, 1.0]</dd>
@@ -586,8 +603,11 @@ extends <a href="../SmartSubsystem.html" title="class in com.frc5113.library.sub
 <h4>tankDrivePureVolts</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;tankDrivePureVolts&#8203;(double&nbsp;leftSpeed,
                                double&nbsp;rightSpeed)</pre>
-<div class="block">Drive the left and right side <b>using voltage control</b>. <b>NOT set it and forget it, must be updated</b>.
- <p> Location is based on the forward moving direction of the robot (stand facing the same way the front of the robot is facing)</div>
+<div class="block">Drive the left and right side <b>using voltage control</b>. <b>NOT set it and forget it, must
+ be updated</b>.
+
+ <p>Location is based on the forward moving direction of the robot (stand facing the same way
+ the front of the robot is facing)</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>leftSpeed</code> - Speed of the left side [0.0, ~12.4]</dd>
@@ -603,7 +623,8 @@ extends <a href="../SmartSubsystem.html" title="class in com.frc5113.library.sub
 <h4>arcadeDrive</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;arcadeDrive&#8203;(double&nbsp;speed,
                         double&nbsp;rotation)</pre>
-<div class="block">Arcade drive (speed and turn). The calculated values will be squared to decrease sensitivity at low speeds.</div>
+<div class="block">Arcade drive (speed and turn). The calculated values will be squared to decrease sensitivity at
+ low speeds.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>speed</code> - The robot's speed along the X axis [-1.0, 1.0]. Forward is positive.</dd>
@@ -622,7 +643,7 @@ extends <a href="../SmartSubsystem.html" title="class in com.frc5113.library.sub
 <div class="block">Curvature drive method for differential drive platform.
 
  <p>The rotation argument controls the curvature of the robot's path rather than its rate of
- heading change. This makes the robot more controllable at high speeds.</p>
+ heading change. This makes the robot more controllable at high speeds.
 
  <p>This version turns in place only at low speeds, shouldn't be an issue</div>
 <dl>
@@ -644,7 +665,7 @@ extends <a href="../SmartSubsystem.html" title="class in com.frc5113.library.sub
 <div class="block">Curvature drive method for differential drive platform.
 
  <p>The rotation argument controls the curvature of the robot's path rather than its rate of
- heading change. This makes the robot more controllable at high speeds.</p></div>
+ heading change. This makes the robot more controllable at high speeds.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>speed</code> - The robot's speed along the X axis [-1.0..1.0]. Forward is positive.</dd>
@@ -662,11 +683,14 @@ extends <a href="../SmartSubsystem.html" title="class in com.frc5113.library.sub
 <pre class="methodSignature">public&nbsp;void&nbsp;triggerDrive&#8203;(double&nbsp;forward,
                          double&nbsp;reverse,
                          double&nbsp;rotation)</pre>
-<div class="block">Arcade drive (speed and turn), but the speed is controlled by two triggers (forward and backward - where the speed is <code>forward - backward</code>). The calculated values will be squared to decrease sensitivity at low speeds.</div>
+<div class="block">Arcade drive (speed and turn), but the speed is controlled by two triggers (forward and
+ backward - where the speed is <code>forward - backward</code>). The calculated values will be
+ squared to decrease sensitivity at low speeds.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>forward</code> - The robot's speed along the X axis [0, 1.0]. Moves robot forward by this amount.</dd>
-<dd><code>reverse</code> - The robot's speed along the X axis [0, 1.0]. Moves robot backward by this amount.</dd>
+<dd><code>reverse</code> - The robot's speed along the X axis [0, 1.0]. Moves robot backward by this
+     amount.</dd>
 <dd><code>rotation</code> - The robot's rotation rate around the Z axis [-1.0, 1.0]. Clockwise is positive.</dd>
 </dl>
 </li>

@@ -137,16 +137,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public abstract class <span class="typeNameLabel">Curve</span>
 extends java.lang.Object</pre>
-<div class="block">This class and its subclasses remap controller stick inputs
- according to specifics provided of multiple classes of curves.
- 
- This is the superclass of several types of curves. It contains
- most of the code that is used for all types of curves (Linear,
- Exponential, Spline, and Step).
- 
- To create a Curve, do not create a <code>Curve</code> object directly,
- use a subclass of <code>Curve</code> such as <code>ExpCurve</code>
- instead.</div>
+<div class="block">This class and its subclasses remap controller stick inputs according to specifics provided of
+ multiple classes of curves.
+
+ <p>This is the superclass of several types of curves. It contains most of the code that is used
+ for all types of curves (Linear, Exponential, Spline, and Step).
+
+ <p>To create a Curve, do not create a <code>Curve</code> object directly, use a subclass of
+ <code>Curve</code> such as <code>ExpCurve</code> instead.</div>
 </li>
 </ul>
 </div>
@@ -192,9 +190,8 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>protected double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#calculateDeadzone(double)">calculateDeadzone</a></span>&#8203;(double&nbsp;input)</code></th>
 <td class="colLast">
-<div class="block">Returns the value of <code>input</code> mapped to create
- a deadband of width <code>deadzone</code> in the center of the
- curve and squishes the rest of the curve to the outside 
+<div class="block">Returns the value of <code>input</code> mapped to create a deadband of width <code>deadzone
+ </code> in the center of the curve and squishes the rest of the curve to the outside
  proportionally.</div>
 </td>
 </tr>
@@ -209,16 +206,14 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>protected double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#calculateOffset(double)">calculateOffset</a></span>&#8203;(double&nbsp;input)</code></th>
 <td class="colLast">
-<div class="block">Returns the value of <code>input</code> summed with the
- value of <code>offset</code>.</div>
+<div class="block">Returns the value of <code>input</code> summed with the value of <code>offset</code>.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>protected double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#calculateScalar(double)">calculateScalar</a></span>&#8203;(double&nbsp;input)</code></th>
 <td class="colLast">
-<div class="block">Returns the value of <code>input</code> multiplied by the
- value of <code>scalar</code>.</div>
+<div class="block">Returns the value of <code>input</code> multiplied by the value of <code>scalar</code>.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
@@ -232,25 +227,23 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDeadDiameter()">getDeadDiameter</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns the value of <code>deadDiameter</code>, the
- value for the width in the center of the curve
- where any input results in an output of <code>0.0</code></div>
+<div class="block">Returns the value of <code>deadDiameter</code>, the value for the width in the center of the
+ curve where any input results in an output of <code>0.0</code></div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOffset()">getOffset</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns the value of <code>offset</code>, the double
- value added to the final curve.</div>
+<div class="block">Returns the value of <code>offset</code>, the double value added to the final curve.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getScalar()">getScalar</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns the value of <code>scalar</code>, the double
- value multiplied to the curve before it is offset.</div>
+<div class="block">Returns the value of <code>scalar</code>, the double value multiplied to the curve before it is
+ offset.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
@@ -271,8 +264,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code><a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDeadDiameter(double)">setDeadDiameter</a></span>&#8203;(double&nbsp;deadDiameter)</code></th>
 <td class="colLast">
-<div class="block">Sets the value of <code>deadzone</code>, the
- value for the width in the center of the curve
+<div class="block">Sets the value of <code>deadzone</code>, the value for the width in the center of the curve
  where any input results in an output of <code>0.0</code>.</div>
 </td>
 </tr>
@@ -280,16 +272,14 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code><a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setOffset(double)">setOffset</a></span>&#8203;(double&nbsp;offset)</code></th>
 <td class="colLast">
-<div class="block">Sets the value of <code>offset</code>, the
- value added to the final curve.</div>
+<div class="block">Sets the value of <code>offset</code>, the value added to the final curve.</div>
 </td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setScalar(double)">setScalar</a></span>&#8203;(double&nbsp;scalar)</code></th>
 <td class="colLast">
-<div class="block">Sets the value of <code>scalar</code>, the
- value multiplied to the curve before it is offset.</div>
+<div class="block">Sets the value of <code>scalar</code>, the value multiplied to the curve before it is offset.</div>
 </td>
 </tr>
 </table>
@@ -358,15 +348,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>calculateDeadzone</h4>
 <pre class="methodSignature">protected&nbsp;double&nbsp;calculateDeadzone&#8203;(double&nbsp;input)</pre>
-<div class="block">Returns the value of <code>input</code> mapped to create
- a deadband of width <code>deadzone</code> in the center of the
- curve and squishes the rest of the curve to the outside 
- proportionally. <br><br>
-
- A deadband or dead-band (also known as a dead zone or a neutral zone)
- is a band (value range) of input values in the domain of a transfer function in a
- control system or signal processing system where the output is zero
- (the output is 'dead' - no action occurs). - Wikipedia</div>
+<div class="block">Returns the value of <code>input</code> mapped to create a deadband of width <code>deadzone
+ </code> in the center of the curve and squishes the rest of the curve to the outside
+ proportionally. <br>
+ <br>
+ A deadband or dead-band (also known as a dead zone or a neutral zone) is a band (value range)
+ of input values in the domain of a transfer function in a control system or signal processing
+ system where the output is zero (the output is 'dead' - no action occurs). - Wikipedia</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>input</code> - the input value to be mapped</dd>
@@ -382,8 +370,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>calculateScalar</h4>
 <pre class="methodSignature">protected&nbsp;double&nbsp;calculateScalar&#8203;(double&nbsp;input)</pre>
-<div class="block">Returns the value of <code>input</code> multiplied by the
- value of <code>scalar</code>.</div>
+<div class="block">Returns the value of <code>input</code> multiplied by the value of <code>scalar</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>input</code> - the input value to be mapped</dd>
@@ -399,8 +386,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>calculateOffset</h4>
 <pre class="methodSignature">protected&nbsp;double&nbsp;calculateOffset&#8203;(double&nbsp;input)</pre>
-<div class="block">Returns the value of <code>input</code> summed with the
- value of <code>offset</code>.</div>
+<div class="block">Returns the value of <code>input</code> summed with the value of <code>offset</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>input</code> - the input value to be mapped</dd>
@@ -432,9 +418,9 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>printPoints</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;printPoints&#8203;(double[][]&nbsp;points)</pre>
-<div class="block">Prints the values of a 2D double array of points. The output of
- this method can be pasted into <a href="https://www.desmos.com/calculator">Desmos</a>
- to see a visual representation of the <code>points</code> on the <code>Curve</code>.</div>
+<div class="block">Prints the values of a 2D double array of points. The output of this method can be pasted into
+ <a href="https://www.desmos.com/calculator">Desmos</a> to see a visual representation of the
+ <code>points</code> on the <code>Curve</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>points</code> - the set of points to be printed</dd>
@@ -448,9 +434,9 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>printPoints</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;printPoints&#8203;(int&nbsp;pointCount)</pre>
-<div class="block">Prints a set of points on the curve of length <code>pointCount</code>.
- The output of this method can be pasted into <a href="https://www.desmos.com/calculator">Desmos</a>
- to see a visual representation of the <code>Curve</code>.</div>
+<div class="block">Prints a set of points on the curve of length <code>pointCount</code>. The output of this
+ method can be pasted into <a href="https://www.desmos.com/calculator">Desmos</a> to see a
+ visual representation of the <code>Curve</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>pointCount</code> - the number of points to be printed</dd>
@@ -464,10 +450,9 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setOffset</h4>
 <pre class="methodSignature">public&nbsp;<a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a>&nbsp;setOffset&#8203;(double&nbsp;offset)</pre>
-<div class="block">Sets the value of <code>offset</code>, the
- value added to the final curve.
+<div class="block">Sets the value of <code>offset</code>, the value added to the final curve.
 
- <p>Is chainable</p></div>
+ <p>Is chainable</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>offset</code> - the new value of <code>offset</code></dd>
@@ -481,10 +466,9 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setScalar</h4>
 <pre class="methodSignature">public&nbsp;<a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a>&nbsp;setScalar&#8203;(double&nbsp;scalar)</pre>
-<div class="block">Sets the value of <code>scalar</code>, the
- value multiplied to the curve before it is offset.
+<div class="block">Sets the value of <code>scalar</code>, the value multiplied to the curve before it is offset.
 
- <p>Is chainable</p></div>
+ <p>Is chainable</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>scalar</code> - the new value of <code>scalar</code></dd>
@@ -498,11 +482,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setDeadDiameter</h4>
 <pre class="methodSignature">public&nbsp;<a href="Curve.html" title="class in com.frc5113.library.oi.scalers">Curve</a>&nbsp;setDeadDiameter&#8203;(double&nbsp;deadDiameter)</pre>
-<div class="block">Sets the value of <code>deadzone</code>, the
- value for the width in the center of the curve
+<div class="block">Sets the value of <code>deadzone</code>, the value for the width in the center of the curve
  where any input results in an output of <code>0.0</code>.
 
- <p>Is chainable</p></div>
+ <p>Is chainable</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>deadDiameter</code> - the new value of <code>deadzone</code></dd>
@@ -516,8 +499,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getOffset</h4>
 <pre class="methodSignature">public&nbsp;double&nbsp;getOffset()</pre>
-<div class="block">Returns the value of <code>offset</code>, the double
- value added to the final curve.</div>
+<div class="block">Returns the value of <code>offset</code>, the double value added to the final curve.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the current value of <code>offset</code></dd>
@@ -531,8 +513,8 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getScalar</h4>
 <pre class="methodSignature">public&nbsp;double&nbsp;getScalar()</pre>
-<div class="block">Returns the value of <code>scalar</code>, the double
- value multiplied to the curve before it is offset.</div>
+<div class="block">Returns the value of <code>scalar</code>, the double value multiplied to the curve before it is
+ offset.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the current value of <code>scalar</code></dd>
@@ -546,9 +528,8 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getDeadDiameter</h4>
 <pre class="methodSignature">public&nbsp;double&nbsp;getDeadDiameter()</pre>
-<div class="block">Returns the value of <code>deadDiameter</code>, the
- value for the width in the center of the curve
- where any input results in an output of <code>0.0</code></div>
+<div class="block">Returns the value of <code>deadDiameter</code>, the value for the width in the center of the
+ curve where any input results in an output of <code>0.0</code></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the current value of <code>deadDiameter</code></dd>

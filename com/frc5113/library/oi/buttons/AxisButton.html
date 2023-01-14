@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10};
+var data = {"i0":10,"i1":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -126,12 +126,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li>edu.wpi.first.wpilibj2.command.button.Trigger</li>
 <li>
 <ul class="inheritance">
-<li>edu.wpi.first.wpilibj2.command.button.Button</li>
-<li>
-<ul class="inheritance">
 <li>com.frc5113.library.oi.buttons.AxisButton</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -146,7 +141,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">AxisButton</span>
-extends edu.wpi.first.wpilibj2.command.button.Button</pre>
+extends edu.wpi.first.wpilibj2.command.button.Trigger</pre>
 <div class="block">Treat a axis as if it was a button</div>
 </li>
 </ul>
@@ -225,24 +220,22 @@ extends edu.wpi.first.wpilibj2.command.button.Button</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get()">get</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAsBoolean()">getAsBoolean</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the value of an axis in true/false form</div>
 </td>
 </tr>
 </table>
 <ul class="blockList">
-<li class="blockList"><a id="methods.inherited.from.class.edu.wpi.first.wpilibj2.command.button.Button">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;edu.wpi.first.wpilibj2.command.button.Button</h3>
-<code>cancelWhenPressed, toggleWhenPressed, toggleWhenPressed, whenHeld, whenHeld, whenPressed, whenPressed, whenPressed, whenReleased, whenReleased, whenReleased, whileHeld, whileHeld, whileHeld</code></li>
-</ul>
-<ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.edu.wpi.first.wpilibj2.command.button.Trigger">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;edu.wpi.first.wpilibj2.command.button.Trigger</h3>
-<code>and, cancelWhenActive, debounce, debounce, getAsBoolean, negate, or, toggleWhenActive, toggleWhenActive, whenActive, whenActive, whenActive, whenInactive, whenInactive, whenInactive, whileActiveContinuous, whileActiveContinuous, whileActiveContinuous, whileActiveOnce, whileActiveOnce</code></li>
+<code>and, cancelWhenActive, debounce, debounce, negate, onFalse, onTrue, or, toggleOnFalse, toggleOnTrue, toggleWhenActive, whenActive, whenActive, whenInactive, whenInactive, whileActiveContinuous, whileActiveContinuous, whileActiveOnce, whileFalse, whileTrue</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -301,6 +294,24 @@ extends edu.wpi.first.wpilibj2.command.button.Button</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="getAsBoolean()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAsBoolean</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;getAsBoolean()</pre>
+<div class="block">Get the value of an axis in true/false form</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code>getAsBoolean</code>&nbsp;in interface&nbsp;<code>java.util.function.BooleanSupplier</code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code>getAsBoolean</code>&nbsp;in class&nbsp;<code>edu.wpi.first.wpilibj2.command.button.Trigger</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true/false in accordance with set rules</dd>
+</dl>
+</li>
+</ul>
 <a id="get()">
 <!--   -->
 </a>
@@ -308,13 +319,6 @@ extends edu.wpi.first.wpilibj2.command.button.Button</pre>
 <li class="blockList">
 <h4>get</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;get()</pre>
-<div class="block">Get the value of an axis in true/false form</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code>get</code>&nbsp;in class&nbsp;<code>edu.wpi.first.wpilibj2.command.button.Trigger</code></dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>true/false in accordance with set rules</dd>
-</dl>
 </li>
 </ul>
 </li>
