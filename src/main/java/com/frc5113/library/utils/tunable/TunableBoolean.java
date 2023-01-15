@@ -1,7 +1,6 @@
 package com.frc5113.library.utils.tunable;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 import java.util.function.BooleanSupplier;
 
 /**

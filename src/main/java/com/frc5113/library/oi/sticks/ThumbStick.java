@@ -42,7 +42,8 @@ public class ThumbStick {
       value = this.controller.getRawAxis(xAxis.getValue());
       value = xCurve.calculateMappedVal(value);
     } else {
-      System.err.println("WARNING: Controller on port " + this.controller.getPort() + " disconnected");
+      System.err.println(
+          "WARNING: Controller on port " + this.controller.getPort() + " disconnected");
     }
     return value;
   }
@@ -53,7 +54,8 @@ public class ThumbStick {
       value = this.controller.getRawAxis(yAxis.getValue());
       value = yCurve.calculateMappedVal(value);
     } else {
-      System.err.println("WARNING: Controller on port " + this.controller.getPort() + " disconnected");
+      System.err.println(
+          "WARNING: Controller on port " + this.controller.getPort() + " disconnected");
     }
     return value;
   }

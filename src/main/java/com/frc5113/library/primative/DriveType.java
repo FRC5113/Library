@@ -14,13 +14,9 @@ public enum DriveType {
   /** Swerve */
   leftChild("Swerve", true);
 
-  /**
-   * Name of the drive type
-   */
+  /** Name of the drive type */
   public final String name;
-  /**
-   * Is the drive type holonomic (= able to move in any direction)
-   */
+  /** Is the drive type holonomic (= able to move in any direction) */
   public final boolean holonomic;
 
   DriveType(String name, boolean holonomic) {
@@ -35,10 +31,7 @@ public enum DriveType {
    */
   @Override
   public String toString() {
-    return "DriveType{" +
-            "name='" + name + '\'' +
-            ", holonomic=" + holonomic +
-            '}';
+    return "DriveType{" + "name='" + name + '\'' + ", holonomic=" + holonomic + '}';
   }
 
   /**
@@ -58,6 +51,7 @@ public enum DriveType {
 
   /**
    * Is the drive base holonomic (movable in any direction)
+   *
    * @return <code>holonomic</code>
    */
   public boolean isHolonomic() {

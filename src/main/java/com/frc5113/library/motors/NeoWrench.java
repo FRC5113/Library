@@ -33,7 +33,8 @@ public class NeoWrench {
   }
 
   /**
-   * Configure a Neo (CANSpark) motor with sane defaults. Will consult {@link SparkMAXBurnManager} everytime to check if should burn.
+   * Configure a Neo (CANSpark) motor with sane defaults. Will consult {@link SparkMAXBurnManager}
+   * everytime to check if should burn.
    *
    * @param motor Motor to configure
    * @param idleMode Whether to break or coast on .set(0);

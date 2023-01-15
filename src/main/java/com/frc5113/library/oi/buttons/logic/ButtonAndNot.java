@@ -1,7 +1,6 @@
 package com.frc5113.library.oi.buttons.logic;
 
 import com.frc5113.library.oi.buttons.pure.AndNotSupplier;
-import com.frc5113.library.oi.buttons.pure.AndSupplier;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 /**

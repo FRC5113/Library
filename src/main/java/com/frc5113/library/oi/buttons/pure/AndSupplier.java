@@ -1,7 +1,6 @@
 package com.frc5113.library.oi.buttons.pure;
 
 import edu.wpi.first.wpilibj2.command.button.Trigger;
-
 import java.util.function.BooleanSupplier;
 
 /**

@@ -1,7 +1,6 @@
 package com.frc5113.library.oi.generic;
 
 import edu.wpi.first.wpilibj.GenericHID;
-import edu.wpi.first.wpilibj2.command.button.Button;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 

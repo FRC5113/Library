@@ -26,7 +26,8 @@ public class Slider {
       value = this.controller.getRawAxis(slider.getValue());
       value = curve.calculateMappedVal(value);
     } else {
-      System.err.println("WARNING: Controller on port " + this.controller.getPort() + " disconnected");
+      System.err.println(
+          "WARNING: Controller on port " + this.controller.getPort() + " disconnected");
     }
     return value;
   }

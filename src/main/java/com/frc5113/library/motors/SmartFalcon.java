@@ -237,10 +237,13 @@ public class SmartFalcon extends WPI_TalonFX {
 
   @Override
   public String toString() {
-    return "SmartFalcon{" +
-            "outputDiameter=" + outputDiameter +
-            ", gearRatio=" + gearRatio +
-            ", position=" + position +
-            '}';
+    return "SmartFalcon{"
+        + "outputDiameter="
+        + outputDiameter
+        + ", gearRatio="
+        + gearRatio
+        + ", position="
+        + position
+        + '}';
   }
 }

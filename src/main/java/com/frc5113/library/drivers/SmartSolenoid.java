@@ -30,9 +30,7 @@ public class SmartSolenoid extends Solenoid {
     this.robot = robot;
   }
 
-  /**
-   * Set the value of the solenoid
-   */
+  /** Set the value of the solenoid */
   @Override
   public void set(boolean value) {
     if (value != isOn) {
@@ -41,9 +39,7 @@ public class SmartSolenoid extends Solenoid {
     isOn = value;
   }
 
-  /**
-   * Don't waste time with a CAN command to check the com.frc5113.library.state
-   */
+  /** Don't waste time with a CAN command to check the com.frc5113.library.state */
   @Override
   public boolean get() {
     return isOn;

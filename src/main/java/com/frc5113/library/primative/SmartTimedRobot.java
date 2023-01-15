@@ -1,14 +1,13 @@
 package com.frc5113.library.primative;
 
+import com.frc5113.library.state.RobotState;
 import com.frc5113.library.state.StateManager;
+import com.frc5113.library.state.StatefulRobot;
 import com.frc5113.library.utils.Alert;
 import com.frc5113.library.utils.Alert.AlertType;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj.TimedRobot;
-import com.frc5113.library.state.RobotState;
-import com.frc5113.library.state.StatefulRobot;
-
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -34,14 +33,10 @@ public abstract class SmartTimedRobot extends TimedRobot implements StatefulRobo
    */
   public static String MAC = "";
 
-  /**
-   * Mac Address of the competition robot
-   */
+  /** Mac Address of the competition robot */
   public static String compMac = "";
 
-  /**
-   * Is the code running on a non competition robot
-   */
+  /** Is the code running on a non competition robot */
   public static boolean notMainBot = false;
 
   // Alerts
@@ -109,7 +104,8 @@ public abstract class SmartTimedRobot extends TimedRobot implements StatefulRobo
    * @return Whether battery should be changed
    */
   public boolean changeBattery() {
-    return (stateManager.getState() == RobotState.DISABLED && RobotController.getInputVoltage() < 12);
+    return (stateManager.getState() == RobotState.DISABLED
+        && RobotController.getInputVoltage() < 12);
   }
 
   /**
@@ -119,7 +115,8 @@ public abstract class SmartTimedRobot extends TimedRobot implements StatefulRobo
    * @return Whether battery should be changed
    */
   public boolean changeBattery(int voltage) {
-    return (stateManager.getState() == RobotState.DISABLED && RobotController.getInputVoltage() < voltage);
+    return (stateManager.getState() == RobotState.DISABLED
+        && RobotController.getInputVoltage() < voltage);
   }
 
   /**

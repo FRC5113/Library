@@ -14,6 +14,7 @@ import com.revrobotics.RelativeEncoder;
  */
 public class SmartNeo extends CANSparkMax {
   public RelativeEncoder encoder;
+
   public SmartNeo(int canID, IdleMode idleMode) {
     super(canID, MotorType.kBrushless);
     NeoWrench.defaultSetup(this, idleMode, 45);
@@ -31,15 +32,14 @@ public class SmartNeo extends CANSparkMax {
 
   /**
    * Get the relative position of the motor encoder
+   *
    * @return Relative Position
    */
   public double getPosition() {
     return encoder.getPosition();
   }
 
-  /**
-   * Set the encoder position to 0, effectively resetting it
-   */
+  /** Set the encoder position to 0, effectively resetting it */
   public void resetEncoder() {
     encoder.setPosition(0);
   }
