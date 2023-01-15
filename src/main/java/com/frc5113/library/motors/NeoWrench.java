@@ -20,12 +20,27 @@ public class NeoWrench {
    * @param motor Motor to configure
    * @param idleMode Whether to break or coast on .set(0);
    * @param maxDraw Maximum draw in amps, 40amps has been ok
+   * @param burn Should the parameters actually be put into the flash
+   */
+  public static void defaultSetup(CANSparkMax motor, IdleMode idleMode, int maxDraw, boolean burn) {
+    if (burn) {
+      motor.restoreFactoryDefaults();
+      motor.setIdleMode(idleMode);
+      motor.enableVoltageCompensation(12);
+      motor.setSmartCurrentLimit(maxDraw);
+      motor.burnFlash();
+    }
+  }
+
+  /**
+   * Configure a Neo (CANSpark) motor with sane defaults. Will consult {@link SparkMAXBurnManager} everytime to check if should burn.
+   *
+   * @param motor Motor to configure
+   * @param idleMode Whether to break or coast on .set(0);
+   * @param maxDraw Maximum draw in amps, 40amps has been ok
    */
   public static void defaultSetup(CANSparkMax motor, IdleMode idleMode, int maxDraw) {
-    motor.restoreFactoryDefaults();
-    motor.setIdleMode(idleMode);
-    motor.enableVoltageCompensation(12);
-    motor.setSmartCurrentLimit(maxDraw);
-    motor.burnFlash();
+    SparkMAXBurnManager.update();
+    defaultSetup(motor, idleMode, maxDraw, SparkMAXBurnManager.shouldBurn());
   }
 }

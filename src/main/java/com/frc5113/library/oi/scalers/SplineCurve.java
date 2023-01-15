@@ -23,12 +23,12 @@ TODO
  * <code>LEFT_STEP</code> curves, the value on the interval between points is determined by the
  * value of the leftmost point in the interval.
  *
- * @author Justin Babilino (3847), Vladimir Bondar (5113), Team 3847
+ * @author Justin Babilino (3847), Vladimir Bondar (5113)
  * @version 0.0.4
  */
 public class SplineCurve extends Curve {
   /** Types of spline segments used in spline curves. */
-  private static enum SegmentType {
+  private enum SegmentType {
     LINEAR,
     RIGHT_PARABOLIC,
     LEFT_PARABOLIC,

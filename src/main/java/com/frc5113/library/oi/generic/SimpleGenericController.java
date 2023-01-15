@@ -3,6 +3,7 @@ package com.frc5113.library.oi.generic;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj2.command.button.Button;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 public class SimpleGenericController extends GenericHID {
   /**
@@ -30,7 +31,7 @@ public class SimpleGenericController extends GenericHID {
    * @param button Port of desired button value
    * @return Object of button
    */
-  public Button getButton(int button) {
+  public Trigger getButton(int button) {
     return new JoystickButton(this, button);
   }
 

@@ -1,7 +1,7 @@
 package com.frc5113.library.subsystem;
 
 import com.frc5113.library.drivers.SmartSolenoid;
-import com.frc5113.library.primative.StatefulRobot;
+import com.frc5113.library.state.StatefulRobot;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.RunCommand;

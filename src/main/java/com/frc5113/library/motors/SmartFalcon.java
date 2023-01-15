@@ -30,9 +30,7 @@ public class SmartFalcon extends WPI_TalonFX {
    * @param canID integer CAN network ID
    */
   public SmartFalcon(int canID) {
-    super(canID);
-    TalonFXWrench.defaultSetup(this, false, 40);
-    this.setNeutralMode(NeutralMode.Coast);
+    this(canID, false);
   }
 
   /**
@@ -42,9 +40,7 @@ public class SmartFalcon extends WPI_TalonFX {
    * @param inverted spin backwards?
    */
   public SmartFalcon(int canID, boolean inverted) {
-    super(canID);
-    TalonFXWrench.defaultSetup(this, inverted, 40);
-    this.setNeutralMode(NeutralMode.Coast);
+    this(canID, inverted, NeutralMode.Coast);
   }
 
   /**
@@ -55,9 +51,7 @@ public class SmartFalcon extends WPI_TalonFX {
    * @param neutralMode Whether to break or coast when .set(0);
    */
   public SmartFalcon(int canID, boolean inverted, NeutralMode neutralMode) {
-    super(canID);
-    TalonFXWrench.defaultSetup(this, inverted, 40);
-    this.setNeutralMode(neutralMode);
+    this(canID, inverted, neutralMode, new Translation2d());
   }
 
   public SmartFalcon(int canID, boolean inverted, NeutralMode neutralMode, Translation2d position) {
@@ -147,7 +141,6 @@ public class SmartFalcon extends WPI_TalonFX {
   }
 
   // speed setting shortcuts
-
   /**
    * Set the speed to a percentage [-1 to 1]
    *
@@ -214,6 +207,21 @@ public class SmartFalcon extends WPI_TalonFX {
   }
 
   /**
+   * return the position of a drive motor relative to the center of the robot
+   *
+   * @return the relative position to the start
+   */
+  public SmartFalcon setRelativePosition(Translation2d pos) {
+    position = pos;
+    return this;
+  }
+
+  public SmartFalcon setCurrentLimit(double limit) {
+    TalonFXWrench.simpleCurrentLimit(this, limit);
+    return this;
+  }
+
+  /**
    * Check if the falcon is connected (and alive).
    *
    * <p>Runs two tests (motor safety timeout check - succeeds if motor safety is disabled) and
@@ -225,5 +233,14 @@ public class SmartFalcon extends WPI_TalonFX {
    */
   public boolean isConnected() {
     return (!this.isSafetyEnabled() || this.isAlive()) && this.getLastError() == ErrorCode.OK;
+  }
+
+  @Override
+  public String toString() {
+    return "SmartFalcon{" +
+            "outputDiameter=" + outputDiameter +
+            ", gearRatio=" + gearRatio +
+            ", position=" + position +
+            '}';
   }
 }

@@ -37,6 +37,8 @@ public class Stick extends ThumbStick {
     if (this.controller.isConnected()) {
       value = this.controller.getRawAxis(twistAxis.getValue());
       value = twistCurve.calculateMappedVal(value);
+    } else {
+      System.err.println("WARNING: Controller on port " + this.controller.getPort() + " disconnected");
     }
     return value;
   }

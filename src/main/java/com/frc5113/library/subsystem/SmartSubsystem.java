@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 /**
  * Use this class when creating a subsystem. This will allow it to be loaded into the subsystem
- * manager for easy telemetry and debugging
+ * manager for easy telemetry and debugging. It also allows the subsystem to be put into a subsystem manager.
  */
 public abstract class SmartSubsystem extends SubsystemBase {
   public SmartSubsystem() {

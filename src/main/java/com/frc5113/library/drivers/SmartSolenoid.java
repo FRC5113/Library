@@ -1,7 +1,6 @@
 package com.frc5113.library.drivers;
 
-import com.frc5113.library.primative.RobotState;
-import com.frc5113.library.primative.StatefulRobot;
+import com.frc5113.library.state.StatefulRobot;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.Solenoid;
 
@@ -31,20 +30,21 @@ public class SmartSolenoid extends Solenoid {
     this.robot = robot;
   }
 
+  /**
+   * Set the value of the solenoid
+   */
   @Override
-  // Allen - Only update solenoid if we need to send a new command or the robot
-  // state changed from or to Disabled
   public void set(boolean value) {
-    boolean is_disabled = robot.getState() == RobotState.DISABLED;
-    if ((!is_disabled && wasDisabled) || value != isOn) {
+    if (value != isOn) {
       super.set(value);
     }
     isOn = value;
-    wasDisabled = is_disabled;
   }
 
+  /**
+   * Don't waste time with a CAN command to check the com.frc5113.library.state
+   */
   @Override
-  // Allen - Don't waste time with a CAN command to check the state
   public boolean get() {
     return isOn;
   }

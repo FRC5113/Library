@@ -12,10 +12,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 
-// Based on FRC#6328 software
+// Based on work by FRC Team 6328, Mechanical Advantage
 /** Class for managing persistent alerts to be sent over NetworkTables. */
 public class Alert {
-  private static final Map<String, SendableAlerts> groups = new HashMap<String, SendableAlerts>();
+  private static final Map<String, SendableAlerts> alertGroups = new HashMap<>();
 
   private final AlertType type;
   private boolean active = false;
@@ -42,14 +42,14 @@ public class Alert {
    * @param type Alert level specifying urgency.
    */
   public Alert(String group, String text, AlertType type) {
-    if (!groups.containsKey(group)) {
-      groups.put(group, new SendableAlerts());
-      SmartDashboard.putData(group, groups.get(group));
+    if (!alertGroups.containsKey(group)) {
+      alertGroups.put(group, new SendableAlerts());
+      SmartDashboard.putData(group, alertGroups.get(group));
     }
 
     this.text = text;
     this.type = type;
-    groups.get(group).alerts.add(this);
+    alertGroups.get(group).alerts.add(this);
   }
 
   /**
@@ -109,7 +109,7 @@ public class Alert {
   }
 
   /** Represents an alert's level of urgency. */
-  public static enum AlertType {
+  public enum AlertType {
     /**
      * High priority alert - displayed first on the dashboard with a red "X" symbol. Use this type
      * for problems which will seriously affect the robot's functionality and thus require immediate

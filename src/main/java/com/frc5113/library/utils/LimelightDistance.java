@@ -3,14 +3,12 @@ package com.frc5113.library.utils;
 import edu.wpi.first.math.util.Units;
 
 /**
- * Sets up Limelight Distance Calculations. all Constructors should be in inches, all calculations
- * are done in Meters.
+ * Do Limelight Distance Calculations easily. All constructors parameters should be in inches, while all calculations are done in meters.
  */
 public class LimelightDistance {
   private final double targetHeight;
   private final double limelightHeight;
   private final double limelightAngle;
-  private double distanceToTarget;
 
   /**
    * Information about the limelight's mounting
@@ -26,20 +24,15 @@ public class LimelightDistance {
   }
 
   public double distanceInches(double targetAngle) {
-    distanceToTarget =
-        ((targetHeight - limelightHeight) / Math.tan(limelightAngle + Math.toRadians(targetAngle)));
-    return Units.metersToInches(distanceToTarget);
+    return Units.metersToInches(distanceMeters(targetAngle));
   }
 
   public double distanceFeet(double targetAngle) {
-    distanceToTarget =
-        ((targetHeight - limelightHeight) / Math.tan(limelightAngle + Math.toRadians(targetAngle)));
-    return Units.metersToFeet(distanceToTarget);
+    return Units.metersToFeet(distanceMeters(targetAngle));
   }
 
   public double distanceMeters(double targetAngle) {
-    distanceToTarget =
-        ((targetHeight - limelightHeight) / Math.tan(limelightAngle + Math.toRadians(targetAngle)));
+    double distanceToTarget = ((targetHeight - limelightHeight) / Math.tan(limelightAngle + Math.toRadians(targetAngle)));
     return distanceToTarget;
   }
 }

@@ -1,60 +1,19 @@
 package com.frc5113.library.oi.buttons;
 
+import com.frc5113.library.oi.buttons.pure.AxisButtonSupplier;
 import com.frc5113.library.primative.Axis;
+import com.frc5113.library.primative.ThresholdType;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
-/** Treat a axis as if it was a button */
+/** Treat an axis as if it was a button */
 public class AxisButton extends Trigger {
-  private final GenericHID controller;
-  private final int axis;
-  private final double targetVal;
-  private final ThresholdType thresholdType;
-
-  public enum ThresholdType {
-    LESS_THAN,
-    GREATER_THAN,
-    EXACT,
-    POV,
-    DEADBAND;
-  }
 
   public AxisButton(GenericHID joystick, int axis, double threshold, ThresholdType thresholdType) {
-    this.controller = joystick;
-    this.axis = axis;
-    this.targetVal = threshold;
-    this.thresholdType = thresholdType;
+    super(new AxisButtonSupplier(joystick, axis, threshold, thresholdType));
   }
 
   public AxisButton(GenericHID joystick, Axis axis, double threshold, ThresholdType thresholdType) {
     this(joystick, axis.getValue(), threshold, thresholdType);
-  }
-
-  /**
-   * Get the value of an axis in true/false form
-   *
-   * @return true/false in accordance with set rules
-   */
-  @Override
-  public boolean getAsBoolean() {
-    switch (this.thresholdType) {
-      case EXACT:
-        // System.out.println("axis value: " + joy.getRawAxis(this.axis));
-        return controller.getRawAxis(this.axis) == this.targetVal;
-      case LESS_THAN:
-        return controller.getRawAxis(this.axis) < this.targetVal;
-      case GREATER_THAN:
-        return controller.getRawAxis(this.axis) > this.targetVal;
-      case POV:
-        return controller.getPOV() == this.targetVal;
-      case DEADBAND:
-        return Math.abs(controller.getRawAxis(this.axis)) > this.targetVal;
-      default:
-        return false;
-    }
-  }
-
-  public boolean get() {
-    return getAsBoolean();
   }
 }

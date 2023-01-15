@@ -1,17 +1,20 @@
-package com.frc5113.library.utils;
+package com.frc5113.library.utils.tunable;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+import java.util.Objects;
+import java.util.function.Supplier;
 
 /**
  * Class for a tunable number. Gets value from dashboard in tuning mode, returns default if not or
  * value not in dashboard.
  */
-public class TunableNumber {
+public class TunableString implements Supplier<String> {
   private static final String tableKey = "TunableNumbers";
 
   private final String key;
-  private double defaultValue;
-  private double lastHasChangedValue = defaultValue;
+  private String defaultValue = "";
+  private String lastHasChangedValue = defaultValue;
   private boolean tuningMode = true;
 
   /**
@@ -19,7 +22,7 @@ public class TunableNumber {
    *
    * @param dashboardKey Key on dashboard
    */
-  public TunableNumber(String dashboardKey) {
+  public TunableString(String dashboardKey) {
     this.key = tableKey + "/" + dashboardKey;
   }
 
@@ -29,19 +32,19 @@ public class TunableNumber {
    * @param dashboardKey Key on dashboard
    * @param defaultValue Default value
    */
-  public TunableNumber(String dashboardKey, double defaultValue) {
+  public TunableString(String dashboardKey, String defaultValue) {
     this(dashboardKey);
     setDefault(defaultValue);
   }
 
   /**
-   * Create a new TunableNumber with the default value that can (not be tunable)
+   * Create a new TunableNumber with the default value that can (but doesn't have to be) tunable
    *
    * @param dashboardKey Key on dashboard
    * @param defaultValue Default value
    * @param tuningMode Should be able to be tuned
    */
-  public TunableNumber(String dashboardKey, double defaultValue, boolean tuningMode) {
+  public TunableString(String dashboardKey, String defaultValue, boolean tuningMode) {
     this(dashboardKey, defaultValue);
     setTuningMode(tuningMode);
   }
@@ -51,7 +54,7 @@ public class TunableNumber {
    *
    * @return The default value
    */
-  public double getDefault() {
+  public String getDefault() {
     return defaultValue;
   }
 
@@ -60,11 +63,11 @@ public class TunableNumber {
    *
    * @param defaultValue The default value
    */
-  public void setDefault(double defaultValue) {
+  public void setDefault(String defaultValue) {
     this.defaultValue = defaultValue;
     if (tuningMode) {
       // This makes sure the data is on NetworkTables but will not change it
-      SmartDashboard.putNumber(key, SmartDashboard.getNumber(key, defaultValue));
+      SmartDashboard.putString(key, SmartDashboard.getString(key, defaultValue));
     } else {
       SmartDashboard.clearPersistent(key);
     }
@@ -75,8 +78,18 @@ public class TunableNumber {
    *
    * @return The current value
    */
-  public double get() {
-    return tuningMode ? SmartDashboard.getNumber(key, defaultValue) : defaultValue;
+  @Override
+  public String get() {
+    return tuningMode ? SmartDashboard.getString(key, defaultValue) : defaultValue;
+  }
+
+  /**
+   * Get the current value, from dashboard if available and in tuning mode
+   *
+   * @return The current value
+   */
+  public String getAsString() {
+    return get();
   }
 
   /**
@@ -86,8 +99,8 @@ public class TunableNumber {
    *     otherwise
    */
   public boolean hasChanged() {
-    double currentValue = get();
-    if (currentValue != lastHasChangedValue) {
+    String currentValue = get();
+    if (!Objects.equals(currentValue, lastHasChangedValue)) {
       lastHasChangedValue = currentValue;
       return true;
     }
@@ -96,9 +109,9 @@ public class TunableNumber {
   }
 
   /**
-   * Set whether the number should be tuned
+   * Set whether the number should be able to be tuned
    *
-   * @param tuningMode Tuning Mode
+   * @param tuningMode Tuning Mode (y/n?)
    */
   public void setTuningMode(boolean tuningMode) {
     this.tuningMode = tuningMode;
