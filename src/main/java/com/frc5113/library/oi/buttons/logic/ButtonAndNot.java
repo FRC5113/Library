@@ -1,20 +1,27 @@
 package com.frc5113.library.oi.buttons.logic;
 
-import edu.wpi.first.wpilibj2.command.button.Button;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
 
-public class ButtonAndNot extends Button {
+/**
+ * Treat two buttons as one (where the fake button is "pressed" when one real buttons is pressed and
+ * the other is not)
+ */
+public class ButtonAndNot extends Trigger {
 
-    Button b1;
-    Button b2;
+  Trigger b1;
+  Trigger b2;
 
-    public ButtonAndNot(Button trueButton, Button falseButton) {
-        b1 = trueButton;
-        b2 = falseButton;
-    }
+  public ButtonAndNot(Trigger trueButton, Trigger falseButton) {
+    b1 = trueButton;
+    b2 = falseButton;
+  }
 
-    @Override
-    public boolean get(){
-        return b1.get() && !b2.get();
-    }
+  public boolean get() {
+    return b1.getAsBoolean() && !b2.getAsBoolean();
+  }
 
+  @Override
+  public boolean getAsBoolean() {
+    return b1.getAsBoolean() && !b2.getAsBoolean();
+  }
 }

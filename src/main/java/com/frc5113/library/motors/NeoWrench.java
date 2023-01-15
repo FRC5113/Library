@@ -4,8 +4,7 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMax.IdleMode;
 
 /**
- * Basic configuration for Neo (on a CANSpark) motors
- * <br>
+ * Basic configuration for Neo (on a CANSpark) motors <br>
  * Nominal Voltage: 12 V<br>
  * Empirical Motor Kv: 473 Kv<br>
  * Empirical Free Speed: 5676 RPM<br>
@@ -15,17 +14,18 @@ import com.revrobotics.CANSparkMax.IdleMode;
  * Empirical Peak Output Power: 406 W<br>
  */
 public class NeoWrench {
-    /**
-     * Configure a Neo (CANSpark) motor with sane defaults
-     * @param motor Motor to configure
-     * @param idleMode Whether to break or coast on .set(0);
-     * @param maxDraw Maximum draw in amps, 40amps has been ok
-     */
-    public static void defaultSetup(CANSparkMax motor, IdleMode idleMode, int maxDraw) {
-        motor.restoreFactoryDefaults();
-        motor.setIdleMode(idleMode);
-        motor.enableVoltageCompensation(12);
-        motor.setSmartCurrentLimit(maxDraw);
-        motor.burnFlash();
-    }
+  /**
+   * Configure a Neo (CANSpark) motor with sane defaults
+   *
+   * @param motor Motor to configure
+   * @param idleMode Whether to break or coast on .set(0);
+   * @param maxDraw Maximum draw in amps, 40amps has been ok
+   */
+  public static void defaultSetup(CANSparkMax motor, IdleMode idleMode, int maxDraw) {
+    motor.restoreFactoryDefaults();
+    motor.setIdleMode(idleMode);
+    motor.enableVoltageCompensation(12);
+    motor.setSmartCurrentLimit(maxDraw);
+    motor.burnFlash();
+  }
 }
