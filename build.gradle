@@ -188,6 +188,7 @@ tasks.register('generateVendorDepBeta') {
         // Parse the output into a string
         def branch = stdout.toString().trim()
 
+        // create file in repo
         new File(projectDir, "./libraryBuilds/rcrepo/$branch/Library5113Beta.json").text = """{
     "fileName": "Library5113Beta.json",
     "name": "Library5113Beta",
