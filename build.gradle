@@ -174,6 +174,43 @@ tasks.register('generateVendorDep') {
     }
 }
 
+tasks.register('generateVendorDepBeta') {
+    doLast {
+        def stdout = new ByteArrayOutputStream()
+
+        // Execute the git command
+        exec {
+            commandLine "git", "rev-parse", "--abbrev-ref", "HEAD"
+            // Write to the output stream instead of terminal
+            standardOutput = stdout
+        }
+
+        // Parse the output into a string
+        def branch = stdout.toString().trim()
+
+        new File(projectDir, "./libraryBuilds/rcrepo/$branch/Library5113Beta.json").text = """{
+    "fileName": "Library5113Beta.json",
+    "name": "Library5113Beta",
+    "version": "$cVersion",
+    "uuid": "5869a73f-d175-403d-9107-8ce1766835ba",
+    "mavenUrls": [
+        "https://frc5113.github.io/LibraryBuilds/rcrepo/$branch/"
+    ],
+    "jsonUrl": "https://frc5113.github.io/LibraryBuilds/rcrepo/$branch/Library5113Beta.json",
+    "javaDependencies": [
+        {
+            "groupId": "com.frc5113",
+            "artifactId": "library",
+            "version": "$cVersion"
+        }
+    ],
+    "jniDependencies": [],
+    "cppDependencies": []
+}
+"""
+    }
+}
+
 // configure the formatting
 // see: https://docs.wpilib.org/en/stable/docs/software/advanced-gradlerio/code-formatting.html
 spotless {
