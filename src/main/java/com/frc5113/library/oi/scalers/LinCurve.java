@@ -18,7 +18,7 @@ e_{v}=3.4
  */
 public class LinCurve extends Curve {
   /**
-   * Constructs an Linear Curve object which can be used to map a stick input proportionally.
+   * Constructs a Linear Curve object which can be used to map a stick input proportionally.
    * Initialized with default values: <code>
    *     offset = 0.0;
    *     scalar = 1.0;

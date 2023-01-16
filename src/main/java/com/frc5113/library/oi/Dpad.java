@@ -1,8 +1,8 @@
 package com.frc5113.library.oi;
 
 import com.frc5113.library.oi.buttons.AxisButton;
-import com.frc5113.library.oi.buttons.AxisButton.ThresholdType;
 import com.frc5113.library.primative.Axis;
+import com.frc5113.library.primative.ThresholdType;
 import edu.wpi.first.wpilibj.GenericHID;
 
 public class Dpad {

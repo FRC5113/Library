@@ -14,7 +14,7 @@ public class Rumble {
   double rumbleLeft;
 
   /**
-   * Create a new rumble state container
+   * Create a new rumble com.frc5113.library.state container
    *
    * @param joystick Xbox controller with rumble
    */

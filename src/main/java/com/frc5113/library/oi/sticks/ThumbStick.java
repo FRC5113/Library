@@ -41,6 +41,9 @@ public class ThumbStick {
     if (this.controller.isConnected()) {
       value = this.controller.getRawAxis(xAxis.getValue());
       value = xCurve.calculateMappedVal(value);
+    } else {
+      System.err.println(
+          "WARNING: Controller on port " + this.controller.getPort() + " disconnected");
     }
     return value;
   }
@@ -50,6 +53,9 @@ public class ThumbStick {
     if (this.controller.isConnected()) {
       value = this.controller.getRawAxis(yAxis.getValue());
       value = yCurve.calculateMappedVal(value);
+    } else {
+      System.err.println(
+          "WARNING: Controller on port " + this.controller.getPort() + " disconnected");
     }
     return value;
   }
@@ -63,7 +69,7 @@ public class ThumbStick {
   }
 
   /**
-   * Get state of the thumbstick as the pair &gt;X, Y&lt;
+   * Get com.frc5113.library.state of the thumbstick as the pair &gt;X, Y&lt;
    *
    * @return {@link CoordinatePair} &gt;X, Y&lt;
    */
