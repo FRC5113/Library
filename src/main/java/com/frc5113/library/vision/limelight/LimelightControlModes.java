@@ -19,7 +19,7 @@ public class LimelightControlModes {
       }
     }
 
-        private final double value;
+    private final double value;
 
     private LedMode(double value) {
       this.value = value;
