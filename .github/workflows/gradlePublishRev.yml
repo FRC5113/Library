@@ -1,0 +1,70 @@
+name: Publish normal pushs to the Builds Repo as RCs
+on:
+  push:
+    branches: "**"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      # default to a checkout of the triggering "ref"
+      - uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
+
+      - name: Make gradlew executable
+        run: chmod +x /home/runner/work/Library/Library/gradlew
+
+      - name: Setup gradle
+        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+
+      - name: Change Gradle version to the git commit shortRef
+        run: sed "s/def cVersion = .*/def cVersion = '$(git rev-parse --short HEAD)'/" build.gradle > build.gradle.new && mv build.gradle.new build.gradle
+
+      - name: Build package
+        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+        with:
+          arguments: build
+
+      - name: Publish package to local repo
+        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+        with:
+          arguments: publishToMavenLocal
+
+      - name: Checkout Builds Project
+        uses: actions/checkout@master
+        with:
+          repository: FRC5113/LibraryBuilds
+          token: ${{ secrets.PUSH_TOKEN }}
+          path: ./libraryBuilds
+
+      - name: Create (possibly not existing structure) for maven, using a custom path
+        run: mkdir -p ./libraryBuilds/rcrepo/$(git rev-parse --abbrev-ref HEAD)/com/frc5113/library
+
+      - name: Generate vendor dependency .json file
+        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+        with:
+          arguments: generateVendorDepBeta
+
+      - name: Move repo files over
+        run: mv ~/.m2/repository/com/frc5113/library/* ./libraryBuilds/rcrepo/$(git rev-parse --abbrev-ref HEAD)/com/frc5113/library
+
+      - name: Push Library Builds
+        run: |
+          cd ./libraryBuilds
+          git add .
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -am "Added New Version (RC)"
+          git push
