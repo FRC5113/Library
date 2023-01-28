@@ -1,5 +1,6 @@
 package com.frc5113.library.oi.buttons.logic;
 
+import com.frc5113.library.oi.buttons.pure.AndNotSupplier;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 /**
@@ -7,21 +8,7 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  * the other is not)
  */
 public class ButtonAndNot extends Trigger {
-
-  Trigger b1;
-  Trigger b2;
-
-  public ButtonAndNot(Trigger trueButton, Trigger falseButton) {
-    b1 = trueButton;
-    b2 = falseButton;
-  }
-
-  public boolean get() {
-    return b1.getAsBoolean() && !b2.getAsBoolean();
-  }
-
-  @Override
-  public boolean getAsBoolean() {
-    return b1.getAsBoolean() && !b2.getAsBoolean();
+  public ButtonAndNot(Trigger button, Trigger notButton) {
+    super(new AndNotSupplier(button, notButton));
   }
 }

@@ -60,8 +60,7 @@ public abstract class Curve {
    * @return mapped value
    */
   protected double calculateScalar(double input) {
-    double val = input * scalar;
-    return val;
+    return input * scalar;
   }
 
   /**
@@ -71,8 +70,7 @@ public abstract class Curve {
    * @return mapped value
    */
   protected double calculateOffset(double input) {
-    double val = input + offset;
-    return val;
+    return input + offset;
   }
 
   /**

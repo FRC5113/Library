@@ -2,11 +2,11 @@ package com.frc5113.library.oi.xbox;
 
 import com.frc5113.library.oi.Dpad;
 import com.frc5113.library.oi.buttons.AxisButton;
-import com.frc5113.library.oi.buttons.AxisButton.ThresholdType;
 import com.frc5113.library.oi.scalers.Curve;
 import com.frc5113.library.oi.scalers.NoOpCurve;
 import com.frc5113.library.oi.scalers.SmoothCubicCurve;
 import com.frc5113.library.oi.sticks.ThumbStick;
+import com.frc5113.library.primative.ThresholdType;
 import edu.wpi.first.wpilibj.XboxController;
 
 public class XboxGamepad extends XboxController {

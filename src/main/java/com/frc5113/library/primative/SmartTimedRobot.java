@@ -1,6 +1,8 @@
 package com.frc5113.library.primative;
 
-import com.frc5113.library.config.ConfigLibrary;
+import com.frc5113.library.state.RobotState;
+import com.frc5113.library.state.StateManager;
+import com.frc5113.library.state.StatefulRobot;
 import com.frc5113.library.utils.Alert;
 import com.frc5113.library.utils.Alert.AlertType;
 import edu.wpi.first.wpilibj.DriverStation;
@@ -25,15 +27,16 @@ import java.net.UnknownHostException;
  */
 // UPDATE SmartLoggedTimedRobot IN LOGGING when changing this file
 public abstract class SmartTimedRobot extends TimedRobot implements StatefulRobot {
-  /** Manages the current state of the robot */
-  public RobotState state = RobotState.DISABLED;
-
   /**
    * The unique hexadecimal combination that identifies network equipment. See <a
    * href="https://en.wikipedia.org/wiki/MAC_address">Wikipedia</a> for more information
    */
   public static String MAC = "";
 
+  /** Mac Address of the competition robot */
+  public static String compMac = "";
+
+  /** Is the code running on a non competition robot */
   public static boolean notMainBot = false;
 
   // Alerts
@@ -42,14 +45,19 @@ public abstract class SmartTimedRobot extends TimedRobot implements StatefulRobo
       new Alert("Code is not running on the comp bot", Alert.AlertType.WARNING);
   public static Alert FMSConnectedAlert = new Alert("FMS Connected", Alert.AlertType.WARNING);
 
+  public static StateManager stateManager = new StateManager();
+
+  public SmartTimedRobot(String compMac) {
+    SmartTimedRobot.compMac = compMac;
+  }
+
   private static boolean checkIfPracticeRobot() {
     if (MAC.equals("")) {
       getMACAddress();
     }
-    if (!MAC.equals(ConfigLibrary.getMainBotMac())) {
+    if (!MAC.equals(compMac)) {
       notMainBot = true;
       notMainBotAlert.set(true);
-      //            PracticeConstants.practiceBotConstantsOverride();
     }
     return notMainBot;
   }
@@ -96,7 +104,8 @@ public abstract class SmartTimedRobot extends TimedRobot implements StatefulRobo
    * @return Whether battery should be changed
    */
   public boolean changeBattery() {
-    return (this.state == RobotState.DISABLED && RobotController.getInputVoltage() < 12);
+    return (stateManager.getState() == RobotState.DISABLED
+        && RobotController.getInputVoltage() < 12);
   }
 
   /**
@@ -106,16 +115,17 @@ public abstract class SmartTimedRobot extends TimedRobot implements StatefulRobo
    * @return Whether battery should be changed
    */
   public boolean changeBattery(int voltage) {
-    return (this.state == RobotState.DISABLED && RobotController.getInputVoltage() < voltage);
+    return (stateManager.getState() == RobotState.DISABLED
+        && RobotController.getInputVoltage() < voltage);
   }
 
   /**
-   * Get the current state of the robot
+   * Get the current com.frc5113.library.state of the robot
    *
    * @return {@link RobotState} currently
    */
   public RobotState getState() {
-    return state;
+    return stateManager.getState();
   }
 
   /**
@@ -124,7 +134,7 @@ public abstract class SmartTimedRobot extends TimedRobot implements StatefulRobo
    * @param newState New State to set
    */
   public void setState(RobotState newState) {
-    state = newState;
+    stateManager.setState(newState);
   }
 
   // Overwrite the base classes to ensure that logic can be placed

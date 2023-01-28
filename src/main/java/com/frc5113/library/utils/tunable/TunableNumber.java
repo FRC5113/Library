@@ -1,12 +1,13 @@
-package com.frc5113.library.utils;
+package com.frc5113.library.utils.tunable;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import java.util.function.DoubleSupplier;
 
 /**
  * Class for a tunable number. Gets value from dashboard in tuning mode, returns default if not or
  * value not in dashboard.
  */
-public class TunableNumber {
+public class TunableNumber implements DoubleSupplier {
   private static final String tableKey = "TunableNumbers";
 
   private final String key;
@@ -35,7 +36,7 @@ public class TunableNumber {
   }
 
   /**
-   * Create a new TunableNumber with the default value that can (not be tunable)
+   * Create a new TunableNumber with the default value that can (but doesn't have to be) tunable
    *
    * @param dashboardKey Key on dashboard
    * @param defaultValue Default value
@@ -80,6 +81,16 @@ public class TunableNumber {
   }
 
   /**
+   * Get the current value, from dashboard if available and in tuning mode
+   *
+   * @return The current value
+   */
+  @Override
+  public double getAsDouble() {
+    return get();
+  }
+
+  /**
    * Checks whether the number has changed since our last check
    *
    * @return True if the number has changed since the last time this method was called, false
@@ -96,9 +107,9 @@ public class TunableNumber {
   }
 
   /**
-   * Set whether the number should be tuned
+   * Set whether the number should be able to be tuned
    *
-   * @param tuningMode Tuning Mode
+   * @param tuningMode Tuning Mode (y/n?)
    */
   public void setTuningMode(boolean tuningMode) {
     this.tuningMode = tuningMode;

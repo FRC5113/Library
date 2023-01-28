@@ -142,7 +142,7 @@ public class Limelight {
 
   // Setters
   /**
-   * LedMode Sets limelight’s LED state
+   * LedMode Sets limelight’s LED com.frc5113.library.state
    *
    * <ul>
    *   <li>kPipeline
@@ -264,7 +264,7 @@ public class Limelight {
    * <br>
    * <br>
    * <br>
-   * kon - Take 1 snapshot koff - Do not take a snapshot (default state)
+   * kon - Take 1 snapshot koff - Do not take a snapshot (default com.frc5113.library.state)
    *
    * @param snapshot Whether to take a snapshot
    */
