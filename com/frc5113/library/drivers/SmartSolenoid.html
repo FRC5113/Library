@@ -95,12 +95,12 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,com.frc5113.library.primative.StatefulRobot)" class="member-name-link">SmartSolenoid</a><wbr>(int&nbsp;channel,
- <a href="../primative/StatefulRobot.html" title="interface in com.frc5113.library.primative">StatefulRobot</a>&nbsp;robot)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,com.frc5113.library.state.StatefulRobot)" class="member-name-link">SmartSolenoid</a><wbr>(int&nbsp;channel,
+ <a href="../state/StatefulRobot.html" title="interface in com.frc5113.library.state">StatefulRobot</a>&nbsp;robot)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(edu.wpi.first.wpilibj.PneumaticsModuleType,int,com.frc5113.library.primative.StatefulRobot)" class="member-name-link">SmartSolenoid</a><wbr>(edu.wpi.first.wpilibj.PneumaticsModuleType&nbsp;moduleType,
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(edu.wpi.first.wpilibj.PneumaticsModuleType,int,com.frc5113.library.state.StatefulRobot)" class="member-name-link">SmartSolenoid</a><wbr>(edu.wpi.first.wpilibj.PneumaticsModuleType&nbsp;moduleType,
  int&nbsp;channel,
- <a href="../primative/StatefulRobot.html" title="interface in com.frc5113.library.primative">StatefulRobot</a>&nbsp;robot)</code></div>
+ <a href="../state/StatefulRobot.html" title="interface in com.frc5113.library.state">StatefulRobot</a>&nbsp;robot)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
@@ -118,10 +118,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get()" class="member-name-link">get</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Don't waste time with a CAN command to check the com.frc5113.library.state</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(boolean)" class="member-name-link">set</a><wbr>(boolean&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Set the value of the solenoid</div>
+</div>
 </div>
 </div>
 </div>
@@ -143,18 +147,18 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(int,com.frc5113.library.primative.StatefulRobot)">
+<section class="detail" id="&lt;init&gt;(int,com.frc5113.library.state.StatefulRobot)">
 <h3>SmartSolenoid</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SmartSolenoid</span><wbr><span class="parameters">(int&nbsp;channel,
- <a href="../primative/StatefulRobot.html" title="interface in com.frc5113.library.primative">StatefulRobot</a>&nbsp;robot)</span></div>
+ <a href="../state/StatefulRobot.html" title="interface in com.frc5113.library.state">StatefulRobot</a>&nbsp;robot)</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="&lt;init&gt;(edu.wpi.first.wpilibj.PneumaticsModuleType,int,com.frc5113.library.primative.StatefulRobot)">
+<section class="detail" id="&lt;init&gt;(edu.wpi.first.wpilibj.PneumaticsModuleType,int,com.frc5113.library.state.StatefulRobot)">
 <h3>SmartSolenoid</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SmartSolenoid</span><wbr><span class="parameters">(edu.wpi.first.wpilibj.PneumaticsModuleType&nbsp;moduleType,
  int&nbsp;channel,
- <a href="../primative/StatefulRobot.html" title="interface in com.frc5113.library.primative">StatefulRobot</a>&nbsp;robot)</span></div>
+ <a href="../state/StatefulRobot.html" title="interface in com.frc5113.library.state">StatefulRobot</a>&nbsp;robot)</span></div>
 </section>
 </li>
 </ul>
@@ -169,6 +173,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="set(boolean)">
 <h3>set</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(boolean&nbsp;value)</span></div>
+<div class="block">Set the value of the solenoid</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code>set</code>&nbsp;in class&nbsp;<code>edu.wpi.first.wpilibj.Solenoid</code></dd>
@@ -179,6 +184,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="get()">
 <h3>get</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">get</span>()</div>
+<div class="block">Don't waste time with a CAN command to check the com.frc5113.library.state</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code>get</code>&nbsp;in class&nbsp;<code>edu.wpi.first.wpilibj.Solenoid</code></dd>

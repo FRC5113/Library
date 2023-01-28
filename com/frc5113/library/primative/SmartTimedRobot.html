@@ -82,12 +82,12 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="StatefulRobot.html" title="interface in com.frc5113.library.primative">StatefulRobot</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
+<dd><code><a href="../state/StatefulRobot.html" title="interface in com.frc5113.library.state">StatefulRobot</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">SmartTimedRobot</span>
 <span class="extends-implements">extends edu.wpi.first.wpilibj.TimedRobot
-implements <a href="StatefulRobot.html" title="interface in com.frc5113.library.primative">StatefulRobot</a></span></div>
+implements <a href="../state/StatefulRobot.html" title="interface in com.frc5113.library.state">StatefulRobot</a></span></div>
 <div class="block">The <a href="SmartTimedRobot.html" title="class in com.frc5113.library.primative"><code>SmartTimedRobot</code></a> abstract class provides additional scaffolding to the Timed Robot
  class. Its goal is to ensure that any robot code contains additional modifiers that are required
  by libraries to function. While there are no implementation details, they are required (due to
@@ -111,25 +111,30 @@ implements <a href="StatefulRobot.html" title="interface in com.frc5113.library.
 <div class="col-first even-row-color"><code>static <a href="../utils/Alert.html" title="class in com.frc5113.library.utils">Alert</a></code></div>
 <div class="col-second even-row-color"><code><a href="#batteryAlert" class="member-name-link">batteryAlert</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../utils/Alert.html" title="class in com.frc5113.library.utils">Alert</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#FMSConnectedAlert" class="member-name-link">FMSConnectedAlert</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#MAC" class="member-name-link">MAC</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#compMac" class="member-name-link">compMac</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Mac Address of the competition robot</div>
+</div>
+<div class="col-first even-row-color"><code>static <a href="../utils/Alert.html" title="class in com.frc5113.library.utils">Alert</a></code></div>
+<div class="col-second even-row-color"><code><a href="#FMSConnectedAlert" class="member-name-link">FMSConnectedAlert</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#MAC" class="member-name-link">MAC</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">The unique hexadecimal combination that identifies network equipment.</div>
 </div>
-<div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="#notMainBot" class="member-name-link">notMainBot</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../utils/Alert.html" title="class in com.frc5113.library.utils">Alert</a></code></div>
-<div class="col-second even-row-color"><code><a href="#notMainBotAlert" class="member-name-link">notMainBotAlert</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="RobotState.html" title="enum class in com.frc5113.library.primative">RobotState</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#state" class="member-name-link">state</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Manages the current state of the robot</div>
+<div class="col-first even-row-color"><code>static boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#notMainBot" class="member-name-link">notMainBot</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Is the code running on a non competition robot</div>
 </div>
+<div class="col-first odd-row-color"><code>static <a href="../utils/Alert.html" title="class in com.frc5113.library.utils">Alert</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#notMainBotAlert" class="member-name-link">notMainBotAlert</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../state/StateManager.html" title="class in com.frc5113.library.state">StateManager</a></code></div>
+<div class="col-second even-row-color"><code><a href="#stateManager" class="member-name-link">stateManager</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="inherited-list">
 <h3 id="fields-inherited-from-class-edu.wpi.first.wpilibj.TimedRobot">Fields inherited from class&nbsp;edu.wpi.first.wpilibj.TimedRobot</h3>
@@ -144,7 +149,7 @@ implements <a href="StatefulRobot.html" title="interface in com.frc5113.library.
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">SmartTimedRobot</a>()</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">SmartTimedRobot</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;compMac)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -194,10 +199,10 @@ implements <a href="StatefulRobot.html" title="interface in com.frc5113.library.
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#disabledPeriodic()" class="member-name-link">disabledPeriodic</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="RobotState.html" title="enum class in com.frc5113.library.primative">RobotState</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../state/RobotState.html" title="enum class in com.frc5113.library.state">RobotState</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getState()" class="member-name-link">getState</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Get the current state of the robot</div>
+<div class="block">Get the current com.frc5113.library.state of the robot</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#robotInit()" class="member-name-link">robotInit</a>()</code></div>
@@ -211,7 +216,7 @@ implements <a href="StatefulRobot.html" title="interface in com.frc5113.library.
 <div class="block">This function is called every robot packet, no matter the mode.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setState(com.frc5113.library.primative.RobotState)" class="member-name-link">setState</a><wbr>(<a href="RobotState.html" title="enum class in com.frc5113.library.primative">RobotState</a>&nbsp;newState)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setState(com.frc5113.library.state.RobotState)" class="member-name-link">setState</a><wbr>(<a href="../state/RobotState.html" title="enum class in com.frc5113.library.state">RobotState</a>&nbsp;newState)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set the current state of the robot</div>
 </div>
@@ -264,13 +269,6 @@ implements <a href="StatefulRobot.html" title="interface in com.frc5113.library.
 <h2>Field Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="state">
-<h3>state</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="RobotState.html" title="enum class in com.frc5113.library.primative">RobotState</a></span>&nbsp;<span class="element-name">state</span></div>
-<div class="block">Manages the current state of the robot</div>
-</section>
-</li>
-<li>
 <section class="detail" id="MAC">
 <h3>MAC</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">MAC</span></div>
@@ -278,9 +276,17 @@ implements <a href="StatefulRobot.html" title="interface in com.frc5113.library.
 </section>
 </li>
 <li>
+<section class="detail" id="compMac">
+<h3>compMac</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">compMac</span></div>
+<div class="block">Mac Address of the competition robot</div>
+</section>
+</li>
+<li>
 <section class="detail" id="notMainBot">
 <h3>notMainBot</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">notMainBot</span></div>
+<div class="block">Is the code running on a non competition robot</div>
 </section>
 </li>
 <li>
@@ -301,6 +307,12 @@ implements <a href="StatefulRobot.html" title="interface in com.frc5113.library.
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../utils/Alert.html" title="class in com.frc5113.library.utils">Alert</a></span>&nbsp;<span class="element-name">FMSConnectedAlert</span></div>
 </section>
 </li>
+<li>
+<section class="detail" id="stateManager">
+<h3>stateManager</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../state/StateManager.html" title="class in com.frc5113.library.state">StateManager</a></span>&nbsp;<span class="element-name">stateManager</span></div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -310,9 +322,9 @@ implements <a href="StatefulRobot.html" title="interface in com.frc5113.library.
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;()">
+<section class="detail" id="&lt;init&gt;(java.lang.String)">
 <h3>SmartTimedRobot</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SmartTimedRobot</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SmartTimedRobot</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;compMac)</span></div>
 </section>
 </li>
 </ul>
@@ -362,24 +374,24 @@ implements <a href="StatefulRobot.html" title="interface in com.frc5113.library.
 <li>
 <section class="detail" id="getState()">
 <h3>getState</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="RobotState.html" title="enum class in com.frc5113.library.primative">RobotState</a></span>&nbsp;<span class="element-name">getState</span>()</div>
-<div class="block">Get the current state of the robot</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../state/RobotState.html" title="enum class in com.frc5113.library.state">RobotState</a></span>&nbsp;<span class="element-name">getState</span>()</div>
+<div class="block">Get the current com.frc5113.library.state of the robot</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="StatefulRobot.html#getState()">getState</a></code>&nbsp;in interface&nbsp;<code><a href="StatefulRobot.html" title="interface in com.frc5113.library.primative">StatefulRobot</a></code></dd>
+<dd><code><a href="../state/StatefulRobot.html#getState()">getState</a></code>&nbsp;in interface&nbsp;<code><a href="../state/StatefulRobot.html" title="interface in com.frc5113.library.state">StatefulRobot</a></code></dd>
 <dt>Returns:</dt>
-<dd><a href="RobotState.html" title="enum class in com.frc5113.library.primative"><code>RobotState</code></a> currently</dd>
+<dd><a href="../state/RobotState.html" title="enum class in com.frc5113.library.state"><code>RobotState</code></a> currently</dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="setState(com.frc5113.library.primative.RobotState)">
+<section class="detail" id="setState(com.frc5113.library.state.RobotState)">
 <h3>setState</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setState</span><wbr><span class="parameters">(<a href="RobotState.html" title="enum class in com.frc5113.library.primative">RobotState</a>&nbsp;newState)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setState</span><wbr><span class="parameters">(<a href="../state/RobotState.html" title="enum class in com.frc5113.library.state">RobotState</a>&nbsp;newState)</span></div>
 <div class="block">Set the current state of the robot</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="StatefulRobot.html#setState(com.frc5113.library.primative.RobotState)">setState</a></code>&nbsp;in interface&nbsp;<code><a href="StatefulRobot.html" title="interface in com.frc5113.library.primative">StatefulRobot</a></code></dd>
+<dd><code><a href="../state/StatefulRobot.html#setState(com.frc5113.library.state.RobotState)">setState</a></code>&nbsp;in interface&nbsp;<code><a href="../state/StatefulRobot.html" title="interface in com.frc5113.library.state">StatefulRobot</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>newState</code> - New State to set</dd>
 </dl>

@@ -117,6 +117,14 @@ loadScripts(document, 'script');</script>
  com.revrobotics.CANSparkMax.IdleMode&nbsp;idleMode,
  int&nbsp;maxDraw)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Configure a Neo (CANSpark) motor with sane defaults.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#defaultSetup(com.revrobotics.CANSparkMax,com.revrobotics.CANSparkMax.IdleMode,int,boolean)" class="member-name-link">defaultSetup</a><wbr>(com.revrobotics.CANSparkMax&nbsp;motor,
+ com.revrobotics.CANSparkMax.IdleMode&nbsp;idleMode,
+ int&nbsp;maxDraw,
+ boolean&nbsp;burn)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Configure a Neo (CANSpark) motor with sane defaults</div>
 </div>
 </div>
@@ -151,12 +159,30 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
+<section class="detail" id="defaultSetup(com.revrobotics.CANSparkMax,com.revrobotics.CANSparkMax.IdleMode,int,boolean)">
+<h3>defaultSetup</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">defaultSetup</span><wbr><span class="parameters">(com.revrobotics.CANSparkMax&nbsp;motor,
+ com.revrobotics.CANSparkMax.IdleMode&nbsp;idleMode,
+ int&nbsp;maxDraw,
+ boolean&nbsp;burn)</span></div>
+<div class="block">Configure a Neo (CANSpark) motor with sane defaults</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>motor</code> - Motor to configure</dd>
+<dd><code>idleMode</code> - Whether to break or coast on .set(0);</dd>
+<dd><code>maxDraw</code> - Maximum draw in amps, 40amps has been ok</dd>
+<dd><code>burn</code> - Should the parameters actually be put into the flash</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="defaultSetup(com.revrobotics.CANSparkMax,com.revrobotics.CANSparkMax.IdleMode,int)">
 <h3>defaultSetup</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">defaultSetup</span><wbr><span class="parameters">(com.revrobotics.CANSparkMax&nbsp;motor,
  com.revrobotics.CANSparkMax.IdleMode&nbsp;idleMode,
  int&nbsp;maxDraw)</span></div>
-<div class="block">Configure a Neo (CANSpark) motor with sane defaults</div>
+<div class="block">Configure a Neo (CANSpark) motor with sane defaults. Will consult <a href="SparkMAXBurnManager.html" title="class in com.frc5113.library.motors"><code>SparkMAXBurnManager</code></a>
+ everytime to check if should burn.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>motor</code> - Motor to configure</dd>

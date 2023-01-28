@@ -1,9 +1,9 @@
-com.frc5113.library.config
 com.frc5113.library.drivers
 com.frc5113.library.motors
 com.frc5113.library.oi
 com.frc5113.library.oi.buttons
 com.frc5113.library.oi.buttons.logic
+com.frc5113.library.oi.buttons.pure
 com.frc5113.library.oi.generic
 com.frc5113.library.oi.joystick
 com.frc5113.library.oi.scalers
@@ -11,10 +11,8 @@ com.frc5113.library.oi.sticks
 com.frc5113.library.oi.xbox
 com.frc5113.library.primative
 com.frc5113.library.primative.motorselector
-com.frc5113.library.sim
+com.frc5113.library.state
 com.frc5113.library.subsystem
 com.frc5113.library.subsystem.sample
 com.frc5113.library.utils
-frc.robot
-frc.robot.commands
-frc.robot.subsystems
+com.frc5113.library.utils.tunable
