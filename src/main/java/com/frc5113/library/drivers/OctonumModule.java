@@ -1,9 +1,11 @@
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value.*;
+package com.frc5113.library.drivers;
+
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 import com.frc5113.library.motors.SmartFalcon;
 import com.frc5113.library.primative.OctonumType;
 
+import static edu.wpi.first.wpilibj.DoubleSolenoid.Value.*;
 
 
 public class OctonumModule {
@@ -28,7 +30,7 @@ public class OctonumModule {
         if(current != type) {
             solenoid.toggle();
         }
-        current = driveType;
+        current = type;
     }
     
     public void toggle() {
@@ -36,13 +38,11 @@ public class OctonumModule {
     }
 
     public void solenoidOff() {
-        solenoid.off();
+        solenoid.set(kOff);
     }
 
     public void brake() {
         solenoid.set(kForward);
         motor.stopMotor();
     }
-
-
 }
