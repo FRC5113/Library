@@ -1,5 +1,6 @@
 package com.frc5113.library.subsystem;
 
+import com.frc5113.library.loops.ILooper;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 /**
@@ -28,4 +29,13 @@ public abstract class SmartSubsystem extends SubsystemBase {
 
   /** Reset all the motors */
   public abstract void zeroSensors();
+
+  /** Add functions to be executed at the start, periodic, and end of the robot lifecycle */
+  public void registerEnabledLoops(ILooper mEnabledLooper) {}
+
+  /** Read information from constricted resources (ie CAN) */
+  public void readPeriodicInputs() {}
+
+  /** Write periodic information to constricted resources (ie CAN) */
+  public void writePeriodicOutputs() {}
 }
