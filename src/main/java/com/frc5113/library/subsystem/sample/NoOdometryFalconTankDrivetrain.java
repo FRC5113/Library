@@ -1,9 +1,9 @@
 package com.frc5113.library.subsystem.sample;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
+import com.frc5113.library.loops.ILooper;
+import com.frc5113.library.loops.Loop;
 import com.frc5113.library.motors.SmartFalcon;
 import com.frc5113.library.primative.motorselector.TankMotorSelector;
 import com.frc5113.library.subsystem.SmartSubsystem;
@@ -16,10 +16,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class NoOdometryFalconTankDrivetrain extends SmartSubsystem {
 
-  public final SmartFalcon leftParent;
-  public final SmartFalcon rightParent;
-  private final SmartFalcon leftChild;
-  private final SmartFalcon rightChild;
+  public SmartFalcon leftParent;
+  public SmartFalcon rightParent;
+  private SmartFalcon leftChild;
+  private SmartFalcon rightChild;
   private final DifferentialDrive driveBase;
 
   /**
@@ -44,15 +44,14 @@ public class NoOdometryFalconTankDrivetrain extends SmartSubsystem {
       double deadBand,
       double rampRate,
       NeutralMode neutralMode) {
-    leftParent = new SmartFalcon(leftParentId);
-    rightParent = new SmartFalcon(rightParentId);
-    leftChild = new SmartFalcon(leftChildId);
-    rightChild = new SmartFalcon(rightChildId);
-
-    configureMotor(leftParent, true, rampRate, neutralMode);
-    configureMotor(rightParent, false, rampRate, neutralMode);
-    configureMotor(leftChild, true, rampRate, neutralMode);
-    configureMotor(rightChild, false, rampRate, neutralMode);
+    leftParent = new SmartFalcon(leftParentId, false, neutralMode);
+    leftParent = leftParent.setRampRate(rampRate);
+    rightParent = new SmartFalcon(rightParentId, false, neutralMode);
+    rightParent = rightParent.setRampRate(rampRate);
+    leftChild = new SmartFalcon(leftChildId, false, neutralMode);
+    leftChild = leftChild.setRampRate(rampRate);
+    rightChild = new SmartFalcon(rightChildId, false, neutralMode);
+    rightChild = rightChild.setRampRate(rampRate);
 
     rightChild.set(ControlMode.Follower, rightParent.getDeviceID());
     leftChild.set(ControlMode.Follower, leftParent.getDeviceID());
@@ -122,38 +121,6 @@ public class NoOdometryFalconTankDrivetrain extends SmartSubsystem {
   public NoOdometryFalconTankDrivetrain(
       int leftParentId, int rightParentId, int leftChildId, int rightChildId) {
     this(leftParentId, rightParentId, leftChildId, rightChildId, 0.1, 0.1, NeutralMode.Coast);
-  }
-
-  /**
-   * Configure the motors to make sure that their settings are correct.
-   *
-   * <p>Location is based on the forward moving direction of the robot (stand facing the same way
-   * the front of the robot is facing)
-   *
-   * @param motor Motor
-   * @param left whether it's located on the left side of the robot in the direction it is facing
-   */
-  private void configureMotor(
-      WPI_TalonFX motor, boolean left, double rampRate, NeutralMode neutralMode) {
-    motor.configFactoryDefault(); // Resetting the motors to make sure there's no junk on there
-    // before configuring
-    // motor.configVoltageCompSaturation(DRIVE_MAX_VOLTAGE); // only use 12.3 volts regardless of
-    // battery voltage
-    // motor.enableVoltageCompensation(true); // enable ^
-    motor.setInverted(!left);
-    motor.setNeutralMode(
-        neutralMode); // set it so that when the motor is getting no input, it stops
-    motor.configSelectedFeedbackSensor(
-        FeedbackDevice.IntegratedSensor); // configure the encoder (it's inside)
-    motor.setSelectedSensorPosition(0); // reset the encoder to have a value of 0
-    motor.configOpenloopRamp(rampRate); // how long it takes to go from 0 to the set speed
-    motor.setSensorPhase(true);
-    // motor.config_kP(0, 0.001);
-    // motor.config_kI(0, 0);
-    // motor.config_kD(0, 0);
-    // motor.config_kF(0, 0);
-    // Make sure that both sides' encoders are getting positive values when going
-    // forward
   }
 
   /**
@@ -295,6 +262,7 @@ public class NoOdometryFalconTankDrivetrain extends SmartSubsystem {
     }
   }
 
+  /** Set every motor to coast */
   public void setAllToCoast() {
     leftParent.setNeutralMode(NeutralMode.Coast);
     rightParent.setNeutralMode(NeutralMode.Coast);
@@ -302,6 +270,7 @@ public class NoOdometryFalconTankDrivetrain extends SmartSubsystem {
     rightChild.setNeutralMode(NeutralMode.Coast);
   }
 
+  /** Set every motor to break */
   public void setAllToBrake() {
     leftParent.setNeutralMode(NeutralMode.Brake);
     rightParent.setNeutralMode(NeutralMode.Brake);
@@ -309,6 +278,7 @@ public class NoOdometryFalconTankDrivetrain extends SmartSubsystem {
     rightChild.setNeutralMode(NeutralMode.Brake);
   }
 
+  /** set all encoders to zero */
   public void resetEncoders() {
     leftParent.setSelectedSensorPosition(0);
     leftChild.setSelectedSensorPosition(0);
@@ -351,5 +321,30 @@ public class NoOdometryFalconTankDrivetrain extends SmartSubsystem {
   @Override
   public void zeroSensors() {
     resetEncoders();
+  }
+
+  @Override
+  public void readPeriodicInputs() {}
+
+  @Override
+  public void writePeriodicOutputs() {}
+
+  @Override
+  public void registerEnabledLoops(ILooper mEnabledLooper) {
+    mEnabledLooper.register(
+        new Loop() {
+          @Override
+          public void onStart(double timestamp) {
+            setAllToBrake();
+          }
+
+          @Override
+          public void onLoop(double timestamp) {}
+
+          @Override
+          public void onStop(double timestamp) {
+            setAllToCoast();
+          }
+        });
   }
 }

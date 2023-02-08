@@ -30,7 +30,9 @@ public abstract class SmartSubsystem extends SubsystemBase {
   /** Reset all the motors */
   public abstract void zeroSensors();
 
-  /** Add functions to be executed at the start, periodic, and end of the robot lifecycle. Optional. */
+  /**
+   * Add functions to be executed at the start, periodic, and end of the robot lifecycle. Optional.
+   */
   public abstract void registerEnabledLoops(ILooper mEnabledLooper);
 
   /** Read information from constricted resources (ie CAN) */
@@ -38,4 +40,8 @@ public abstract class SmartSubsystem extends SubsystemBase {
 
   /** Write periodic information to constricted resources (ie CAN) */
   public abstract void writePeriodicOutputs();
+
+  // Periodic doesn't need to exist
+  @Override
+  public void periodic() {}
 }
