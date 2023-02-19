@@ -11,6 +11,7 @@ import com.frc5113.library.subsystem.SmartSubsystem;
 import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.DifferentialDriveOdometry;
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -402,6 +403,11 @@ public class FalconTankDrivetrain extends SmartSubsystem {
     }
   }
 
+  @Override
+  public boolean checkSubsystemPeriodic() {
+    return true;
+  }
+
   /** Stop everything in the subsystem (now) */
   @Override
   public void stop() {
@@ -475,7 +481,12 @@ public class FalconTankDrivetrain extends SmartSubsystem {
           public void onStart(double timestamp) {}
 
           @Override
-          public void onLoop(double timestamp) {}
+          public void onLoop(double timestamp) {
+            if (!checkSubsystemPeriodic()) {
+              DriverStation.reportError(
+                  "Subsystem " + this.getClass().getName() + " failed check", false);
+            }
+          }
 
           @Override
           public void onStop(double timestamp) {}

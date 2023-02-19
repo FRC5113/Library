@@ -7,6 +7,7 @@ import com.frc5113.library.loops.Loop;
 import com.frc5113.library.motors.SmartFalcon;
 import com.frc5113.library.primative.motorselector.TankMotorSelector;
 import com.frc5113.library.subsystem.SmartSubsystem;
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -308,6 +309,11 @@ public class NoOdometryFalconTankDrivetrain extends SmartSubsystem {
         && leftChild.isConnected();
   }
 
+  @Override
+  public boolean checkSubsystemPeriodic() {
+    return true;
+  }
+
   /** Stop everything in the subsystem (now) */
   @Override
   public void stop() {
@@ -356,7 +362,12 @@ public class NoOdometryFalconTankDrivetrain extends SmartSubsystem {
           public void onStart(double timestamp) {}
 
           @Override
-          public void onLoop(double timestamp) {}
+          public void onLoop(double timestamp) {
+            if (!checkSubsystemPeriodic()) {
+              DriverStation.reportError(
+                  "Subsystem " + this.getClass().getName() + " failed check", false);
+            }
+          }
 
           @Override
           public void onStop(double timestamp) {}

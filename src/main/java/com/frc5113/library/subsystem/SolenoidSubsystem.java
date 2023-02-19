@@ -4,6 +4,7 @@ import com.frc5113.library.drivers.SmartSolenoid;
 import com.frc5113.library.loops.ILooper;
 import com.frc5113.library.loops.Loop;
 import com.frc5113.library.state.StatefulRobot;
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.RunCommand;
@@ -58,6 +59,11 @@ public class SolenoidSubsystem extends SmartSubsystem {
   }
 
   @Override
+  public boolean checkSubsystemPeriodic() {
+    return true;
+  }
+
+  @Override
   public void registerPeriodicSubsystemCheck(ILooper mCheckLooper) {
     mCheckLooper.register(
         new Loop() {
@@ -65,7 +71,12 @@ public class SolenoidSubsystem extends SmartSubsystem {
           public void onStart(double timestamp) {}
 
           @Override
-          public void onLoop(double timestamp) {}
+          public void onLoop(double timestamp) {
+            if (!checkSubsystemPeriodic()) {
+              DriverStation.reportError(
+                  "Subsystem " + this.getClass().getName() + " failed check", false);
+            }
+          }
 
           @Override
           public void onStop(double timestamp) {}

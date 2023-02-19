@@ -31,6 +31,14 @@ public abstract class SmartSubsystem extends SubsystemBase {
    */
   public abstract void registerPeriodicSubsystemCheck(ILooper mCheckLooper);
 
+  /**
+   * Have the subsystem perform a simple and quickly executing check that verifies the correct
+   * operation of the subsystem. Should print debug data if something fails
+   *
+   * @return Check status (success - true / fail - false)
+   */
+  public abstract boolean checkSubsystemPeriodic();
+
   /** Stop everything in the subsystem (now) */
   public abstract void stop();
 
