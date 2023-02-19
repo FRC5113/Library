@@ -470,15 +470,15 @@ public class FalconTankDrivetrain extends SmartSubsystem {
   @Override
   public void registerPeriodicSubsystemCheck(ILooper mCheckLooper) {
     mCheckLooper.register(
-      new Loop() {
-        @Override
-        public void onStart(double timestamp) {}
-        
-        @Override
-        public void onLoop(double timestamp) {}
+        new Loop() {
+          @Override
+          public void onStart(double timestamp) {}
 
-        @Override
-        public void onStop(double timestamp) {}
-      });
+          @Override
+          public void onLoop(double timestamp) {}
+
+          @Override
+          public void onStop(double timestamp) {}
+        });
   }
 }

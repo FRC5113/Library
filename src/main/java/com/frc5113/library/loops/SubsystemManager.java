@@ -30,19 +30,18 @@ public class SubsystemManager implements ILooper {
     return ret_val;
   }
 
-  public boolean checkSubsystemsPeriodic(){
+  public boolean checkSubsystemsPeriodic() {
     boolean ret_val = true;
 
-    for (SmartSubsystem s: mAllSubsystems){
+    for (SmartSubsystem s : mAllSubsystems) {
       boolean check = s.checkSubsystem();
-      if (!check){
+      if (!check) {
         DriverStation.reportError("Subsystem " + s.getClass().getName() + " failed check", false);
       }
       ret_val &= check;
     }
 
     return ret_val;
-
   }
 
   public void stop() {
@@ -98,7 +97,7 @@ public class SubsystemManager implements ILooper {
     disabledLooper.register(new DisabledLoop());
   }
 
-  public void registerCheckLoops(Looper checkLooper){
+  public void registerCheckLoops(Looper checkLooper) {
     mAllSubsystems.forEach(s -> s.registerPeriodicSubsystemCheck(this));
   }
 
