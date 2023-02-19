@@ -24,6 +24,12 @@ public abstract class SmartSubsystem extends SubsystemBase {
    */
   public abstract boolean checkSubsystem();
 
+  /**
+   * Adds functions to be executed at the start, periodic, and end of the robot life cycle.
+   * Used to perform simple checks to verify the correct operation of a subsystem. Should the checks fail, errors must be reported.
+   */
+  public abstract void registerPeriodicSubsystemCheck(ILooper mCheckLooper);
+
   /** Stop everything in the subsystem (now) */
   public abstract void stop();
 

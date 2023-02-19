@@ -466,4 +466,19 @@ public class FalconTankDrivetrain extends SmartSubsystem {
   public DifferentialDriveOdometry getOdometry() {
     return odometry;
   }
+
+  @Override
+  public void registerPeriodicSubsystemCheck(ILooper mCheckLooper) {
+    mCheckLooper.register(
+      new Loop() {
+        @Override
+        public void onStart(double timestamp) {}
+        
+        @Override
+        public void onLoop(double timestamp) {}
+
+        @Override
+        public void onStop(double timestamp) {}
+      });
+  }
 }
