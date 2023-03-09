@@ -99,10 +99,10 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>final <a href="../../motors/SmartFalcon.html" title="class in com.frc5113.library.motors">SmartFalcon</a></code></div>
+<div class="col-first even-row-color"><code><a href="../../motors/SmartFalcon.html" title="class in com.frc5113.library.motors">SmartFalcon</a></code></div>
 <div class="col-second even-row-color"><code><a href="#leftParent" class="member-name-link">leftParent</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="../../motors/SmartFalcon.html" title="class in com.frc5113.library.motors">SmartFalcon</a></code></div>
+<div class="col-first odd-row-color"><code><a href="../../motors/SmartFalcon.html" title="class in com.frc5113.library.motors">SmartFalcon</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#rightParent" class="member-name-link">rightParent</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
@@ -177,38 +177,65 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Have the subsystem make sure that everything is good</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#curvatureDrive(double,double)" class="member-name-link">curvatureDrive</a><wbr>(double&nbsp;speed,
- double&nbsp;rotation)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkSubsystemPeriodic()" class="member-name-link">checkSubsystemPeriodic</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Curvature drive method for differential drive platform.</div>
+<div class="block">Have the subsystem perform a simple and quickly executing check that verifies the correct
+ operation of the subsystem.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#curvatureDrive(double,double,boolean)" class="member-name-link">curvatureDrive</a><wbr>(double&nbsp;speed,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#curvatureDrive(double,double)" class="member-name-link">curvatureDrive</a><wbr>(double&nbsp;speed,
+ double&nbsp;rotation)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Curvature drive method for differential drive platform.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#curvatureDrive(double,double,boolean)" class="member-name-link">curvatureDrive</a><wbr>(double&nbsp;speed,
  double&nbsp;rotation,
  boolean&nbsp;inPlaceTurns)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Curvature drive method for differential drive platform.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#motorTest(com.frc5113.library.primative.motorselector.TankMotorSelector)" class="member-name-link">motorTest</a><wbr>(<a href="../../primative/motorselector/TankMotorSelector.html" title="enum class in com.frc5113.library.primative.motorselector">TankMotorSelector</a>&nbsp;motor)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#motorTest(com.frc5113.library.primative.motorselector.TankMotorSelector)" class="member-name-link">motorTest</a><wbr>(<a href="../../primative/motorselector/TankMotorSelector.html" title="enum class in com.frc5113.library.primative.motorselector">TankMotorSelector</a>&nbsp;motor)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Check if a motors works</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#outputTelemetry()" class="member-name-link">outputTelemetry</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#outputTelemetry()" class="member-name-link">outputTelemetry</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Output telemetry</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readPeriodicInputs()" class="member-name-link">readPeriodicInputs</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Read information from constricted resources (ie CAN)</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerEnabledLoops(com.frc5113.library.loops.ILooper)" class="member-name-link">registerEnabledLoops</a><wbr>(<a href="../../loops/ILooper.html" title="interface in com.frc5113.library.loops">ILooper</a>&nbsp;mEnabledLooper)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Add functions to be executed at the start, periodic, and end of the robot lifecycle.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerPeriodicSubsystemCheck(com.frc5113.library.loops.ILooper)" class="member-name-link">registerPeriodicSubsystemCheck</a><wbr>(<a href="../../loops/ILooper.html" title="interface in com.frc5113.library.loops">ILooper</a>&nbsp;mCheckLooper)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds functions to be executed at the start, periodic, and end of the robot life cycle.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetEncoders()" class="member-name-link">resetEncoders</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">set all encoders to zero</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAllToBrake()" class="member-name-link">setAllToBrake</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Set every motor to break</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAllToCoast()" class="member-name-link">setAllToCoast</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Set every motor to coast</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setMaxOutput(double)" class="member-name-link">setMaxOutput</a><wbr>(double&nbsp;max)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -246,13 +273,21 @@ loadScripts(document, 'script');</script>
  backward - where the speed is <code>forward - backward</code>).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#zeroSensors()" class="member-name-link">zeroSensors</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writePeriodicOutputs()" class="member-name-link">writePeriodicOutputs</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Write periodic information to constricted resources (ie CAN)</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#zeroSensors()" class="member-name-link">zeroSensors</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reset all the motors</div>
 </div>
 </div>
 </div>
 </div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-com.frc5113.library.subsystem.SmartSubsystem">Methods inherited from class&nbsp;com.frc5113.library.subsystem.<a href="../SmartSubsystem.html" title="class in com.frc5113.library.subsystem">SmartSubsystem</a></h3>
+<code><a href="../SmartSubsystem.html#periodic()">periodic</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-edu.wpi.first.wpilibj2.command.SubsystemBase">Methods inherited from class&nbsp;edu.wpi.first.wpilibj2.command.SubsystemBase</h3>
 <code>addChild, getName, getSubsystem, initSendable, setName, setSubsystem</code></div>
@@ -261,7 +296,7 @@ loadScripts(document, 'script');</script>
 <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-edu.wpi.first.wpilibj2.command.Subsystem">Methods inherited from interface&nbsp;edu.wpi.first.wpilibj2.command.Subsystem</h3>
-<code>getCurrentCommand, getDefaultCommand, periodic, register, run, runEnd, runOnce, setDefaultCommand, simulationPeriodic, startEnd</code></div>
+<code>getCurrentCommand, getDefaultCommand, register, run, runEnd, runOnce, setDefaultCommand, simulationPeriodic, startEnd</code></div>
 </section>
 </li>
 </ul>
@@ -276,13 +311,13 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="leftParent">
 <h3>leftParent</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../../motors/SmartFalcon.html" title="class in com.frc5113.library.motors">SmartFalcon</a></span>&nbsp;<span class="element-name">leftParent</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../motors/SmartFalcon.html" title="class in com.frc5113.library.motors">SmartFalcon</a></span>&nbsp;<span class="element-name">leftParent</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="rightParent">
 <h3>rightParent</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../../motors/SmartFalcon.html" title="class in com.frc5113.library.motors">SmartFalcon</a></span>&nbsp;<span class="element-name">rightParent</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../motors/SmartFalcon.html" title="class in com.frc5113.library.motors">SmartFalcon</a></span>&nbsp;<span class="element-name">rightParent</span></div>
 </section>
 </li>
 </ul>
@@ -539,18 +574,21 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="setAllToCoast()">
 <h3>setAllToCoast</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setAllToCoast</span>()</div>
+<div class="block">Set every motor to coast</div>
 </section>
 </li>
 <li>
 <section class="detail" id="setAllToBrake()">
 <h3>setAllToBrake</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setAllToBrake</span>()</div>
+<div class="block">Set every motor to break</div>
 </section>
 </li>
 <li>
 <section class="detail" id="resetEncoders()">
 <h3>resetEncoders</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">resetEncoders</span>()</div>
+<div class="block">set all encoders to zero</div>
 </section>
 </li>
 <li>
@@ -578,6 +616,21 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="checkSubsystemPeriodic()">
+<h3>checkSubsystemPeriodic</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">checkSubsystemPeriodic</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="../SmartSubsystem.html#checkSubsystemPeriodic()">SmartSubsystem</a></code></span></div>
+<div class="block">Have the subsystem perform a simple and quickly executing check that verifies the correct
+ operation of the subsystem. Should print debug data if something fails</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../SmartSubsystem.html#checkSubsystemPeriodic()">checkSubsystemPeriodic</a></code>&nbsp;in class&nbsp;<code><a href="../SmartSubsystem.html" title="class in com.frc5113.library.subsystem">SmartSubsystem</a></code></dd>
+<dt>Returns:</dt>
+<dd>Check status (success - true / fail - false)</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="stop()">
 <h3>stop</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">stop</span>()</div>
@@ -596,6 +649,56 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../SmartSubsystem.html#zeroSensors()">zeroSensors</a></code>&nbsp;in class&nbsp;<code><a href="../SmartSubsystem.html" title="class in com.frc5113.library.subsystem">SmartSubsystem</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="readPeriodicInputs()">
+<h3>readPeriodicInputs</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">readPeriodicInputs</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="../SmartSubsystem.html#readPeriodicInputs()">SmartSubsystem</a></code></span></div>
+<div class="block">Read information from constricted resources (ie CAN)</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../SmartSubsystem.html#readPeriodicInputs()">readPeriodicInputs</a></code>&nbsp;in class&nbsp;<code><a href="../SmartSubsystem.html" title="class in com.frc5113.library.subsystem">SmartSubsystem</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="writePeriodicOutputs()">
+<h3>writePeriodicOutputs</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">writePeriodicOutputs</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="../SmartSubsystem.html#writePeriodicOutputs()">SmartSubsystem</a></code></span></div>
+<div class="block">Write periodic information to constricted resources (ie CAN)</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../SmartSubsystem.html#writePeriodicOutputs()">writePeriodicOutputs</a></code>&nbsp;in class&nbsp;<code><a href="../SmartSubsystem.html" title="class in com.frc5113.library.subsystem">SmartSubsystem</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="registerEnabledLoops(com.frc5113.library.loops.ILooper)">
+<h3>registerEnabledLoops</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerEnabledLoops</span><wbr><span class="parameters">(<a href="../../loops/ILooper.html" title="interface in com.frc5113.library.loops">ILooper</a>&nbsp;mEnabledLooper)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="../SmartSubsystem.html#registerEnabledLoops(com.frc5113.library.loops.ILooper)">SmartSubsystem</a></code></span></div>
+<div class="block">Add functions to be executed at the start, periodic, and end of the robot lifecycle. Optional.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../SmartSubsystem.html#registerEnabledLoops(com.frc5113.library.loops.ILooper)">registerEnabledLoops</a></code>&nbsp;in class&nbsp;<code><a href="../SmartSubsystem.html" title="class in com.frc5113.library.subsystem">SmartSubsystem</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="registerPeriodicSubsystemCheck(com.frc5113.library.loops.ILooper)">
+<h3>registerPeriodicSubsystemCheck</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerPeriodicSubsystemCheck</span><wbr><span class="parameters">(<a href="../../loops/ILooper.html" title="interface in com.frc5113.library.loops">ILooper</a>&nbsp;mCheckLooper)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="../SmartSubsystem.html#registerPeriodicSubsystemCheck(com.frc5113.library.loops.ILooper)">SmartSubsystem</a></code></span></div>
+<div class="block">Adds functions to be executed at the start, periodic, and end of the robot life cycle. Used to
+ perform simple checks to verify the correct operation of a subsystem. Should the checks fail,
+ errors must be reported.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../SmartSubsystem.html#registerPeriodicSubsystemCheck(com.frc5113.library.loops.ILooper)">registerPeriodicSubsystemCheck</a></code>&nbsp;in class&nbsp;<code><a href="../SmartSubsystem.html" title="class in com.frc5113.library.subsystem">SmartSubsystem</a></code></dd>
 </dl>
 </section>
 </li>

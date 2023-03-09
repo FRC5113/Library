@@ -1,4 +1,5 @@
 com.frc5113.library.drivers
+com.frc5113.library.loops
 com.frc5113.library.motors
 com.frc5113.library.oi
 com.frc5113.library.oi.buttons

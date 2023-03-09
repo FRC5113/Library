@@ -137,6 +137,10 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">A Drivetrain class for a tank drive consisting of two falcons per side</div>
 </div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/primative/GyroState.html" title="class in com.frc5113.library.primative">GyroState</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/frc5113/library/loops/ILooper.html" title="interface in com.frc5113.library.loops">ILooper</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">&nbsp;</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/drivers/InvertibleDigitalInput.html" title="class in com.frc5113.library.drivers">InvertibleDigitalInput</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/oi/joystick/Joystick.html" title="class in com.frc5113.library.oi.joystick">Joystick</a></div>
@@ -176,6 +180,15 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/oi/scalers/LinCurve.html" title="class in com.frc5113.library.oi.scalers">LinCurve</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">This class maps the value of a stick input to a linear curve.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="com/frc5113/library/loops/Loop.html" title="interface in com.frc5113.library.loops">Loop</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Interface for loops, which are routine that run periodically in the robot code (such as periodic
+ gyroscope calibration, etc.)</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/loops/Looper.html" title="class in com.frc5113.library.loops">Looper</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">This code runs all of the robot's loops.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/motors/NeoWrench.html" title="class in com.frc5113.library.motors">NeoWrench</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
@@ -284,48 +297,52 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Larger sticks (full hand ones) also come with twist functionality.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/motors/TalonFXWrench.html" title="class in com.frc5113.library.motors">TalonFXWrench</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/loops/SubsystemManager.html" title="class in com.frc5113.library.loops">SubsystemManager</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Used to reset, start, stop, and update all subsystems at once</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/motors/TalonFXWrench.html" title="class in com.frc5113.library.motors">TalonFXWrench</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Basic configuration for TalonFX (Falcon) motors 400W Power @ 40A / 12VDC (20A optimal)</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab3"><a href="com/frc5113/library/primative/motorselector/TankMotorSelector.html" title="enum class in com.frc5113.library.primative.motorselector">TankMotorSelector</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab3">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="com/frc5113/library/primative/motorselector/TankMotorSelector.html" title="enum class in com.frc5113.library.primative.motorselector">TankMotorSelector</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab3">
 <div class="block">In a 4 motor tank drive, select an individual motor</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="com/frc5113/library/primative/ThresholdType.html" title="enum class in com.frc5113.library.primative">ThresholdType</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/oi/sticks/ThumbStick.html" title="class in com.frc5113.library.oi.sticks">ThumbStick</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab3"><a href="com/frc5113/library/primative/ThresholdType.html" title="enum class in com.frc5113.library.primative">ThresholdType</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/oi/sticks/ThumbStick.html" title="class in com.frc5113.library.oi.sticks">ThumbStick</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Thumbstick provides an expression of a thumbstick found on any device, with an x-axis and y-axis.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/oi/xbox/Triggers.html" title="class in com.frc5113.library.oi.xbox">Triggers</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/oi/xbox/Triggers.html" title="class in com.frc5113.library.oi.xbox">Triggers</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Represent the state of the physical triggers (on the back of the XBox controller)</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/utils/tunable/TunableBoolean.html" title="class in com.frc5113.library.utils.tunable">TunableBoolean</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
-<div class="block">Class for a tunable number.</div>
-</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/utils/tunable/TunableNumber.html" title="class in com.frc5113.library.utils.tunable">TunableNumber</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/utils/tunable/TunableBoolean.html" title="class in com.frc5113.library.utils.tunable">TunableBoolean</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Class for a tunable number.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/utils/tunable/TunableString.html" title="class in com.frc5113.library.utils.tunable">TunableString</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/utils/tunable/TunableNumber.html" title="class in com.frc5113.library.utils.tunable">TunableNumber</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Class for a tunable number.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/utils/Util.html" title="class in com.frc5113.library.utils">Util</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/utils/tunable/TunableString.html" title="class in com.frc5113.library.utils.tunable">TunableString</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Class for a tunable number.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/utils/Util.html" title="class in com.frc5113.library.utils">Util</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Contains basic functions that are used often.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/oi/xbox/XboxGamepad.html" title="class in com.frc5113.library.oi.xbox">XboxGamepad</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="com/frc5113/library/oi/xbox/XboxGamepad.XboxAxis.html" title="enum class in com.frc5113.library.oi.xbox">XboxGamepad.XboxAxis</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab3">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/frc5113/library/oi/xbox/XboxGamepad.html" title="class in com.frc5113.library.oi.xbox">XboxGamepad</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab3"><a href="com/frc5113/library/oi/xbox/XboxGamepad.XboxAxis.html" title="enum class in com.frc5113.library.oi.xbox">XboxGamepad.XboxAxis</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab3">
 <div class="block">The axis numerations of the XBox controller.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab3"><a href="com/frc5113/library/oi/xbox/XboxGamepad.XboxButton.html" title="enum class in com.frc5113.library.oi.xbox">XboxGamepad.XboxButton</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab3">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="com/frc5113/library/oi/xbox/XboxGamepad.XboxButton.html" title="enum class in com.frc5113.library.oi.xbox">XboxGamepad.XboxButton</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab3">
 <div class="block">Button IDs of an XBox controller</div>
 </div>
 </div>
