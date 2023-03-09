@@ -17,3 +17,5 @@ com.frc5113.library.subsystem
 com.frc5113.library.subsystem.sample
 com.frc5113.library.utils
 com.frc5113.library.utils.tunable
+com.frc5113.library.vision.limelight
+com.frc5113.library.vision.photon
