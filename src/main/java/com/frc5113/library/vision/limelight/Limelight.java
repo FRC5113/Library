@@ -1,6 +1,6 @@
-package com.frc5113.library.drivers;
+package com.frc5113.library.vision.limelight;
 
-import com.frc5113.library.drivers.LimelightControlModes.*;
+import com.frc5113.library.vision.limelight.LimelightControlModes.*;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;

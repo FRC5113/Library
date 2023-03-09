@@ -1,4 +1,4 @@
-package com.frc5113.library.drivers;
+package com.frc5113.library.vision.limelight;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +19,7 @@ public class LimelightControlModes {
       }
     }
 
-    private double value;
+    private final double value;
 
     private LedMode(double value) {
       this.value = value;
