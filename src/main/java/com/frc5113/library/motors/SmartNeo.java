@@ -16,9 +16,14 @@ public class SmartNeo extends CANSparkMax {
   public RelativeEncoder encoder;
 
   public SmartNeo(int canID, IdleMode idleMode) {
+    this(canID, idleMode, false);
+  }
+
+  public SmartNeo(int canID, IdleMode idleMode, boolean inverted) {
     super(canID, MotorType.kBrushless);
     NeoWrench.defaultSetup(this, idleMode, 45);
     encoder = getEncoder();
+    this.setInverted(inverted);
   }
 
   /**
